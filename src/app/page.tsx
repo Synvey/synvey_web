@@ -2,6 +2,23 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
+  const tickerItems = [
+    "Faster releases",
+    "Clear analytics",
+    "Robust quality",
+    "Easy integrations",
+    "Enterprise-grade security",
+    "Real-time monitoring",
+    "Developer-first UX",
+    "Scales with your traffic",
+    "Zero-downtime deploys",
+    "Smart automation",
+    "API-ready by default",
+    "SOC2-friendly practices",
+    "Role-based access",
+    "Powerful insights",
+    "Global performance",
+  ];
   return (
     <main>
       <section className="relative isolate min-h-[90vh] flex items-center">
@@ -47,58 +64,18 @@ export default function HomePage() {
           <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
             <div className="overflow-hidden">
               <div className="flex animate-scroll gap-6 hover:pause-animation">
-                <div className="flex gap-6 whitespace-nowrap">
-                  {[
-                    "Faster releases",
-                    "Clear analytics", 
-                    "Robust quality",
-                    "Easy integrations",
-                    "Enterprise-grade security",
-                    "Real-time monitoring",
-                    "Developer-first UX",
-                    "Scales with your traffic",
-                    "Zero-downtime deploys",
-                    "Smart automation",
-                    "API-ready by default",
-                    "SOC2-friendly practices",
-                    "Role-based access",
-                    "Powerful insights",
-                    "Global performance"
-                  ].map((item, index) => (
-                    <span
-                      key={`hero-bottom-${index}`}
-                      className="inline-flex items-center rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-200 shadow-sm transition-colors hover:bg-zinc-900/70 hover:text-zinc-100 sm:px-5 sm:py-2.5 sm:text-base"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-6 whitespace-nowrap">
-                  {[
-                    "Faster releases",
-                    "Clear analytics", 
-                    "Robust quality",
-                    "Easy integrations",
-                    "Enterprise-grade security",
-                    "Real-time monitoring",
-                    "Developer-first UX",
-                    "Scales with your traffic",
-                    "Zero-downtime deploys",
-                    "Smart automation",
-                    "API-ready by default",
-                    "SOC2-friendly practices",
-                    "Role-based access",
-                    "Powerful insights",
-                    "Global performance"
-                  ].map((item, index) => (
-                    <span
-                      key={`hero-bottom-dup-${index}`}
-                      className="inline-flex items-center rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-200 shadow-sm transition-colors hover:bg-zinc-900/70 hover:text-zinc-100 sm:px-5 sm:py-2.5 sm:text-base"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                {[0, 1].map((copy) => (
+                  <div key={copy} className="flex gap-6 whitespace-nowrap">
+                    {tickerItems.map((item, index) => (
+                      <span
+                        key={`${copy}-${index}`}
+                        className="inline-flex items-center rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-200 shadow-sm transition-colors hover:bg-zinc-900/70 hover:text-zinc-100 sm:px-5 sm:py-2.5 sm:text-base"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

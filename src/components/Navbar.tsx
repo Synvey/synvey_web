@@ -43,7 +43,6 @@ const NAV_ITEMS: MenuItem[] = [
       { label: "Get Started", href: "/solutions#cta", description: "Ready to transform your platform?" },
     ],
   },
-  { label: "Customers", href: "/customers" },
   {
     label: "Resources",
     items: [
@@ -52,7 +51,6 @@ const NAV_ITEMS: MenuItem[] = [
       { label: "Guides", href: "/guides" },
     ],
   },
-  { label: "Pricing", href: "/pricing" },
   {
     label: "Company",
     items: [
@@ -63,6 +61,108 @@ const NAV_ITEMS: MenuItem[] = [
 ];
 
 // ThemeToggle now provided by ModeToggle (shadcn/next-themes)
+
+function getSubmenuIcon(label: string) {
+  switch (label) {
+    case "Overview":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M4 4h16v4H4zM4 10h16v10H4z"/>
+        </svg>
+      );
+    case "AI Integration":
+    case "AI Integration":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      );
+    case "Desktop Applications":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      );
+    case "Web Applications":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+        </svg>
+      );
+    case "Mobile Applications":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      );
+    case "UI/UX Services":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+        </svg>
+      );
+    case "Cloud & DevOps":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+        </svg>
+      );
+    case "Solution Pillars":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M4 3h4v18H4zM10 8h4v13h-4zM16 13h4v8h-4z" />
+        </svg>
+      );
+    case "Industries":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M3 13l7-5 7 5V5l7 5v9H3z" />
+        </svg>
+      );
+    case "Get Started":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M12 2l3 7h7l-5.5 4 2.5 7-7-4.5L5 20l2.5-7L2 9h7z" />
+        </svg>
+      );
+    case "Docs":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M6 2h9l5 5v15H6zM15 2v5h5" />
+        </svg>
+      );
+    case "Blog":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h10v2H4z" />
+        </svg>
+      );
+    case "Guides":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M4 5h8a4 4 0 014 4v10H8a4 4 0 00-4 4V5zM12 5h4v10h-4z" />
+        </svg>
+      );
+    case "About":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10zm-7 9a7 7 0 0114 0H5z" />
+        </svg>
+      );
+    case "Contact":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M2 4h20v12H2zM4 20l6-4h4l6 4" />
+        </svg>
+      );
+    default:
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <circle cx="12" cy="12" r="5" />
+        </svg>
+      );
+  }
+}
 
 function DesktopNav() {
   return (
@@ -102,7 +202,7 @@ function DesktopNav() {
                                 className="group flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800/60"
                               >
                                 <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-md border border-zinc-200 text-zinc-700 transition-colors group-hover:border-zinc-300 dark:border-zinc-700 dark:text-zinc-300">
-                                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M4 4h16v4H4zM4 10h16v10H4z"/></svg>
+                                  {getSubmenuIcon(sub.label)}
                                 </span>
                                 <span>
                                   <div className="flex items-center gap-2">
@@ -115,11 +215,6 @@ function DesktopNav() {
                                 </span>
                               </Link>
                             ))}
-                          </div>
-                          <div className="border-t border-zinc-200 p-3 text-right text-xs dark:border-zinc-800">
-                            <Link href={item.label === "Products" ? "/products" : ((item.items[0] && item.items[0].href) || '#')} className="text-zinc-600 underline-offset-2 hover:underline dark:text-zinc-400">
-                              View all {item.label.toLowerCase()}
-                            </Link>
                           </div>
                         </div>
                       </div>
