@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import ThreeDashedLines from "@/components/ThreeDashedLines";
 
 export default function HomePage() {
   const tickerItems = [
@@ -47,13 +48,11 @@ export default function HomePage() {
               {/* Trust logos removed by request */}
             </div>
 
-            {/* Right: Visual */}
+            {/* Right: Visual (Three.js dashed lines) */}
             <div className="animate-on-load animate-slide-in-right animate-delay-200">
               <div className="relative mx-auto w-full max-w-xl">
                 <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
-                <div className="flex items-center justify-center">
-                  <img src="/logo.jpg" alt="Synvey visual" className="h-auto w-4/5 rounded-full shadow-2xl ring-1 ring-zinc-800/30" />
-                </div>
+                <ThreeDashedLines />
               </div>
             </div>
           </div>
