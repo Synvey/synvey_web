@@ -23,7 +23,7 @@ type MenuItem = {
 
 const NAV_ITEMS: MenuItem[] = [
   {
-    label: "Products",
+    label: "Solutions",
     items: [
       { label: "Overview", href: "/products", description: "Complete set of tools to accelerate innovation." },
       { label: "AI Integration", href: "/products/ai-integration", description: "Harness AI to build intelligent applications." },
@@ -35,12 +35,15 @@ const NAV_ITEMS: MenuItem[] = [
     ],
   },
   {
-    label: "Solutions",
+    label: "Use cases",
     items: [
-      { label: "Overview", href: "/solutions", description: "Foundational technology for digital success." },
-      { label: "Solution Pillars", href: "/solutions#pillars", description: "Integration, Analytics, Security & more." },
-      { label: "Industries", href: "/solutions#industries", description: "Finance, Retail, Public Sector solutions." },
-      { label: "Get Started", href: "/solutions#cta", description: "Ready to transform your platform?" },
+      { label: "Overview", href: "/use-cases", description: "Real-world applications and success stories." },
+      { label: "E-commerce Platform", href: "/use-cases/ecommerce-platform", description: "Build scalable online stores with AI-powered features." },
+      { label: "Healthcare Management", href: "/use-cases/healthcare-management", description: "Secure patient data and streamline medical workflows." },
+      { label: "Financial Services", href: "/use-cases/financial-services", description: "Compliant fintech solutions with real-time analytics." },
+      { label: "Education Technology", href: "/use-cases/education-technology", description: "Interactive learning platforms and student management." },
+      { label: "Manufacturing IoT", href: "/use-cases/manufacturing-iot", description: "Smart factory solutions and predictive maintenance." },
+      { label: "Real Estate Portal", href: "/use-cases/real-estate-portal", description: "Property listings with virtual tours and analytics." },
     ],
   },
   {

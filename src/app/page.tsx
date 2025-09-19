@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ThreeDashedLines from "@/components/ThreeDashedLines";
+import CapabilitiesCollapsible from "@/components/CapabilitiesCollapsible";
 
 export default function HomePage() {
   const tickerItems = [
@@ -29,7 +30,7 @@ export default function HomePage() {
             {/* Left: Text */}
             <div className="animate-on-load animate-slide-in-left">
               <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
-                Accelerate innovation with reliability and security.
+                Build faster. Ship securely.
               </h1>
               <p className="mt-4 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg animate-on-load animate-fade-in-up animate-delay-200">
                 Build, scale, and monitor applications with confidence. Streamlined workflows, deep insights, and first‑class integrations in one platform.
@@ -92,9 +93,9 @@ export default function HomePage() {
               From AI integration to cybersecurity, we provide end-to-end solutions that power your digital transformation.
             </p>
           </div>
-
-           {/* Feature 1: AI Integration */}
-           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-32">
+          {/* Always visible: first two capabilities */}
+          {/* Feature 1: AI Integration */}
+          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-32">
              <div className="order-2 lg:order-1">
                <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                  AI Integration
@@ -115,9 +116,8 @@ export default function HomePage() {
                </div>
              </div>
            </div>
-
           {/* Feature 2: Desktop Applications */}
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-32">
+          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-8">
             <div>
               <div className="relative mx-auto w-full max-w-sm">
                 <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 blur-2xl" />
@@ -138,7 +138,8 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-
+          {/* Collapsible: remaining capabilities */}
+          <CapabilitiesCollapsible>
           {/* Feature 3: Web Applications */}
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-32">
             <div className="order-2 lg:order-1">
@@ -253,6 +254,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          </CapabilitiesCollapsible>
         </div>
       </section>
 
@@ -355,7 +357,7 @@ export default function HomePage() {
              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/90 via-indigo-500/90 to-indigo-400/90" />
              <div className="relative text-center">
                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-                 Get Started with Synvey
+                 Ready to Transform Your Business?
                </h2>
                <div className="mt-8">
                  <Button asChild size="lg" className="bg-white text-indigo-600 hover:bg-indigo-50 font-semibold px-8 py-3 text-lg">
