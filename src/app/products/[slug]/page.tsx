@@ -6,7 +6,7 @@ const PRODUCTS = {
   "ai-integration": {
     name: "AI Integration",
     tagline: "Harness the power of artificial intelligence to build intelligent applications",
-    overview: "Transform your applications with cutting-edge AI capabilities. Our AI Integration platform provides seamless integration of machine learning models, natural language processing, and intelligent automation to help you build applications that learn, adapt, and deliver exceptional user experiences.",
+    overview: "We help businesses harness the power of Artificial Intelligence by integrating machine learning models, natural language processing, and automation into their existing systems. Our solutions optimize workflows, improve decision-making, and enhance customer experiences.",
     icon: (
       <svg className="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -84,7 +84,7 @@ const PRODUCTS = {
   "web-applications": {
     name: "Web Applications",
     tagline: "Build scalable, responsive web applications that work seamlessly across all devices",
-    overview: "Create modern web applications that scale with your business. Our platform provides the tools and infrastructure needed to build fast, secure, and maintainable web applications that deliver exceptional user experiences.",
+    overview: "We develop modern, responsive, and secure web applications that are tailored to enhance business productivity and deliver seamless user experiences.",
     icon: (
       <svg className="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
@@ -123,7 +123,7 @@ const PRODUCTS = {
   "mobile-applications": {
     name: "Mobile Applications",
     tagline: "Develop native and cross-platform mobile apps that engage users and drive growth",
-    overview: "Create mobile applications that captivate users and drive business growth. Our platform supports both native and cross-platform development, enabling you to reach iOS and Android users with high-performance applications.",
+    overview: "Our mobile app solutions bring your ideas to life with engaging, high-performing apps that work seamlessly across platforms. We ensure intuitive user journeys and optimized performance.",
     icon: (
       <svg className="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -162,7 +162,7 @@ const PRODUCTS = {
   "ui-ux-services": {
     name: "UI/UX Services",
     tagline: "Create intuitive, accessible user experiences that delight customers and drive engagement",
-    overview: "Design user experiences that convert visitors into customers. Our UI/UX services combine user-centered design principles with modern aesthetics to create interfaces that are both beautiful and functional.",
+    overview: "We design digital products that prioritize user experience while maintaining a modern, visually appealing aesthetic. Our design process ensures usability, accessibility, and delight.",
     icon: (
       <svg className="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
@@ -201,7 +201,7 @@ const PRODUCTS = {
   "cloud-devops": {
     name: "Cloud & DevOps",
     tagline: "Streamline deployment and operations with cloud-native solutions and DevOps best practices",
-    overview: "Accelerate your development lifecycle with modern DevOps practices and cloud infrastructure. Our platform provides automated CI/CD pipelines, infrastructure as code, and scalable cloud architectures to help you deploy faster and more reliably.",
+    overview: "We empower businesses to scale and deliver faster through cloud infrastructure and DevOps automation, ensuring reliability, security, and continuous delivery.",
     icon: (
       <svg className="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />

@@ -33,7 +33,7 @@ export default function HomePage() {
                 Build faster. Ship securely.
               </h1>
               <p className="mt-4 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg animate-on-load animate-fade-in-up animate-delay-200">
-                Build, scale, and monitor applications with confidence. Streamlined workflows, deep insights, and first‑class integrations in one platform.
+                Synvey empowers businesses with digital solutions that scale. From AI integration and custom apps to seamless mobile experiences and intuitive UI/UX design, we deliver technology that drives innovation and growth.
               </p>
               <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4 animate-on-load animate-fade-in-up animate-delay-300">
                 <Button asChild size="lg">
@@ -229,29 +229,6 @@ export default function HomePage() {
                 Streamline deployment and operations with cloud-native solutions and DevOps best practices. 
                 Automated CI/CD pipelines, infrastructure as code, and scalable cloud architectures.
               </p>
-            </div>
-          </div>
-
-          {/* Feature 7: Cybersecurity */}
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
-            <div className="order-2 lg:order-1">
-              <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Cybersecurity
-              </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">
-                Protect your digital assets with comprehensive security solutions and compliance frameworks. 
-                Threat detection, data encryption, and security monitoring built into every solution.
-              </p>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="relative mx-auto w-full max-w-sm">
-                <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-red-500/10 to-orange-500/10 blur-2xl" />
-                <div className="aspect-square flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
-                  <svg className="w-20 h-20 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-              </div>
             </div>
           </div>
           </CapabilitiesCollapsible>
