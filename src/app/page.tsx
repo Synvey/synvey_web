@@ -29,8 +29,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
             {/* Left: Text */}
             <div className="animate-on-load animate-slide-in-left">
-              <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
-                Build faster. Ship securely.
+              <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-5xl">
+                Smart Tech.<br/>Bold Design.<br/>Real Growth.
               </h1>
               <p className="mt-4 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg animate-on-load animate-fade-in-up animate-delay-200">
                 Synvey empowers businesses with digital solutions that scale. From AI integration and custom apps to seamless mobile experiences and intuitive UI/UX design, we deliver technology that drives innovation and growth.
@@ -87,10 +87,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Comprehensive Platform Capabilities
+              Comprehensive Platform Solutions
             </h2>
             <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">
-              From AI integration to cybersecurity, we provide end-to-end solutions that power your digital transformation.
+              From AI integration to DevOps, we provide end-to-end solutions that power your digital transformation.
             </p>
           </div>
           {/* Always visible: first two capabilities */}
