@@ -2,7 +2,7 @@ import Link from "next/link";
 import { div } from "three/src/nodes/math/OperatorNode.js";
 
 const solutionLinks = [
-  { label: "AI Integration", href: "/products/ai-integration" },
+  { label: "AI Integration", href: "/products/ai-integration"},
   { label: "Desktop Applications", href: "/products/desktop-applications" },
   { label: "Web Applications", href: "/products/web-applications" },
   { label: "Mobile Applications", href: "/products/mobile-applications" },
@@ -37,7 +37,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-zinc-800 bg-zinc-900/50 text-foreground">
       {/* Main Footer Content */}
-      <div className="mx-auto max-w-[90rem] px-3 py-12 sm:px-4 lg:px-6">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
           {/* Company Info & Social */}
           <div className="lg:col-span-2 space-y-6">

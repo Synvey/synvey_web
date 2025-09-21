@@ -6,7 +6,7 @@ export default function AboutPage() {
     <main>
       {/* Hero Section */}
       <section className="relative isolate min-h-[80vh] flex items-center">
-        <div className="mx-auto max-w-[90rem] px-3 py-0 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-7xl px-4 py-0 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
             {/* Left: Text */}
             <div className="animate-on-load animate-slide-in-left">
@@ -41,7 +41,7 @@ export default function AboutPage() {
 
       {/* Company Story Section */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Our Story
@@ -93,7 +93,7 @@ export default function AboutPage() {
 
       {/* Mission & Values Section */}
       <section className="py-16 sm:py-20 bg-zinc-900/30">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Our Mission & Values
@@ -199,7 +199,7 @@ export default function AboutPage() {
 
       {/* Team Section */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Meet Our Team
@@ -305,7 +305,7 @@ export default function AboutPage() {
 
       {/* Stats Section */}
       <section className="py-16 sm:py-20 bg-zinc-900/30">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Our Impact
@@ -338,7 +338,7 @@ export default function AboutPage() {
 
       {/* CTA Section */}
       <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400 px-8 py-16 sm:px-12 sm:py-20">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/90 via-indigo-500/90 to-indigo-400/90" />
             <div className="relative text-center">
