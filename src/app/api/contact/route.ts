@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-
+export const runtime = "nodejs";
 type ContactPayload = {
   fullName: string;
   email: string;
@@ -39,20 +39,32 @@ function validatePayload(body: unknown): { valid: boolean; errors?: string[]; da
 
 export async function POST(request: Request) {
   try {
+    const startedAt = Date.now();
+    const reqId = Math.random().toString(36).slice(2, 10);
+    console.info(`[contact_api][${reqId}] Received POST /api/contact`);
     const body = await request.json();
     const { valid, errors, data } = validatePayload(body);
     if (!valid || !data) {
+      console.warn(`[contact_api][${reqId}] Validation failed`, { errors });
       return NextResponse.json({ ok: false, errors }, { status: 400 });
     }
 
     const host = process.env.SMTP_HOST;
-    const port = parseInt(process.env.SMTP_PORT || "0", 10);
-    const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_PASS;
-    const from = process.env.MAIL_FROM || user;
-    const to = process.env.MAIL_TO || user;
+    const port = process.env.SMTP_PORT;
+    const user = process.env.SMTP_USERNAME;
+    const pass = process.env.SMTP_PASSWORD;
+    const from = process.env.SMTP_FROM_EMAIL || user;
+    const to = process.env.SMTP_USERNAME || user;
 
     if (!host || !port || !user || !pass || !from || !to) {
+      console.error(`[contact_api][${reqId}] Missing SMTP configuration`, {
+        hasHost: !!host,
+        hasPort: !!port,
+        hasUser: !!user,
+        hasPass: !!pass,
+        hasFrom: !!from,
+        hasTo: !!to,
+      });
       return NextResponse.json(
         { ok: false, error: "Missing SMTP configuration. Please set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_FROM, MAIL_TO." },
         { status: 500 }
@@ -80,11 +92,20 @@ export async function POST(request: Request) {
         <p style="white-space:pre-wrap">${data.message}</p>
       </div>
     `;
+    console.info(`[contact_api][${reqId}] Sending email`, {
+      to,
+      from,
+      subject,
+      topic: data.topic,
+    });
+    const info = await transporter.sendMail({ from, to, subject, text, html, replyTo: data.email });
+    console.info(`[contact_api][${reqId}] Email sent`, { messageId: info.messageId });
 
-    await transporter.sendMail({ from, to, subject, text, html, replyTo: data.email });
-
+    const durationMs = Date.now() - startedAt;
+    console.info(`[contact_api][${reqId}] Completed successfully in ${durationMs}ms`);
     return NextResponse.json({ ok: true });
   } catch (error) {
+    console.error(`[contact_api] Error while processing request`, error);
     return NextResponse.json({ ok: false, error: "Failed to send message" }, { status: 500 });
   }
 }
