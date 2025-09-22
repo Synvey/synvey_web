@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const productLinks = [
+const solutionLinks = [
   { label: "AI Integration", href: "/products/ai-integration" },
   { label: "Desktop Applications", href: "/products/desktop-applications" },
   { label: "Web Applications", href: "/products/web-applications" },
@@ -9,13 +9,13 @@ const productLinks = [
   { label: "Cloud & DevOps", href: "/products/cloud-devops" },
 ];
 
-const solutionLinks = [
-  { label: "Integration & APIs", href: "/solutions#integration" },
-  { label: "Analytics & Insights", href: "/solutions#analytics" },
-  { label: "Security & Compliance", href: "/solutions#security" },
-  { label: "Automation & Workflows", href: "/solutions#automation" },
-  { label: "Cloud-Native Development", href: "/solutions#cloud" },
-  { label: "DevOps & Observability", href: "/solutions#devops" },
+const useCaseLinks = [
+  { label: "E-commerce Platform", href: "/use-cases/ecommerce-platform" },
+  { label: "Healthcare Management", href: "/use-cases/healthcare-management" },
+  { label: "Financial Services", href: "/use-cases/financial-services" },
+  { label: "Education Technology", href: "/use-cases/education-technology" },
+  { label: "Manufacturing IoT", href: "/use-cases/manufacturing-iot" },
+  { label: "Real Estate Portal", href: "/use-cases/real-estate-portal" },
 ];
 
 const companyLinks = [
@@ -52,12 +52,12 @@ export default function Footer() {
           {/* Company Info & Social */}
           <div className="lg:col-span-2 space-y-6">
             <div>
-              <Link href="/" className="text-2xl font-bold tracking-tight text-foreground hover:text-white transition-colors">
-                Synvey
+              <Link href="/" className="inline-flex items-center hover:opacity-80 transition-opacity" aria-label="Home">
+                <img src="/logo.png" alt="Synvey" className="h-8 w-auto" />
               </Link>
               <p className="mt-4 text-sm text-zinc-400 leading-relaxed max-w-sm">
-                Accelerating innovation through reliable, secure, and intuitive development tools. 
-                Empowering teams to build better software, faster.
+                Building real-world solutions across industries. From e-commerce to healthcare, 
+                we help businesses transform their digital presence with proven technology.
               </p>
             </div>
             
@@ -115,11 +115,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Products */}
+          {/* Solutions */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Products</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-4">Solutions</h4>
             <ul className="space-y-3 text-sm text-zinc-400">
-              {productLinks.map((link) => (
+              {solutionLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="hover:text-white transition-colors">
                     {link.label}
@@ -129,11 +129,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Solutions */}
+          {/* Use Cases */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Solutions</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-4">Use Cases</h4>
             <ul className="space-y-3 text-sm text-zinc-400">
-              {solutionLinks.map((link) => (
+              {useCaseLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="hover:text-white transition-colors">
                     {link.label}
@@ -179,7 +179,7 @@ export default function Footer() {
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-lg font-semibold text-foreground mb-2">Stay Updated</h3>
             <p className="text-sm text-zinc-400 mb-6">
-              Get the latest updates on new features, product releases, and industry insights.
+              Get the latest updates on new use cases, success stories, and industry insights.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
@@ -214,6 +214,9 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <span>All systems operational</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>🏆 Trusted by 500+ companies</span>
               </div>
             </div>
           </div>
