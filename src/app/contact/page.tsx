@@ -30,10 +30,18 @@ export default function ContactPage() {
     setSubmitStatus("idle");
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // For demo purposes, always succeed
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) {
+        throw new Error("Request failed");
+      }
+      const data = await res.json();
+      if (!data.ok) {
+        throw new Error(data.error || "Unknown error");
+      }
       setSubmitStatus("success");
       setFormData({
         fullName: "",
