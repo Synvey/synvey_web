@@ -93,7 +93,7 @@ export default function ProductsPage() {
           <div className="absolute right-[-18rem] bottom-[-12rem] h-[32rem] w-[32rem] rounded-full bg-cyan-500/10 blur-3xl" />
         </div>
 
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl animate-on-load animate-fade-in-up">
               From Code to Creativity, We Build What Matters
@@ -107,7 +107,7 @@ export default function ProductsPage() {
 
       {/* Products Grid */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PRODUCTS.map((product, index) => (
               <div
@@ -140,7 +140,7 @@ export default function ProductsPage() {
 
       {/* CTA Section */}
       <section className="py-16 sm:py-20 bg-zinc-900/30">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center">
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Ready to Get Started?

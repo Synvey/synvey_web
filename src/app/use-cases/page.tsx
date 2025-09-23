@@ -57,7 +57,7 @@ export default function UseCasesPage() {
     <main>
       {/* Hero Section */}
       <section className="relative isolate min-h-[70vh] flex items-center">
-        <div className="mx-auto max-w-[90rem] px-3 py-16 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center">
             <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
               Real-World Use Cases & Success Stories
@@ -76,7 +76,7 @@ export default function UseCasesPage() {
 
       {/* Use Cases Grid */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Industry-Specific Solutions
@@ -124,7 +124,7 @@ export default function UseCasesPage() {
 
       {/* Success Stories */}
       <section className="py-16 sm:py-20 bg-zinc-900/30">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Success Stories

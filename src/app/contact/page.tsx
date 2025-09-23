@@ -68,7 +68,7 @@ export default function ContactPage() {
           <div className="absolute right-[-18rem] bottom-[-12rem] h-[32rem] w-[32rem] rounded-full bg-cyan-500/10 blur-3xl" />
         </div>
 
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl animate-on-load animate-fade-in-up">
               Get in Touch with Synvey
@@ -82,7 +82,7 @@ export default function ContactPage() {
 
       {/* Quick Contact Options */}
       <section className="py-16">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {/* Sales */}
             <div className="group relative rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 transition-all hover:border-zinc-700 hover:bg-zinc-900/70 hover:shadow-lg animate-on-load animate-scale-in animate-delay-200">
@@ -139,7 +139,7 @@ export default function ContactPage() {
 
       {/* Contact Form */}
       <section className="py-16">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 sm:p-10">
               {submitStatus === "success" ? (

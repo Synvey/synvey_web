@@ -307,7 +307,7 @@ export default function Navbar() {
 
   return (
     <header className={`sticky top-0 z-50 w-full bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 ${isScrolled ? "shadow-md shadow-zinc-900/40" : "shadow-none"}`}>
-      <div className="mx-auto flex h-16 max-w-[90rem] items-center justify-between px-3 sm:px-4 lg:px-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
         <div className="flex items-center gap-3">
           <Link href="/" className="inline-flex items-center animate-on-load animate-slide-in-left" aria-label="Home">
             <img src="/logo.png" alt="Synvey" className="h-5 w-auto" />

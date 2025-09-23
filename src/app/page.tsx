@@ -25,7 +25,7 @@ export default function HomePage() {
     <main>
       <section className="relative isolate min-h-[90vh] flex items-center">
 
-        <div className="mx-auto max-w-[90rem] px-3 py-0 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-7xl px-4 py-0 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
             {/* Left: Text */}
             <div className="animate-on-load animate-slide-in-left">
@@ -61,7 +61,7 @@ export default function HomePage() {
 
         {/* Ticker anchored at bottom of hero */}
         <div className="pointer-events-auto absolute bottom-4 left-0 right-0 animate-on-load animate-fade-in-up animate-delay-500">
-          <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
             <div className="overflow-hidden">
               <div className="flex animate-scroll gap-6 hover:pause-animation">
                 {[0, 1].map((copy) => (
@@ -84,7 +84,7 @@ export default function HomePage() {
 
       {/* Platform / Feature Highlights Section */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Comprehensive Platform Solutions
@@ -237,7 +237,7 @@ export default function HomePage() {
 
       {/* Customer Proof / Testimonials Section */}
       <section className="py-16 sm:py-20 bg-zinc-900/30">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               What Our Customers Say
@@ -329,7 +329,7 @@ export default function HomePage() {
 
        {/* Large CTA Banner */}
        <section className="py-20 sm:py-24">
-         <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400 px-8 py-16 sm:px-12 sm:py-20">
              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/90 via-indigo-500/90 to-indigo-400/90" />
              <div className="relative text-center">
