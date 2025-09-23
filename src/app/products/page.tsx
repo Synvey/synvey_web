@@ -96,7 +96,7 @@ export default function ProductsPage() {
         <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl animate-on-load animate-fade-in-up">
-              Powerful Products to Build, Scale, and Secure Your Digital Platform
+              From Code to Creativity, We Build What Matters
             </h1>
             <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto animate-on-load animate-fade-in-up animate-delay-200">
               Synvey offers a complete set of tools to accelerate innovation.

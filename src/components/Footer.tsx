@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { div } from "three/src/nodes/math/OperatorNode.js";
 
 const solutionLinks = [
   { label: "AI Integration", href: "/products/ai-integration" },
@@ -13,9 +14,7 @@ const useCaseLinks = [
   { label: "E-commerce Platform", href: "/use-cases/ecommerce-platform" },
   { label: "Healthcare Management", href: "/use-cases/healthcare-management" },
   { label: "Financial Services", href: "/use-cases/financial-services" },
-  { label: "Education Technology", href: "/use-cases/education-technology" },
-  { label: "Manufacturing IoT", href: "/use-cases/manufacturing-iot" },
-  { label: "Real Estate Portal", href: "/use-cases/real-estate-portal" },
+  { label: "Education Technology", href: "/use-cases/education-technology" }
 ];
 
 const companyLinks = [
@@ -23,15 +22,6 @@ const companyLinks = [
   { label: "Contact", href: "/contact" },
   { label: "News & Updates", href: "/news" },
   { label: "Partnerships", href: "/partnerships" },
-];
-
-const resourceLinks = [
-  { label: "Documentation", href: "/docs" },
-  { label: "API Reference", href: "/api" },
-  { label: "Tutorials", href: "/tutorials" },
-  { label: "Blog", href: "/blog" },
-  { label: "Support Center", href: "/support" },
-  { label: "Community", href: "/community" },
 ];
 
 const legalLinks = [
@@ -145,18 +135,6 @@ export default function Footer() {
 
           {/* Resources & Company */}
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-1">
-            <div>
-              <h4 className="text-sm font-semibold text-foreground mb-4">Resources</h4>
-              <ul className="space-y-3 text-sm text-zinc-400">
-                {resourceLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="hover:text-white transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
             <div>
               <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
               <ul className="space-y-3 text-sm text-zinc-400">
