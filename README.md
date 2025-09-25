@@ -20,6 +20,17 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+### Tawk.to (local and production)
+
+Create `.env.local` and add:
+
+```
+NEXT_PUBLIC_TAWK_PROPERTY_ID=your_property_id
+NEXT_PUBLIC_TAWK_WIDGET_ID=your_widget_id
+```
+
+Restart the dev server. The chat widget will load locally at `localhost:3000` when the env vars are present.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

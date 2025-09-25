@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ThreeDashedLines from "@/components/ThreeDashedLines";
-import CapabilitiesCollapsible from "@/components/CapabilitiesCollapsible";
+import Reveal from "@/components/Reveal";
 
 export default function HomePage() {
   const tickerItems = [
@@ -21,16 +21,104 @@ export default function HomePage() {
     "Powerful insights",
     "Global performance",
   ];
+  const useCases = [
+    {
+      slug: "ecommerce-platform",
+      title: "E-commerce Platform",
+      description: "Build scalable online stores with AI-powered features",
+      icon: "🛒",
+      features: ["AI-powered recommendations", "Real-time inventory", "Secure payments", "Mobile optimization"],
+    },
+    {
+      slug: "healthcare-management",
+      title: "Healthcare Management",
+      description: "Secure patient data and streamline medical workflows",
+      icon: "🏥",
+      features: ["HIPAA compliance", "Patient portals", "Appointment scheduling", "Medical records"],
+    },
+    {
+      slug: "financial-services",
+      title: "Financial Services",
+      description: "Compliant fintech solutions with real-time analytics",
+      icon: "💳",
+      features: ["PCI compliance", "Real-time transactions", "Fraud detection", "Risk management"],
+    },
+    {
+      slug: "education-technology",
+      title: "Education Technology",
+      description: "Interactive learning platforms and student management",
+      icon: "🎓",
+      features: ["Learning management", "Student tracking", "Virtual classrooms", "Assessment tools"],
+    },
+    {
+      slug: "manufacturing-iot",
+      title: "Manufacturing IoT",
+      description: "Smart factory solutions and predictive maintenance",
+      icon: "🏭",
+      features: ["IoT sensors", "Predictive analytics", "Quality control", "Supply chain"],
+    },
+    {
+      slug: "real-estate-portal",
+      title: "Real Estate Portal",
+      description: "Property listings with virtual tours and analytics",
+      icon: "🏠",
+      features: ["Virtual tours", "Property search", "Market analytics", "Lead management"],
+    },
+  ];
+  const solutions = [
+    {
+      slug: "ai-integration",
+      title: "AI Integration",
+      description: "Harness AI to build intelligent applications",
+      icon: "🤖",
+      features: ["ML models", "NLP", "Predictive analytics", "Automation"],
+    },
+    {
+      slug: "desktop-applications",
+      title: "Desktop Applications",
+      description: "Create powerful native desktop apps",
+      icon: "🖥️",
+      features: ["Cross-platform", "Native performance", "Modern UI", "Security"],
+    },
+    {
+      slug: "web-applications",
+      title: "Web Applications",
+      description: "Build scalable responsive web apps",
+      icon: "🕸️",
+      features: ["Responsive", "Performance", "SEO ready", "PWA"],
+    },
+    {
+      slug: "mobile-applications",
+      title: "Mobile Applications",
+      description: "Develop engaging mobile experiences",
+      icon: "📱",
+      features: ["Native iOS/Android", "Cross-platform", "Offline", "Push notifications"],
+    },
+    {
+      slug: "ui-ux-services",
+      title: "UI/UX Services",
+      description: "Design intuitive user experiences",
+      icon: "🎨",
+      features: ["Research", "Prototyping", "Visual design", "Usability testing"],
+    },
+    {
+      slug: "cloud-devops",
+      title: "Cloud & DevOps",
+      description: "Streamline deployment and operations",
+      icon: "☁️",
+      features: ["CI/CD", "IaC", "Kubernetes", "Monitoring"],
+    },
+  ];
   return (
     <main>
       <section className="relative isolate min-h-[90vh] flex items-center">
 
         <div className="mx-auto max-w-7xl px-4 py-0 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
-          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14 lg:gap-24 xl:gap-32">
             {/* Left: Text */}
-            <div className="animate-on-load animate-slide-in-left">
+            <Reveal className="lg:pr-8 xl:pr-12">
               <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-5xl">
-                Smart Tech.<br/>Bold Design.<br/>Real Growth.
+                Innovate faster.<br/>Deliver with precision.
               </h1>
               <p className="mt-4 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg animate-on-load animate-fade-in-up animate-delay-200">
                 Synvey empowers businesses with digital solutions that scale. From AI integration and custom apps to seamless mobile experiences and intuitive UI/UX design, we deliver technology that drives innovation and growth.
@@ -47,15 +135,15 @@ export default function HomePage() {
               
 
               {/* Trust logos removed by request */}
-            </div>
+            </Reveal>
 
             {/* Right: Visual (Three.js dashed lines) */}
-            <div className="animate-on-load animate-slide-in-right animate-delay-200">
+            <Reveal className="lg:ml-8 xl:ml-12" delay={120}>
               <div className="relative mx-auto w-full max-w-xl">
                 <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
                 <ThreeDashedLines />
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
 
@@ -81,157 +169,101 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Platform / Feature Highlights Section */}
+      {/* Solutions Overview - redesigned to match Industry-Specific Solutions */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Comprehensive Platform Solutions
+              Our Solutions
             </h2>
-            <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">
-              From AI integration to DevOps, we provide end-to-end solutions that power your digital transformation.
+            <p className="mt-4 text-lg text-zinc-400">
+              Complete set of tools to accelerate innovation and digital transformation
             </p>
           </div>
-          {/* Always visible: first two capabilities */}
-          {/* Feature 1: AI Integration */}
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-32">
-             <div className="order-2 lg:order-1">
-               <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                 AI Integration
-               </h3>
-               <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">
-                 Harness the power of artificial intelligence with seamless integration capabilities. 
-                 Build intelligent applications that learn, adapt, and deliver exceptional user experiences.
-               </p>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {solutions.map((solution, idx) => (
+              <Reveal key={solution.slug} delay={idx * 60}>
+                <div className="hover-card relative rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all hover:border-zinc-700 hover:bg-zinc-900/70">
+                  <div className="w-16 h-16 rounded-xl bg-indigo-500/10 mb-6 text-3xl flex items-center justify-center">
+                    {solution.icon}
              </div>
-             <div className="order-1 lg:order-2">
-               <div className="relative mx-auto w-full max-w-sm">
-                 <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 blur-2xl" />
-                 <div className="aspect-square flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
-                   <svg className="w-20 h-20 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                   </svg>
-                 </div>
-               </div>
-             </div>
-           </div>
-          {/* Feature 2: Desktop Applications */}
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-8">
-            <div>
-              <div className="relative mx-auto w-full max-w-sm">
-                <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 blur-2xl" />
-                <div className="aspect-square flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
-                  <svg className="w-20 h-20 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Desktop Applications
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                    <Link href={`/products/${solution.slug}`} className="hover:underline">
+                      {solution.title}
+                    </Link>
               </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">
-                Create powerful, native desktop applications that deliver exceptional performance. 
-                Cross-platform compatibility with modern frameworks and enterprise-grade security.
-              </p>
+                  <p className="text-zinc-400 leading-relaxed mb-4">
+                    {solution.description}
+                  </p>
+                  <div className="space-y-2">
+                    <div className="text-sm font-medium text-zinc-300">Key Features:</div>
+                    <ul className="text-sm text-zinc-400 space-y-1">
+                      {solution.features.slice(0, 3).map((feature, index) => (
+                        <li key={index} className="flex items-center">
+                          <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
             </div>
-          </div>
-          {/* Collapsible: remaining capabilities */}
-          <CapabilitiesCollapsible>
-          {/* Feature 3: Web Applications */}
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-32">
-            <div className="order-2 lg:order-1">
-              <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Web Applications
-              </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">
-                Build scalable, responsive web applications that work seamlessly across all devices. 
-                Modern frameworks, optimized performance, and intuitive user interfaces.
-              </p>
+                  <div className="mt-4">
+                    <Link href={`/products/${solution.slug}`} className="text-sm text-indigo-400 font-medium hover:text-indigo-300 transition-colors">
+                      Learn more →
+                    </Link>
             </div>
-            <div className="order-1 lg:order-2">
-              <div className="relative mx-auto w-full max-w-sm">
-                <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 blur-2xl" />
-                <div className="aspect-square flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
-                  <svg className="w-20 h-20 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
-                  </svg>
                 </div>
-              </div>
-            </div>
+              </Reveal>
+            ))}
           </div>
+                </div>
+      </section>
 
-          {/* Feature 4: Mobile Applications */}
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-32">
-            <div>
-              <div className="relative mx-auto w-full max-w-sm">
-                <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10 blur-2xl" />
-                <div className="aspect-square flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
-                  <svg className="w-20 h-20 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Mobile Applications
-              </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">
-                Develop native and cross-platform mobile apps that engage users and drive business growth. 
-                iOS, Android, and hybrid solutions with offline capabilities.
-              </p>
-            </div>
+      {/* Use Cases Overview - matches use-cases overview */}
+      <section className="py-16 sm:py-20 bg-zinc-900/30">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Industry-Specific Solutions
+            </h2>
+            <p className="mt-4 text-lg text-zinc-400">
+              Tailored solutions for every industry and business challenge
+            </p>
           </div>
-
-          {/* Feature 5: UI/UX Design */}
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-32">
-            <div className="order-2 lg:order-1">
-              <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                UI/UX Design
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {useCases.map((useCase, idx) => (
+              <Reveal key={useCase.slug} delay={idx * 60}>
+                <div className="hover-card relative rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all hover:border-zinc-700 hover:bg-zinc-900/70">
+                  <div className="w-16 h-16 rounded-xl bg-indigo-500/10 mb-6 text-3xl flex items-center justify-center">
+                    {useCase.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                    <Link href={`/use-cases/${useCase.slug}`} className="hover:underline">
+                      {useCase.title}
+                    </Link>
               </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">
-                Create intuitive, accessible user experiences that delight customers and drive engagement. 
-                User-centered design principles with modern aesthetics and seamless interactions.
-              </p>
+                  <p className="text-zinc-400 leading-relaxed mb-4">
+                    {useCase.description}
+                  </p>
+                  <div className="space-y-2">
+                    <div className="text-sm font-medium text-zinc-300">Key Features:</div>
+                    <ul className="text-sm text-zinc-400 space-y-1">
+                      {useCase.features.slice(0, 3).map((feature, index) => (
+                        <li key={index} className="flex items-center">
+                          <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
             </div>
-            <div className="order-1 lg:order-2">
-              <div className="relative mx-auto w-full max-w-sm">
-                <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-pink-500/10 to-rose-500/10 blur-2xl" />
-                <div className="aspect-square flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
-                  <svg className="w-20 h-20 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
+                  <div className="mt-4">
+                    <Link href={`/use-cases/${useCase.slug}`} className="text-sm text-indigo-400 font-medium hover:text-indigo-300 transition-colors">
+                      Learn more →
+                    </Link>
           </div>
-
-          {/* Feature 6: Cloud & DevOps */}
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20 mb-32">
-            <div>
-              <div className="relative mx-auto w-full max-w-sm">
-                <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-blue-500/10 blur-2xl" />
-                <div className="aspect-square flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
-                  <svg className="w-20 h-20 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                  </svg>
                 </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Cloud & DevOps
-              </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">
-                Streamline deployment and operations with cloud-native solutions and DevOps best practices. 
-                Automated CI/CD pipelines, infrastructure as code, and scalable cloud architectures.
-              </p>
-            </div>
+              </Reveal>
+            ))}
           </div>
-          </CapabilitiesCollapsible>
         </div>
       </section>
 
@@ -341,6 +373,28 @@ export default function HomePage() {
                    <Link href="/contact">Contact Us</Link>
                  </Button>
                </div>
+             </div>
+           </div>
+         </div>
+       </section>
+
+      {/* Newsletter Signup (moved from footer) - placed directly after CTA banner */}
+      <section className="border-t border-zinc-800 bg-zinc-900/30">
+        <div className="mx-auto max-w-[90rem] px-3 py-12 sm:px-4 lg:px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-lg font-semibold text-foreground mb-2">Stay Updated</h3>
+            <p className="text-sm text-zinc-400 mb-6">
+              Get the latest updates on new use cases, success stories, and industry insights.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-2 rounded-lg border border-zinc-700 bg-zinc-800/50 text-foreground placeholder-zinc-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm"
+              />
+              <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
+                Subscribe
+              </button>
              </div>
            </div>
          </div>

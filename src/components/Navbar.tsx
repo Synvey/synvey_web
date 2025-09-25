@@ -13,7 +13,6 @@ import {
   NavigationMenuLink,
 } from "./ui/navigation-menu";
 import { Sheet, SheetTrigger, SheetContent, SheetClose } from "./ui/sheet";
-import { ModeToggle } from "./../components/ModeToggle";
 
 type MenuItem = {
   label: string;
@@ -25,7 +24,6 @@ const NAV_ITEMS: MenuItem[] = [
   {
     label: "Solutions",
     items: [
-      { label: "Overview", href: "/products", description: "Complete set of tools to accelerate innovation." },
       { label: "AI Integration", href: "/products/ai-integration", description: "Harness AI to build intelligent applications." },
       { label: "Desktop Applications", href: "/products/desktop-applications", description: "Create powerful native desktop apps." },
       { label: "Web Applications", href: "/products/web-applications", description: "Build scalable responsive web apps." },
@@ -37,7 +35,6 @@ const NAV_ITEMS: MenuItem[] = [
   {
     label: "Use cases",
     items: [
-      { label: "Overview", href: "/use-cases", description: "Real-world applications and success stories." },
       { label: "E-commerce Platform", href: "/use-cases/ecommerce-platform", description: "Build scalable online stores with AI-powered features." },
       { label: "Healthcare Management", href: "/use-cases/healthcare-management", description: "Secure patient data and streamline medical workflows." },
       { label: "Financial Services", href: "/use-cases/financial-services", description: "Compliant fintech solutions with real-time analytics." },
@@ -57,8 +54,8 @@ const NAV_ITEMS: MenuItem[] = [
   {
     label: "Company",
     items: [
-      { label: "About", href: "/about" },
-      { label: "Contact", href: "/contact" },
+      { label: "About Us", href: "/about" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
 ];
@@ -179,46 +176,28 @@ function DesktopNav() {
                   <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[680px] overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-xl dark:border-zinc-800 dark:bg-zinc-900">
-                      <div className="grid grid-cols-5">
-                        <div className="col-span-2 hidden border-r border-zinc-200 p-5 dark:border-zinc-800 lg:block">
-                          <div className="rounded-lg bg-gradient-to-br from-zinc-100 to-zinc-50 p-4 dark:from-zinc-800 dark:to-zinc-900">
-                            <div className="flex items-center gap-3">
-                              <div className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
-                                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4 2.5 7-7-4.5L5 20l2.5-7L2 9h7z"/></svg>
-                              </div>
-                              <div>
-                                <div className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">{item.label}</div>
-                                <div className="text-xs text-zinc-500 dark:text-zinc-400">Explore our {item.label.toLowerCase()} offerings</div>
-                              </div>
-                            </div>
-                            <div className="mt-4 rounded-md border border-dashed border-zinc-200 p-3 text-xs text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
-                              Powerful tools to build, scale, and analyze your apps with ease.
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-span-5 lg:col-span-3">
-                          <div className="grid grid-cols-1 gap-1 p-2 sm:grid-cols-2">
-                            {item.items.map((sub) => (
-                              <Link
-                                key={sub.href}
-                                href={sub.href}
-                                className="group flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800/60"
-                              >
-                                <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-md border border-zinc-200 text-zinc-700 transition-colors group-hover:border-zinc-300 dark:border-zinc-700 dark:text-zinc-300">
-                                  {getSubmenuIcon(sub.label)}
-                                </span>
-                                <span>
-                                  <div className="flex items-center gap-2">
-                                    <div className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{sub.label}</div>
-                                    <span className="rounded-md border border-zinc-200 px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-zinc-600 dark:border-zinc-700 dark:text-zinc-400">New</span>
-                                  </div>
-                                  {sub.description && (
-                                    <div className="mt-1 line-clamp-2 text-xs text-zinc-500 dark:text-zinc-400">{sub.description}</div>
-                                  )}
-                                </span>
-                              </Link>
-                            ))}
-                          </div>
+                      <div className="p-2">
+                        <div className="grid grid-cols-1 gap-1 sm:grid-cols-2">
+                          {item.items.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              className="group flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800/60"
+                            >
+                              <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-md border border-zinc-200 text-zinc-700 transition-colors group-hover:border-zinc-300 dark:border-zinc-700 dark:text-zinc-300">
+                                {getSubmenuIcon(sub.label)}
+                              </span>
+                              <span>
+                                <div className="flex items-center gap-2">
+                                  <div className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{sub.label}</div>
+                                  <span className="rounded-md border border-zinc-200 px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-zinc-600 dark:border-zinc-700 dark:text-zinc-400">New</span>
+                                </div>
+                                {sub.description && (
+                                  <div className="mt-1 line-clamp-2 text-xs text-zinc-500 dark:text-zinc-400">{sub.description}</div>
+                                )}
+                              </span>
+                            </Link>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -283,7 +262,6 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
             ))}
           </div>
           <div className="mt-4 flex items-center gap-2">
-            <ModeToggle />
             <Button asChild>
               <Link href="/contact">Contact us</Link>
             </Button>
@@ -315,13 +293,11 @@ export default function Navbar() {
           <DesktopNav />
         </div>
         <div className="hidden items-center gap-2 lg:flex">
-          <ModeToggle />
           <Button asChild className="animate-on-load animate-slide-in-right animate-delay-200">
             <Link href="/contact">Contact us</Link>
           </Button>
         </div>
         <div className="flex items-center gap-2 lg:hidden">
-          <ModeToggle />
           <button
             aria-label="Open menu"
             onClick={() => setOpen(true)}

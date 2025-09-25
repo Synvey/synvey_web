@@ -19,7 +19,7 @@ const useCaseLinks = [
 
 const companyLinks = [
   { label: "About Us", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
   { label: "News & Updates", href: "/news" },
   { label: "Partnerships", href: "/partnerships" },
 ];
@@ -55,9 +55,15 @@ export default function Footer() {
             <div className="space-y-3">
               <h4 className="text-sm font-semibold text-foreground">Get in Touch</h4>
               <div className="space-y-2 text-sm text-zinc-400">
-                <p>📧 hello@synvey.com</p>
-                <p>📞 +1 (555) 123-4567</p>
-                <p>📍 San Francisco, CA</p>
+                <p>
+                  📧 <a href="mailto:hello@synvey.com" className="hover:text-white transition-colors">hello@synvey.com</a>
+                </p>
+                <p>
+                  📞 <a href="tel:+15551234567" className="hover:text-white transition-colors">+1 (555) 123-4567</a>
+                </p>
+                <p>
+                  📍 <a href="https://maps.google.com/?q=San%20Francisco%2C%20CA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">San Francisco, CA</a>
+                </p>
               </div>
             </div>
 
@@ -68,6 +74,7 @@ export default function Footer() {
                 <a 
                   aria-label="LinkedIn" 
                   href="https://linkedin.com/company/synvey" 
+                  target="_blank" rel="noopener noreferrer"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-700 text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white hover:border-zinc-600"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
@@ -77,6 +84,7 @@ export default function Footer() {
                 <a 
                   aria-label="Twitter" 
                   href="https://twitter.com/synvey" 
+                  target="_blank" rel="noopener noreferrer"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-700 text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white hover:border-zinc-600"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
@@ -86,6 +94,7 @@ export default function Footer() {
                 <a 
                   aria-label="GitHub" 
                   href="https://github.com/synvey" 
+                  target="_blank" rel="noopener noreferrer"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-700 text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white hover:border-zinc-600"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
@@ -95,6 +104,7 @@ export default function Footer() {
                 <a 
                   aria-label="YouTube" 
                   href="https://youtube.com/@synvey" 
+                  target="_blank" rel="noopener noreferrer"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-700 text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white hover:border-zinc-600"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
@@ -151,27 +161,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Newsletter Signup */}
-      <div className="border-t border-zinc-800 bg-zinc-900/30">
-        <div className="mx-auto max-w-[90rem] px-3 py-8 sm:px-4 lg:px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-lg font-semibold text-foreground mb-2">Stay Updated</h3>
-            <p className="text-sm text-zinc-400 mb-6">
-              Get the latest updates on new use cases, success stories, and industry insights.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg border border-zinc-700 bg-zinc-800/50 text-foreground placeholder-zinc-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm"
-              />
-              <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Bottom Bar */}
       <div className="border-t border-zinc-800 bg-zinc-900/50">

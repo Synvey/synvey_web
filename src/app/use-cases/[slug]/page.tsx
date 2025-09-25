@@ -168,13 +168,14 @@ const useCases = {
 };
 
 interface UseCasePageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function UseCasePage({ params }: UseCasePageProps) {
-  const useCase = useCases[params.slug as keyof typeof useCases];
+export default async function UseCasePage({ params }: UseCasePageProps) {
+  const { slug } = await params;
+  const useCase = useCases[slug as keyof typeof useCases];
 
   if (!useCase) {
     notFound();

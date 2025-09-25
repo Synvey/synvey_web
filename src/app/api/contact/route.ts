@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import type SMTPTransport from "nodemailer/lib/smtp-transport";
 export const runtime = "nodejs";
 type ContactPayload = {
   fullName: string;
@@ -50,16 +51,16 @@ export async function POST(request: Request) {
     }
 
     const host = process.env.SMTP_HOST;
-    const port = process.env.SMTP_PORT;
+    const portEnv = process.env.SMTP_PORT;
     const user = process.env.SMTP_USERNAME;
     const pass = process.env.SMTP_PASSWORD;
     const from = process.env.SMTP_FROM_EMAIL || user;
     const to = process.env.SMTP_USERNAME || user;
 
-    if (!host || !port || !user || !pass || !from || !to) {
+    if (!host || !portEnv || !user || !pass || !from || !to) {
       console.error(`[contact_api][${reqId}] Missing SMTP configuration`, {
         hasHost: !!host,
-        hasPort: !!port,
+        hasPort: !!portEnv,
         hasUser: !!user,
         hasPass: !!pass,
         hasFrom: !!from,
@@ -71,12 +72,13 @@ export async function POST(request: Request) {
       );
     }
 
+    const port = Number.parseInt(String(portEnv), 10);
     const transporter = nodemailer.createTransport({
       host,
       port,
       secure: port === 465,
       auth: { user, pass },
-    });
+    } as SMTPTransport.Options);
 
     const subject = `[Contact] ${data.topic} - ${data.fullName}`;
     const text = `New contact submission\n\nName: ${data.fullName}\nEmail: ${data.email}\nCompany: ${data.company || "-"}\nPhone: ${data.phone || "-"}\nTopic: ${data.topic}\n\nMessage:\n${data.message}`;

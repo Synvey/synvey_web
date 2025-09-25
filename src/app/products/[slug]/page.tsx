@@ -357,10 +357,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
             </div>
             <div className="flex items-center justify-center">
-              <div className="aspect-square w-full max-w-md rounded-2xl border border-zinc-800 bg-zinc-900/50 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">📊</div>
-                  <p className="text-zinc-400">Product Screenshot</p>
+              <div className="w-full max-w-2xl">
+                <h3 className="text-lg font-semibold text-foreground mb-4 text-center">
+                  Demo Video
+                </h3>
+                <div className="relative w-full overflow-hidden rounded-xl border border-zinc-700 bg-zinc-900/60 pb-[56.25%]">
+                  <div className="absolute inset-0 flex items-center justify-center gap-2 text-sm text-zinc-300">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Demo video placeholder ({product.name})</span>
+                  </div>
                 </div>
               </div>
             </div>
