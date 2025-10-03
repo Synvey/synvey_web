@@ -1,25 +1,14 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import ThreeDashedLines from "@/components/ThreeDashedLines";
 import Reveal from "@/components/Reveal";
+import SolutionsShowcase from "@/components/SolutionsShowcase";
 
 export default function HomePage() {
-  const tickerItems = [
-    "Faster releases",
-    "Clear analytics",
-    "Robust quality",
-    "Easy integrations",
-    "Enterprise-grade security",
-    "Real-time monitoring",
-    "Developer-first UX",
-    "Scales with your traffic",
-    "Zero-downtime deploys",
-    "Smart automation",
-    "API-ready by default",
-    "SOC2-friendly practices",
-    "Role-based access",
-    "Powerful insights",
-    "Global performance",
+  // Brand-style logos; use placeholders available in /public and fallbacks with initials
+  const brandTicker = [
+    { src: "/Open.png", name: "Open AI" },
+    { src: "/Open.png", name: "Open AI" },
+
   ];
   const useCases = [
     {
@@ -109,9 +98,17 @@ export default function HomePage() {
       features: ["CI/CD", "IaC", "Kubernetes", "Monitoring"],
     },
   ];
+  const solutionMediaBySlug: Record<string, { src: string; alt?: string }> = {
+    "ai-integration": { src: "/ai-intergration.jpg", alt: "AI Integration" },
+    "desktop-applications": { src: "", alt: "Desktop Applications" },
+    "web-applications": { src: "", alt: "Web Applications" },
+    "mobile-applications": { src: "", alt: "Mobile Applications" },
+    "ui-ux-services": { src: "", alt: "UI/UX Services" },
+    "cloud-devops": { src: "", alt: "Cloud & DevOps" },
+  };
   return (
     <main>
-      <section className="relative isolate min-h-[90vh] flex items-center">
+      <section className="relative isolate min-h-[100vh] flex items-center">
 
         <div className="mx-auto max-w-7xl px-4 py-0 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14 lg:gap-24 xl:gap-32">
@@ -133,90 +130,73 @@ export default function HomePage() {
               </div>
 
               
-
-              {/* Trust logos removed by request */}
+              
+              {/* Trust logos / Brand Ticker */}
+              <div className="mt-25 w-full animate-on-load animate-fade-in-up animate-delay-500">
+                <div className="relative w-full">
+                  <p className="mb-4 text-center text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
+                    Used by 5000+ teams who value storytelling
+                  </p>
+                  <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-800/60 bg-gradient-to-b from-black/0 via-zinc-900/30 to-black/0 px-3 py-3 sm:px-4 sm:py-4 mask-fade-x">
+                    <div className="flex animate-scroll gap-12 sm:gap-16 hover:pause-animation">
+                      {[0, 1].map((copy) => (
+                        <div key={copy} className="flex items-center gap-12 sm:gap-16 whitespace-nowrap">
+                          {brandTicker.map((brand, index) => (
+                            brand.src ? (
+                              <img
+                                key={`${copy}-${index}`}
+                                src={brand.src}
+                                alt={brand.name}
+                                className="h-6 sm:h-7 w-auto opacity-80 saturate-0 contrast-125 hover:opacity-100 transition-opacity"
+                              />
+                            ) : (
+                              <div key={`${copy}-${index}`} className="inline-flex items-center gap-3">
+                                <div className="flex h-7 w-7 items-center justify-center rounded-md bg-zinc-800/70 ring-1 ring-inset ring-zinc-700 text-[10px] font-semibold text-zinc-200">
+                                  {(brand.name || "").slice(0, 2).toUpperCase()}
+                                </div>
+                                <span className="text-zinc-300 text-sm sm:text-base font-medium opacity-90">{brand.name}</span>
+                              </div>
+                            )
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Reveal>
 
-            {/* Right: Visual (Three.js dashed lines) */}
+            {/* Right: Visual (After Effects video) */}
             <Reveal className="lg:ml-8 xl:ml-12" delay={120}>
               <div className="relative mx-auto w-full max-w-xl">
-                <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
-                <ThreeDashedLines />
+                <div className="absolute -inset-2 -z-10 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
+                <div className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40">
+                  <video
+                    src="/ae-hero.mp4"
+                    className="block w-full h-auto aspect-square object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                </div>
               </div>
             </Reveal>
           </div>
         </div>
 
-        {/* Ticker anchored at bottom of hero */}
-        <div className="pointer-events-auto absolute bottom-4 left-0 right-0 animate-on-load animate-fade-in-up animate-delay-500">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
-            <div className="overflow-hidden">
-              <div className="flex animate-scroll gap-6 hover:pause-animation">
-                {[0, 1].map((copy) => (
-                  <div key={copy} className="flex gap-6 whitespace-nowrap">
-                    {tickerItems.map((item, index) => (
-                      <span
-                        key={`${copy}-${index}`}
-                        className="inline-flex items-center rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-200 shadow-sm transition-colors hover:bg-zinc-900/70 hover:text-zinc-100 sm:px-5 sm:py-2.5 sm:text-base"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
-      {/* Solutions Overview - redesigned to match Industry-Specific Solutions */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Our Solutions
-            </h2>
-            <p className="mt-4 text-lg text-zinc-400">
-              Complete set of tools to accelerate innovation and digital transformation
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {solutions.map((solution, idx) => (
-              <Reveal key={solution.slug} delay={idx * 60}>
-                <div className="hover-card relative rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all hover:border-zinc-700 hover:bg-zinc-900/70">
-                  <div className="w-16 h-16 rounded-xl bg-indigo-500/10 mb-6 text-3xl flex items-center justify-center">
-                    {solution.icon}
-             </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    <Link href={`/products/${solution.slug}`} className="hover:underline">
-                      {solution.title}
-                    </Link>
-              </h3>
-                  <p className="text-zinc-400 leading-relaxed mb-4">
-                    {solution.description}
-                  </p>
-                  <div className="space-y-2">
-                    <div className="text-sm font-medium text-zinc-300">Key Features:</div>
-                    <ul className="text-sm text-zinc-400 space-y-1">
-                      {solution.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-center">
-                          <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-            </div>
-                  <div className="mt-4">
-                    <Link href={`/products/${solution.slug}`} className="text-sm text-indigo-400 font-medium hover:text-indigo-300 transition-colors">
-                      Learn more →
-                    </Link>
-            </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-                </div>
-      </section>
+      {/* Solutions Showcase - tabs + scroll sync, white background */}
+      <SolutionsShowcase
+        solutions={solutions.map((s) => ({
+          id: s.slug,
+          title: s.title,
+          blurb: s.description,
+          ctaHref: `/products/${s.slug}`,
+          mediaSrc: solutionMediaBySlug[s.slug]?.src,
+          mediaAlt: solutionMediaBySlug[s.slug]?.alt,
+        }))}
+      />
 
       {/* Use Cases Overview - matches use-cases overview */}
       <section className="py-16 sm:py-20 bg-zinc-900/30">

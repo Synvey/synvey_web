@@ -60,7 +60,7 @@ const NAV_ITEMS: MenuItem[] = [
   },
 ];
 
-// ThemeToggle now provided by ModeToggle (shadcn/next-themes)
+// Theme toggle removed
 
 function getSubmenuIcon(label: string) {
   switch (label) {
@@ -285,28 +285,37 @@ export default function Navbar() {
 
   return (
     <header className={`sticky top-0 z-50 w-full bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 ${isScrolled ? "shadow-md shadow-zinc-900/40" : "shadow-none"}`}>
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
-        <div className="flex items-center gap-3">
-          <Link href="/" className="inline-flex items-center animate-on-load animate-slide-in-left" aria-label="Home">
-            <img src="/logo.png" alt="Synvey" className="h-5 w-auto" />
-          </Link>
+      <div className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
+        {/* Left: Desktop navigation */}
+        <div className="hidden lg:flex">
           <DesktopNav />
         </div>
-        <div className="hidden items-center gap-2 lg:flex">
-          <Button asChild className="animate-on-load animate-slide-in-right animate-delay-200">
-            <Link href="/contact">Contact us</Link>
-          </Button>
+
+        {/* Center: Logo */}
+        <div className="flex items-center justify-center">
+          <Link href="/" className="inline-flex items-center" aria-label="Home">
+            <img src="/logo.png" alt="Synvey" className="h-5 w-auto" />
+          </Link>
         </div>
-        <div className="flex items-center gap-2 lg:hidden">
-          <button
-            aria-label="Open menu"
-            onClick={() => setOpen(true)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+
+        {/* Right: CTA / Mobile menu */}
+        <div className="flex items-center justify-end gap-2">
+          <div className="hidden lg:flex">
+            <Button asChild className="animate-on-load animate-slide-in-right animate-delay-200">
+              <Link href="/contact">Contact us</Link>
+            </Button>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              aria-label="Open menu"
+              onClick={() => setOpen(true)}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
       <MobileDrawer open={open} onClose={() => setOpen(false)} />

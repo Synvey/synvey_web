@@ -63,6 +63,12 @@ body {
   animation-play-state: paused;
 }
 
+/* Horizontal edge fade using mask-image for nicer marquee edges */
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
 /* Site Load Animations */
 @keyframes fadeInUp {
   from {
