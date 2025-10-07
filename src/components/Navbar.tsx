@@ -12,7 +12,7 @@ import {
   NavigationMenuViewport,
   NavigationMenuLink,
 } from "./ui/navigation-menu";
-import { Sheet, SheetTrigger, SheetContent, SheetClose } from "./ui/sheet";
+import { Sheet, SheetContent, SheetClose } from "./ui/sheet";
 
 type MenuItem = {
   label: string;
@@ -293,7 +293,11 @@ export default function Navbar() {
 
         {/* Center: Logo */}
         <div className="flex items-center justify-center">
-          <Link href="/" className="inline-flex items-center" aria-label="Home">
+          <Link href="/" className="inline-flex items-center relative" aria-label="Home">
+            {/* Flash backdrop */}
+            <span className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+              <span className="block h-22 w-22 rounded-full bg-white/70 blur-[45px] animate-logo-flash" />
+            </span>
             <img src="/logo.png" alt="Synvey" className="h-5 w-auto" />
           </Link>
         </div>

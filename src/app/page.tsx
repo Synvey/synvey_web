@@ -138,26 +138,23 @@ export default function HomePage() {
                     Used by 5000+ teams who value storytelling
                   </p>
                   <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-800/60 bg-gradient-to-b from-black/0 via-zinc-900/30 to-black/0 px-3 py-3 sm:px-4 sm:py-4 mask-fade-x">
-                    <div className="flex animate-scroll gap-12 sm:gap-16 hover:pause-animation">
-                      {[0, 1].map((copy) => (
-                        <div key={copy} className="flex items-center gap-12 sm:gap-16 whitespace-nowrap">
-                          {brandTicker.map((brand, index) => (
-                            brand.src ? (
-                              <img
-                                key={`${copy}-${index}`}
-                                src={brand.src}
-                                alt={brand.name}
-                                className="h-6 sm:h-7 w-auto opacity-80 saturate-0 contrast-125 hover:opacity-100 transition-opacity"
-                              />
-                            ) : (
-                              <div key={`${copy}-${index}`} className="inline-flex items-center gap-3">
-                                <div className="flex h-7 w-7 items-center justify-center rounded-md bg-zinc-800/70 ring-1 ring-inset ring-zinc-700 text-[10px] font-semibold text-zinc-200">
-                                  {(brand.name || "").slice(0, 2).toUpperCase()}
-                                </div>
-                                <span className="text-zinc-300 text-sm sm:text-base font-medium opacity-90">{brand.name}</span>
+                    <div className="flex animate-scroll gap-12 sm:gap-16 whitespace-nowrap hover:pause-animation">
+                      {brandTicker.map((brand, index) => (
+                        <div key={index} className="shrink-0 flex items-center">
+                          {brand.src ? (
+                            <img
+                              src={brand.src}
+                              alt={brand.name}
+                              className="h-6 sm:h-7 w-auto opacity-80 saturate-0 contrast-125 hover:opacity-100 transition-opacity mx-6"
+                            />
+                          ) : (
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-zinc-800/70 ring-1 ring-inset ring-zinc-700 text-[10px] font-semibold text-zinc-200">
+                                {(brand.name || "").slice(0, 2).toUpperCase()}
                               </div>
-                            )
-                          ))}
+                              <span className="text-zinc-300 text-sm sm:text-base font-medium opacity-90">{brand.name}</span>
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -172,7 +169,7 @@ export default function HomePage() {
                 <div className="absolute -inset-2 -z-10 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
                 <div className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40">
                   <video
-                    src="/ae-hero.mp4"
+                    src="/"
                     className="block w-full h-auto aspect-square object-cover"
                     autoPlay
                     muted

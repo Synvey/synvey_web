@@ -21,12 +21,12 @@ export default function SolutionsShowcase({ solutions }: { solutions: Solution[]
   const onTabClick = (id: string) => setActiveId(id);
 
   return (
-    <div ref={sectionRef} className="bg-white text-[#0d0f28] min-h-[100vh] flex items-start sm:items-center">
+    <div ref={sectionRef} className="bg-background text-foreground min-h-[100vh] flex items-start sm:items-center">
       <div className="w-full mx-auto max-w-7xl xl:max-w-[1280px] 2xl:max-w-[1280px] px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-10">Our Solutions</h2>
 
         {/* Tabs */}
-        <div className="rounded-2xl bg-zinc-100 p-4 flex gap-4 whitespace-nowrap justify-center mb-12">
+        <div className="rounded-2xl bg-zinc-900/40 ring-1 ring-zinc-800 p-4 flex gap-4 whitespace-nowrap justify-center mb-12">
           {solutions.map((s) => {
             const isActive = s.id === activeId;
             return (
@@ -34,7 +34,7 @@ export default function SolutionsShowcase({ solutions }: { solutions: Solution[]
                 key={s.id}
                 onClick={() => onTabClick(s.id)}
                 className={`shrink-0 rounded-xl px-6 py-4 text-base font-medium transition-colors ${
-                  isActive ? "bg-[#0d0f28] text-white" : "bg-white text-[#0d0f28] hover:bg-zinc-200"
+                  isActive ? "bg-[#0d0f28] text-white" : "bg-zinc-800 text-zinc-200 hover:bg-zinc-700"
                 }`}
                 aria-selected={isActive}
                 role="tab"
@@ -53,24 +53,24 @@ export default function SolutionsShowcase({ solutions }: { solutions: Solution[]
               <article
                 key={s.id}
                 aria-hidden={!isActive}
-                className={`rounded-3xl bg-white ring-1 ring-zinc-200 shadow-md overflow-hidden transition-opacity duration-300 ${
+                className={`rounded-3xl bg-zinc-900/50 ring-1 ring-zinc-800 shadow-md overflow-hidden transition-opacity duration-300 ${
                   isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none absolute inset-0"
                 }`}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 min-h-[560px]">
                   <div className="p-14 sm:p-16 lg:p-20">
-                    <div className="text-xs font-semibold text-zinc-500 mb-3">{s.title.toUpperCase()}</div>
-                    <h3 className="text-4xl font-semibold mb-6 text-[#0d0f28]">{s.title}</h3>
-                    <p className="text-zinc-600 leading-relaxed mb-10 text-lg">{s.blurb}</p>
+                    <div className="text-xs font-semibold text-zinc-400 mb-3">{s.title.toUpperCase()}</div>
+                    <h3 className="text-4xl font-semibold mb-6 text-foreground">{s.title}</h3>
+                    <p className="text-zinc-300 leading-relaxed mb-10 text-lg">{s.blurb}</p>
                     <a
                       href={s.ctaHref}
-                      className="inline-flex items-center rounded-lg bg-[#0d0f28] text-white px-7 py-3.5 text-base font-medium hover:bg-[#0a0f1f]"
+                      className="inline-flex items-center rounded-lg bg-white text-[#0d0f28] px-7 py-3.5 text-base font-medium hover:bg-zinc-100"
                     >
                       Explore {s.title}
                       <span className="ml-2" aria-hidden>→</span>
                     </a>
                   </div>
-                  <div className="relative bg-zinc-100">
+                  <div className="relative bg-zinc-800">
                     {s.mediaSrc ? (
                       <img
                         src={s.mediaSrc}
@@ -78,7 +78,7 @@ export default function SolutionsShowcase({ solutions }: { solutions: Solution[]
                         className="absolute inset-0 h-full w-full object-cover"
                       />
                     ) : (
-                      <div className="absolute inset-0 flex items-center justify-center text-zinc-400">Media</div>
+                      <div className="absolute inset-0 flex items-center justify-center text-zinc-500">Media</div>
                     )}
                   </div>
                 </div>
