@@ -3,17 +3,21 @@ import { Slot } from "@radix-ui/react-slot";
 
 import { cn } from "./cn";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean;
   variant?: "default" | "secondary" | "ghost" | "outline";
   size?: "sm" | "md" | "lg";
 }
 
 const variantClass: Record<NonNullable<ButtonProps["variant"]>, string> = {
-  default: "bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white",
-  secondary: "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700",
+  default:
+    "bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white",
+  secondary:
+    "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700",
   ghost: "bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800",
-  outline: "border border-zinc-200 hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-800",
+  outline:
+    "border border-zinc-200 hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-800",
 };
 
 const sizeClass: Record<NonNullable<ButtonProps["size"]>, string> = {
@@ -40,5 +44,3 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 Button.displayName = "Button";
-
-
