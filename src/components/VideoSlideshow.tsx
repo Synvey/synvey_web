@@ -16,7 +16,7 @@ export default function VideoSlideshow() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % videos.length);
-    }, 10000); // 10 seconds per video
+    }, 10000); // 10 s per video
     return () => clearInterval(timer);
   }, []);
 
@@ -27,7 +27,7 @@ export default function VideoSlideshow() {
   };
 
   return (
-    <div className="relative w-[800px] h-[450px] overflow-hidden rounded-2xl bg-black shadow-2xl">
+    <div className="relative w-full h-full aspect-video overflow-hidden rounded-3xl bg-black/60 shadow-2xl">
       <AnimatePresence mode="wait">
         <motion.video
           key={current}
@@ -36,7 +36,9 @@ export default function VideoSlideshow() {
           muted
           playsInline
           preload="auto"
-          className="absolute w-full h-full object-contain"
+          loop
+          // object-contain keeps the whole frame visible (letter-box effect)
+          className="absolute inset-0 w-full h-full object-contain bg-black/60"
           variants={slideVariants}
           initial="initial"
           animate="animate"

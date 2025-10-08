@@ -95,9 +95,36 @@ const NAV_ITEMS: MenuItem[] = [
   {
     label: "Resources",
     items: [
-      { label: "Docs", href: "/docs" },
-      { label: "Blog", href: "/blog" },
-      { label: "Guides", href: "/guides" },
+      {
+        label: "Documentation",
+        href: "/docs",
+        description: "Complete API reference and guides.",
+      },
+      {
+        label: "Blog",
+        href: "/blog",
+        description: "Latest insights and industry trends.",
+      },
+      {
+        label: "Guides",
+        href: "/guides",
+        description: "Step-by-step tutorials and best practices.",
+      },
+      {
+        label: "Case Studies",
+        href: "/case-studies",
+        description: "Real-world success stories and implementations.",
+      },
+      {
+        label: "Webinars",
+        href: "/webinars",
+        description: "Live sessions and recorded presentations.",
+      },
+      {
+        label: "Community",
+        href: "/community",
+        description: "Connect with developers and get support.",
+      },
     ],
   },
   {
@@ -190,6 +217,24 @@ function getSubmenuIcon(label: string) {
       return (
         <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
           <path d="M4 5h8a4 4 0 014 4v10H8a4 4 0 00-4 4V5zM12 5h4v10h-4z" />
+        </svg>
+      );
+    case "Case Studies":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      );
+    case "Webinars":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      );
+    case "Community":
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       );
     case "About":
@@ -396,10 +441,12 @@ export default function Navbar() {
             className="inline-flex items-center relative"
             aria-label="Home"
           >
-            {/* Flash backdrop */}
-            <span className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-              <span className="block h-22 w-25 rounded-full bg-white/70 blur-[55px] animate-logo-flash" />
-            </span>
+            {/* Flash backdrop - hidden when scrolled */}
+            {!isScrolled && (
+              <span className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+                <span className="block h-22 w-25 rounded-full bg-white/70 blur-[55px] animate-logo-flash" />
+              </span>
+            )}
             <img src="/logo.png" alt="Synvey" className="h-5 w-auto" />
           </Link>
         </div>

@@ -155,7 +155,7 @@ export default function HomePage() {
     <main>
       <section className="relative isolate min-h-[100vh] flex items-center">
         <div className="mx-auto max-w-7xl px-4 py-0 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
-          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14 lg:gap-24 xl:gap-32">
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-8 lg:gap-12 xl:gap-8">
             {/* Left: Text */}
             <Reveal className="lg:pr-8 xl:pr-12">
               <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-5xl">
@@ -214,9 +214,9 @@ export default function HomePage() {
 
             {/* Right: Visual (After Effects video) */}
             <Reveal className="lg:ml-8 xl:ml-12" delay={120}>
-              <div className="relative mx-auto w-full max-w-xl">
+              <div className="relative mx-auto w-full max-w-2xl">
                 <div className="absolute -inset-2 -z-10 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
-                <div className="relative w-full max-w-xl mx-auto h-96 flex items-center justify-center overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40">
+                <div className="relative w-full max-w-2xl mx-auto h-[400px] flex items-center justify-center overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40">
                   <VideoSlideshow />
                 </div>
               </div>
@@ -224,6 +224,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      
       {/* Solutions Showcase - tabs + scroll sync, white background */}
       <SolutionsShowcase
         solutions={solutions.map((s) => ({
