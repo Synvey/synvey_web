@@ -153,71 +153,66 @@ export default function HomePage() {
   };
   return (
     <main>
-      <section className="relative isolate min-h-[100vh] flex items-center">
-        <div className="mx-auto max-w-7xl px-4 py-0 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
-          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-8 lg:gap-12 xl:gap-8">
-            {/* Left: Text */}
-            <Reveal className="lg:pr-8 xl:pr-12">
-              <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-5xl">
-                Innovate faster.
-                <br />
-                Deliver with precision.
+      <section className="relative isolate min-h-[120vh] flex items-center">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
+          <div className="flex flex-col items-center gap-16">
+            {/* Top: Text Content */}
+            <Reveal className="text-center max-w-4xl">
+              <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
+                Every great presentation starts with a Chronicle
               </h1>
-              <p className="mt-4 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg animate-on-load animate-fade-in-up animate-delay-200">
-                Synvey empowers businesses with digital solutions that scale.
-                From AI integration and custom apps to seamless mobile
-                experiences and intuitive UI/UX design, we deliver technology
-                that drives innovation and growth.
+              <p className="mt-6 max-w-2xl mx-auto text-lg leading-7 text-zinc-400 sm:text-xl animate-on-load animate-fade-in-up animate-delay-200">
+                Create stunning presentations. No design skills required.
               </p>
-              <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4 animate-on-load animate-fade-in-up animate-delay-300">
-                <Button asChild size="lg">
-                  <Link href="/technologies">Our technologies</Link>
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 animate-on-load animate-fade-in-up animate-delay-300">
+                <Button asChild size="lg" className="bg-zinc-200 text-zinc-900 hover:bg-zinc-300">
+                  <Link href="/technologies">Try for free</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href="/contact">Contact us</Link>
+                <Button asChild variant="outline" size="lg" className="border-zinc-600 text-zinc-300 hover:bg-zinc-800">
+                  <Link href="/contact">Watch video</Link>
                 </Button>
               </div>
+            </Reveal>
 
-              {/* Trust logos / Brand Ticker */}
-              <div className="mt-25 w-full animate-on-load animate-fade-in-up animate-delay-500">
-                <div className="relative w-full">
-                  <p className="mb-4 text-center text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
-                    Used by 5000+ teams who value storytelling
-                  </p>
-                  <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-800/60 bg-gradient-to-b from-black/0 via-zinc-900/30 to-black/0 px-3 py-3 sm:px-4 sm:py-4 mask-fade-x">
-                    <div className="flex animate-scroll gap-12 sm:gap-16 whitespace-nowrap hover:pause-animation">
-                      {brandTicker.map((brand, index) => (
-                        <div key={index} className="shrink-0 flex items-center">
-                          {brand.src ? (
-                            <img
-                              src={brand.src}
-                              alt={brand.name}
-                              className="h-6 sm:h-7 w-auto opacity-80 saturate-0 contrast-125 hover:opacity-100 transition-opacity mx-6"
-                            />
-                          ) : (
-                            <div className="flex items-center gap-3">
-                              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-zinc-800/70 ring-1 ring-inset ring-zinc-700 text-[10px] font-semibold text-zinc-200">
-                                {(brand.name || "").slice(0, 2).toUpperCase()}
-                              </div>
-                              <span className="text-zinc-300 text-sm sm:text-base font-medium opacity-90">
-                                {brand.name}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+            {/* Middle: Video Slideshow */}
+            <Reveal delay={120} className="w-full">
+              <div className="relative mx-auto w-full max-w-4xl">
+                <div className="absolute -inset-2 -z-10 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
+                <div className="relative w-full max-w-4xl mx-auto h-[500px] flex items-center justify-center overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40">
+                  <VideoSlideshow />
                 </div>
               </div>
             </Reveal>
 
-            {/* Right: Visual (After Effects video) */}
-            <Reveal className="lg:ml-8 xl:ml-12" delay={120}>
-              <div className="relative mx-auto w-full max-w-2xl">
-                <div className="absolute -inset-2 -z-10 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
-                <div className="relative w-full max-w-2xl mx-auto h-[400px] flex items-center justify-center overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40">
-                  <VideoSlideshow />
+            {/* Bottom: Trust logos / Brand Ticker */}
+            <Reveal delay={240} className="w-full">
+              <div className="relative w-full max-w-5xl mx-auto">
+                <p className="mb-6 text-center text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
+                  Used by 5000+ teams who value storytelling
+                </p>
+                <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-800/60 bg-gradient-to-b from-black/0 via-zinc-900/30 to-black/0 px-4 py-4 sm:px-6 sm:py-5 mask-fade-x">
+                  <div className="flex animate-scroll gap-12 sm:gap-16 whitespace-nowrap hover:pause-animation">
+                    {brandTicker.map((brand, index) => (
+                      <div key={index} className="shrink-0 flex items-center">
+                        {brand.src ? (
+                          <img
+                            src={brand.src}
+                            alt={brand.name}
+                            className="h-6 sm:h-7 w-auto opacity-80 saturate-0 contrast-125 hover:opacity-100 transition-opacity mx-6"
+                          />
+                        ) : (
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-zinc-800/70 ring-1 ring-inset ring-zinc-700 text-[10px] font-semibold text-zinc-200">
+                              {(brand.name || "").slice(0, 2).toUpperCase()}
+                            </div>
+                            <span className="text-zinc-300 text-sm sm:text-base font-medium opacity-90">
+                              {brand.name}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Reveal>
