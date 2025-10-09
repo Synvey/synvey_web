@@ -1,10 +1,26 @@
 import Link from "next/link";
-import RotatingText from "../components/RotatingText";
+import React from "react";
+import { FlipWords } from "@/components/ui/flip-words";
+// import RotatingText from "../components/RotatingText";
 import VideoSlideshow from "../components/VideoSlideshow";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import UseCasesOverview from "@/components/UseCasesOverview";
+
+export function FlipWordsDemo() {
+  const words = ["better", "cute", "beautiful", "modern"];
+
+  return (
+    <div className="h-[40rem] flex justify-center items-center px-4">
+      <div className="text-4xl mx-auto font-normal text-neutral-600 dark:text-neutral-400">
+        Build
+        <FlipWords words={words} /> <br />
+        websites with Aceternity UI
+      </div>
+    </div>
+  );
+}
 
 export default function HomePage() {
   // Brand-style logos; use placeholders available in /public and fallbacks with initials
@@ -167,6 +183,7 @@ export default function HomePage() {
     "ui-ux-services": { src: "", alt: "UI/UX Services" },
     "cloud-devops": { src: "", alt: "Cloud & DevOps" },
   };
+
   return (
     <main className="bg-background">
       <section className="relative isolate min-h-[120vh] flex items-center">
@@ -174,20 +191,13 @@ export default function HomePage() {
           <div className="flex flex-col items-center gap-16">
             {/* Top: Text Content */}
             <Reveal className="text-center max-w-4xl">
-              <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
+              <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
                 Innovate faster. <br />
                 Deliver with{" "}
-                <RotatingText
-                  texts={["precision.", "Accuracy", "efficiency"]}
-                  mainClassName="px-2 sm:px-2 md:px-3  text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-                  staggerFrom={"last"}
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  exit={{ y: "-120%" }}
-                  staggerDuration={0.025}
-                  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                  rotationInterval={4000}
+                <FlipWords
+                  words={["precision.", "accuracy.", "efficiency."]}
+                  className="inline-block text-primary px-1"
+                  duration={3000}
                 />
               </h1>
               <p className="mt-6 max-w-2xl mx-auto text-lg leading-7 text-zinc-400 sm:text-xl animate-on-load animate-fade-in-up animate-delay-200">
