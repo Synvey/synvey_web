@@ -8,25 +8,22 @@ import Reveal from "@/components/Reveal";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import UseCasesOverview from "@/components/UseCasesOverview";
 
-export function FlipWordsDemo() {
-  const words = ["better", "cute", "beautiful", "modern"];
-
-  return (
-    <div className="h-[40rem] flex justify-center items-center px-4">
-      <div className="text-4xl mx-auto font-normal text-neutral-600 dark:text-neutral-400">
-        Build
-        <FlipWords words={words} /> <br />
-        websites with Aceternity UI
-      </div>
-    </div>
-  );
-}
-
 export default function HomePage() {
   // Brand-style logos; use placeholders available in /public and fallbacks with initials
   const brandTicker = [
-    { src: "/Open.png", name: "Open AI" },
-    { src: "/Open.png", name: "Open AI" },
+    { src: "/Openai.svg", name: "Open AI" },
+    { src: "/figma.svg", name: "Figma" },
+    { src: "/js.svg", name: "Js" },
+    { src: "/react.svg", name: "React" },
+    { src: "/python.svg", name: "Python" },
+    { src: "/docker.svg", name: "Docker" },
+    { src: "/flutter.svg", name: "Flutter" },
+    { src: "/github.svg", name: "github" },
+    { src: "/php.svg", name: "PHP" },
+    { src: "/google.svg", name: "Google" },
+    { src: "/laravel.svg", name: "Laravel" },
+    { src: "/go.svg", name: "GO" },
+    { src: "/node.svg", name: "Node" },
   ];
 
   // Enhanced use cases data for sticky scroll reveal
@@ -176,7 +173,7 @@ export default function HomePage() {
     },
   ];
   const solutionMediaBySlug: Record<string, { src: string; alt?: string }> = {
-    "ai-integration": { src: "/ai-intergration.jpg", alt: "AI Integration" },
+    "ai-integration": { src: "/aiIntegration.webm", alt: "AI Integration" },
     "desktop-applications": { src: "", alt: "Desktop Applications" },
     "web-applications": { src: "", alt: "Web Applications" },
     "mobile-applications": { src: "", alt: "Mobile Applications" },
@@ -216,11 +213,22 @@ export default function HomePage() {
               </div>
             </Reveal>
 
+            {/* Gif Container */}
+            <Reveal delay={120}>
+              <div className=" flex items-center justify-cente">
+                <img
+                  src="/gif.gif"
+                  alt="Animated GIF"
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            </Reveal>
+
             {/* Middle: Video Slideshow */}
             <Reveal delay={120} className="w-full">
-              <div className="relative mx-auto w-full max-w-6xl">
-                <div className="absolute -inset-2 -z-10 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
-                <div className="relative w-full max-w-6xl mx-auto h-[600px] flex items-center justify-center overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40">
+              <div className="relative mx-auto w-full max-w-6xl border-10 border-[#171717] rounded-3xl">
+                {/* <div className="absolute -inset-2 -z-10 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" /> */}
+                <div className="relative w-full max-w-6xl mx-auto h-[600px] flex items-center justify-center overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
                   <VideoSlideshow />
                 </div>
               </div>
@@ -230,10 +238,11 @@ export default function HomePage() {
             <Reveal delay={240} className="w-full">
               <div className="relative w-full max-w-5xl mx-auto">
                 <p className="mb-6 text-center text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
-                  Used by 5000+ teams who value storytelling
+                  Proficient in 100+ modern tools and libraries across various
+                  technologies
                 </p>
                 <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-800/60 bg-gradient-to-b from-black/0 via-zinc-900/30 to-black/0 px-4 py-4 sm:px-6 sm:py-5 mask-fade-x">
-                  <div className="flex animate-scroll gap-12 sm:gap-16 whitespace-nowrap hover:pause-animation">
+                  <div className="flex animate-scroll gap-4 sm:gap-6 whitespace-nowrap hover:pause-animation">
                     {brandTicker.map((brand, index) => (
                       <div key={index} className="shrink-0 flex items-center">
                         {brand.src ? (
