@@ -3,6 +3,7 @@ import VideoSlideshow from "../components/VideoSlideshow";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
+import UseCasesOverview from "@/components/UseCasesOverview";
 
 export default function HomePage() {
   // Brand-style logos; use placeholders available in /public and fallbacks with initials
@@ -10,78 +11,73 @@ export default function HomePage() {
     { src: "/Open.png", name: "Open AI" },
     { src: "/Open.png", name: "Open AI" },
   ];
-  const useCases = [
+
+  // Enhanced use cases data for sticky scroll reveal
+  const stickyUseCases = [
     {
-      slug: "ecommerce-platform",
       title: "E-commerce Platform",
-      description: "Build scalable online stores with AI-powered features",
-      icon: "🛒",
-      features: [
-        "AI-powered recommendations",
-        "Real-time inventory",
-        "Secure payments",
-        "Mobile optimization",
-      ],
+      description: "Build scalable online stores with AI-powered features that drive sales and enhance customer experience. Our solutions include intelligent product recommendations, real-time inventory management, and seamless payment processing.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+          <img
+            src="/gifs/ecommerce-platform.gif"
+            alt="E-commerce Platform Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
     {
-      slug: "healthcare-management",
       title: "Healthcare Management",
-      description: "Secure patient data and streamline medical workflows",
-      icon: "🏥",
-      features: [
-        "HIPAA compliance",
-        "Patient portals",
-        "Appointment scheduling",
-        "Medical records",
-      ],
+      description: "Secure patient data and streamline medical workflows with HIPAA-compliant solutions. Our healthcare platforms provide patient portals, appointment scheduling, and comprehensive medical record management.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+          <img
+            src="/gifs/healthcare-management.gif"
+            alt="Healthcare Management Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
     {
-      slug: "financial-services",
       title: "Financial Services",
-      description: "Compliant fintech solutions with real-time analytics",
-      icon: "💳",
-      features: [
-        "PCI compliance",
-        "Real-time transactions",
-        "Fraud detection",
-        "Risk management",
-      ],
+      description: "Compliant fintech solutions with real-time analytics and fraud detection. Our financial platforms ensure PCI compliance while providing seamless transaction processing and advanced risk management.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+          <img
+            src="/gifs/financial-services.gif"
+            alt="Financial Services Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
     {
-      slug: "education-technology",
       title: "Education Technology",
-      description: "Interactive learning platforms and student management",
-      icon: "🎓",
-      features: [
-        "Learning management",
-        "Student tracking",
-        "Virtual classrooms",
-        "Assessment tools",
-      ],
+      description: "Interactive learning platforms and comprehensive student management systems. Our EdTech solutions include learning management systems, virtual classrooms, and advanced assessment tools.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+          <img
+            src="/gifs/education-technology.gif"
+            alt="Education Technology Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
     {
-      slug: "manufacturing-iot",
-      title: "Manufacturing IoT",
-      description: "Smart factory solutions and predictive maintenance",
-      icon: "🏭",
-      features: [
-        "IoT sensors",
-        "Predictive analytics",
-        "Quality control",
-        "Supply chain",
-      ],
-    },
-    {
-      slug: "real-estate-portal",
       title: "Real Estate Portal",
-      description: "Property listings with virtual tours and analytics",
-      icon: "🏠",
-      features: [
-        "Virtual tours",
-        "Property search",
-        "Market analytics",
-        "Lead management",
-      ],
+      description: "Property listings with virtual tours and comprehensive market analytics. Our real estate platforms provide immersive property experiences, advanced search capabilities, and lead management systems.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center">
+          <img
+            src="/gifs/real-estate-portal.gif"
+            alt="Real Estate Portal Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
   ];
   const solutions = [
@@ -237,62 +233,8 @@ export default function HomePage() {
         }))}
       />
 
-      {/* Use Cases Overview - matches use-cases overview */}
-      <section className="py-16 sm:py-20 bg-zinc-900/30">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Industry-Specific Solutions
-            </h2>
-            <p className="mt-4 text-lg text-zinc-400">
-              Tailored solutions for every industry and business challenge
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {useCases.map((useCase, idx) => (
-              <Reveal key={useCase.slug} delay={idx * 60}>
-                <div className="hover-card relative rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all hover:border-zinc-700 hover:bg-zinc-900/70">
-                  <div className="w-16 h-16 rounded-xl bg-indigo-500/10 mb-6 text-3xl flex items-center justify-center">
-                    {useCase.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    <Link
-                      href={`/use-cases/${useCase.slug}`}
-                      className="hover:underline"
-                    >
-                      {useCase.title}
-                    </Link>
-                  </h3>
-                  <p className="text-zinc-400 leading-relaxed mb-4">
-                    {useCase.description}
-                  </p>
-                  <div className="space-y-2">
-                    <div className="text-sm font-medium text-zinc-300">
-                      Key Features:
-                    </div>
-                    <ul className="text-sm text-zinc-400 space-y-1">
-                      {useCase.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-center">
-                          <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-4">
-                    <Link
-                      href={`/use-cases/${useCase.slug}`}
-                      className="text-sm text-indigo-400 font-medium hover:text-indigo-300 transition-colors"
-                    >
-                      Learn more →
-                    </Link>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Use Cases Overview - Sticky Scroll Reveal */}
+      <UseCasesOverview useCases={stickyUseCases} />
 
       {/* Customer Proof / Testimonials Section */}
       <section className="py-16 sm:py-20 bg-zinc-900/30">
