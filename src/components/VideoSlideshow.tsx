@@ -36,7 +36,6 @@ export default function VideoSlideshow() {
           muted
           playsInline
           preload="auto"
-          loop
           // object-contain keeps the whole frame visible (letter-box effect)
           className="absolute inset-0 w-full h-full object-contain bg-black/60"
           variants={slideVariants}

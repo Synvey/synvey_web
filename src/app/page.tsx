@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RotatingText from "../components/RotatingText";
 import VideoSlideshow from "../components/VideoSlideshow";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
@@ -16,7 +17,8 @@ export default function HomePage() {
   const stickyUseCases = [
     {
       title: "E-commerce Platform",
-      description: "Build scalable online stores with AI-powered features that drive sales and enhance customer experience. Our solutions include intelligent product recommendations, real-time inventory management, and seamless payment processing.",
+      description:
+        "Build scalable online stores with AI-powered features that drive sales and enhance customer experience. Our solutions include intelligent product recommendations, real-time inventory management, and seamless payment processing.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
           <img
@@ -29,7 +31,8 @@ export default function HomePage() {
     },
     {
       title: "Healthcare Management",
-      description: "Secure patient data and streamline medical workflows with HIPAA-compliant solutions. Our healthcare platforms provide patient portals, appointment scheduling, and comprehensive medical record management.",
+      description:
+        "Secure patient data and streamline medical workflows with HIPAA-compliant solutions. Our healthcare platforms provide patient portals, appointment scheduling, and comprehensive medical record management.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
           <img
@@ -42,7 +45,8 @@ export default function HomePage() {
     },
     {
       title: "Financial Services",
-      description: "Compliant fintech solutions with real-time analytics and fraud detection. Our financial platforms ensure PCI compliance while providing seamless transaction processing and advanced risk management.",
+      description:
+        "Compliant fintech solutions with real-time analytics and fraud detection. Our financial platforms ensure PCI compliance while providing seamless transaction processing and advanced risk management.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
           <img
@@ -55,7 +59,8 @@ export default function HomePage() {
     },
     {
       title: "Education Technology",
-      description: "Interactive learning platforms and comprehensive student management systems. Our EdTech solutions include learning management systems, virtual classrooms, and advanced assessment tools.",
+      description:
+        "Interactive learning platforms and comprehensive student management systems. Our EdTech solutions include learning management systems, virtual classrooms, and advanced assessment tools.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
           <img
@@ -68,7 +73,8 @@ export default function HomePage() {
     },
     {
       title: "Manufacturing IoT",
-      description: "Smart factory solutions with predictive maintenance and quality control. Our IoT platforms integrate sensors, analytics, and supply chain management for optimized manufacturing operations.",
+      description:
+        "Smart factory solutions with predictive maintenance and quality control. Our IoT platforms integrate sensors, analytics, and supply chain management for optimized manufacturing operations.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
           <img
@@ -81,7 +87,8 @@ export default function HomePage() {
     },
     {
       title: "Real Estate Portal",
-      description: "Property listings with virtual tours and comprehensive market analytics. Our real estate platforms provide immersive property experiences, advanced search capabilities, and lead management systems.",
+      description:
+        "Property listings with virtual tours and comprehensive market analytics. Our real estate platforms provide immersive property experiences, advanced search capabilities, and lead management systems.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center">
           <img
@@ -168,9 +175,20 @@ export default function HomePage() {
             {/* Top: Text Content */}
             <Reveal className="text-center max-w-4xl">
               <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
-                Innovate faster.
-                <br />
-                Deliver with precision.
+                Innovate faster. <br />
+                Deliver with{" "}
+                <RotatingText
+                  texts={["precision.", "Accuracy", "efficiency"]}
+                  mainClassName="px-2 sm:px-2 md:px-3  text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                  staggerFrom={"last"}
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  exit={{ y: "-120%" }}
+                  staggerDuration={0.025}
+                  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                  rotationInterval={4000}
+                />
               </h1>
               <p className="mt-6 max-w-2xl mx-auto text-lg leading-7 text-zinc-400 sm:text-xl animate-on-load animate-fade-in-up animate-delay-200">
                 Synvey empowers businesses with digital solutions that scale.
@@ -233,7 +251,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
+
       {/* Solutions Showcase - tabs + scroll sync, white background */}
       <SolutionsShowcase
         solutions={solutions.map((s) => ({
