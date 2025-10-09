@@ -159,26 +159,31 @@ export default function HomePage() {
             {/* Top: Text Content */}
             <Reveal className="text-center max-w-4xl">
               <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
-                Every great presentation starts with a Chronicle
+                Innovate faster.
+                <br />
+                Deliver with precision.
               </h1>
               <p className="mt-6 max-w-2xl mx-auto text-lg leading-7 text-zinc-400 sm:text-xl animate-on-load animate-fade-in-up animate-delay-200">
-                Create stunning presentations. No design skills required.
+                Synvey empowers businesses with digital solutions that scale.
+                From AI integration and custom apps to seamless mobile
+                experiences and intuitive UI/UX design, we deliver technology
+                that drives innovation and growth.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 animate-on-load animate-fade-in-up animate-delay-300">
-                <Button asChild size="lg" className="bg-zinc-200 text-zinc-900 hover:bg-zinc-300">
-                  <Link href="/technologies">Try for free</Link>
+                <Button asChild size="lg">
+                  <Link href="/technologies">Our technologies</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-zinc-600 text-zinc-300 hover:bg-zinc-800">
-                  <Link href="/contact">Watch video</Link>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/contact">Contact us</Link>
                 </Button>
               </div>
             </Reveal>
 
             {/* Middle: Video Slideshow */}
             <Reveal delay={120} className="w-full">
-              <div className="relative mx-auto w-full max-w-4xl">
+              <div className="relative mx-auto w-full max-w-6xl">
                 <div className="absolute -inset-2 -z-10 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
-                <div className="relative w-full max-w-4xl mx-auto h-[500px] flex items-center justify-center overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40">
+                <div className="relative w-full max-w-6xl mx-auto h-[600px] flex items-center justify-center overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40">
                   <VideoSlideshow />
                 </div>
               </div>
