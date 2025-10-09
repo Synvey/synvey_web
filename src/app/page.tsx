@@ -67,6 +67,19 @@ export default function HomePage() {
       ),
     },
     {
+      title: "Manufacturing IoT",
+      description: "Smart factory solutions with predictive maintenance and quality control. Our IoT platforms integrate sensors, analytics, and supply chain management for optimized manufacturing operations.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
+          <img
+            src="/gifs/manufacturing-iot.gif"
+            alt="Manufacturing IoT Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
+    },
+    {
       title: "Real Estate Portal",
       description: "Property listings with virtual tours and comprehensive market analytics. Our real estate platforms provide immersive property experiences, advanced search capabilities, and lead management systems.",
       content: (
@@ -148,7 +161,7 @@ export default function HomePage() {
     "cloud-devops": { src: "", alt: "Cloud & DevOps" },
   };
   return (
-    <main>
+    <main className="bg-background">
       <section className="relative isolate min-h-[120vh] flex items-center">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
           <div className="flex flex-col items-center gap-16">
