@@ -8,6 +8,7 @@ import Reveal from "@/components/Reveal";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import UseCasesOverview from "@/components/UseCasesOverview";
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
+import StatsSection from "@/components/StatsSection";
 
 export default function HomePage() {
   // Brand-style logos; use placeholders available in /public and fallbacks with initials
@@ -278,12 +279,15 @@ export default function HomePage() {
                 />
               </div>
             </Reveal>
+            <Reveal delay={240}>
+              <StatsSection />
+            </Reveal>
 
             {/* Bottom: Trust logos / Brand Ticker */}
             <Reveal delay={240} className="w-full">
               <div className="relative w-full max-w-5xl mx-auto">
                 <p className="mb-6 text-center text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
-                  Proficient in 100+ modern tools and libraries across various
+                  Proficient in 80+ modern tools and libraries across various
                   technologies
                 </p>
                 <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-800/60 bg-gradient-to-b from-black/0 via-zinc-900/30 to-black/0 px-4 py-4 sm:px-6 sm:py-5 mask-fade-x">

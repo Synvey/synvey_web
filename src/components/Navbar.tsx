@@ -156,17 +156,23 @@ function DesktopNav() {
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
                         className={`overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-xl dark:border-zinc-800 dark:bg-zinc-900 ${
-                          item.label === 'Company' ? 'w-[240px]' : 'w-[680px]'
+                          item.label === "Company" ? "w-[240px]" : "w-[680px]"
                         }`}
                       >
                         <div className="p-2">
-                          <div className={`grid gap-1 ${item.label === 'Company' ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
+                          <div
+                            className={`grid gap-1 ${
+                              item.label === "Company"
+                                ? "grid-cols-1"
+                                : "grid-cols-1 sm:grid-cols-2"
+                            }`}
+                          >
                             {item.items.map((sub) => (
                               <Link
                                 key={sub.href}
                                 href={sub.href}
                                 className={`group flex items-start rounded-md transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800/60 ${
-                                  sub.description ? 'p-3' : 'px-3 py-2'
+                                  sub.description ? "p-3" : "px-3 py-2"
                                 }`}
                               >
                                 <span>
