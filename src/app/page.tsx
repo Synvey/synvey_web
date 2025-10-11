@@ -2,10 +2,12 @@ import Link from "next/link";
 import React from "react";
 import { FlipWords } from "@/components/ui/flip-words";
 import VideoSlideshow from "../components/VideoSlideshow";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import UseCasesOverview from "@/components/UseCasesOverview";
+import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 
 export default function HomePage() {
   // Brand-style logos; use placeholders available in /public and fallbacks with initials
@@ -23,6 +25,40 @@ export default function HomePage() {
     { src: "/laravel.svg", name: "Laravel" },
     { src: "/go.svg", name: "GO" },
     { src: "/node.svg", name: "Node" },
+  ];
+
+  // User reviews
+  const testimonials = [
+    {
+      quote:
+        "Synvey completely transformed the way we approach digital solutions. From understanding our unique business challenges to delivering a fully customized platform, their team demonstrated unmatched expertise and creativity. Their proactive approach and attention to detail ensured that every milestone was met with precision, making the entire experience smooth and rewarding.",
+      name: "Alex Turner",
+      title: "QuantumEdge Solutions",
+    },
+    {
+      quote:
+        "Working with Synvey has been a revelation for our organization. They not only delivered a high-quality product but also guided us through complex technical decisions with clarity and professionalism. The team’s innovative thinking and dedication to achieving excellence have truly set them apart in the IT industry",
+      name: "Maya Li",
+      title: "Nexora Systems",
+    },
+    {
+      quote:
+        "Synvey’s solutions exceeded our expectations in every way. Their deep understanding of modern technology, combined with a strategic approach to our business objectives, resulted in a scalable and efficient platform. The collaboration was seamless, and their responsiveness to feedback made the project incredibly smooth.",
+      name: "Raj Patel",
+      title: "VertexWave Corp.",
+    },
+    {
+      quote:
+        "From the first consultation to the final delivery, Synvey proved to be a trusted partner. They took the time to understand our business, proposed innovative solutions, and executed them flawlessly. The team’s professionalism, technical expertise, and commitment to quality ensured a final product that has positively impacted our operations and growth.",
+      name: "Sofia Kim",
+      title: "LuminaCore Solutions",
+    },
+    {
+      quote:
+        "Synvey has redefined what we thought was possible with IT solutions. Their ability to combine creativity with technical precision allowed us to implement systems that are not only functional but also future-proof. Every step of the project demonstrated their dedication, knowledge, and a genuine interest in helping our company succeed.",
+      name: "Ethan Cole",
+      title: "Solaris Innovations",
+    },
   ];
 
   // Enhanced use cases data for sticky scroll reveal
@@ -295,125 +331,46 @@ export default function HomePage() {
       {/* Use Cases Overview - Sticky Scroll Reveal */}
       <UseCasesOverview useCases={stickyUseCases} />
 
-      {/* Customer Proof / Testimonials Section */}
+      {/* Customer reviews */}
+
       <section className="py-16 sm:py-20 bg-zinc-900/30">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              What Our Customers Say
+              <TextGenerateEffect
+                words="What our customer says"
+                className="text-[48px] font-bold w-full text-left text-white  leading-tight mb-6"
+              />
             </h2>
-            <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">
-              Trusted by teams worldwide to build and scale faster.
+            <p className=" text-lg text-zinc-400  mx-auto">
+              <TextGenerateEffect
+                words="Trusted by teams worldwide to build and scale faster."
+                className="text-xl text-left text-zinc-400  mx-auto"
+              />
             </p>
           </div>
 
-          <div className="relative">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-              {/* Testimonial 1 */}
-              <div className="group relative aspect-square rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 transition-all hover:border-zinc-700 hover:bg-zinc-900/70 hover:shadow-lg flex flex-col justify-between">
-                <div>
-                  <blockquote className="text-zinc-300 leading-relaxed mb-4 text-base">
-                    "Reduced release time by 40% with Synvey."
-                  </blockquote>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-red-500 mr-3 flex items-center justify-center shadow-xl border-4 border-white">
-                    <span className="text-white font-black text-lg">SC</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">
-                      Sarah Chen
-                    </div>
-                    <div className="text-xs text-zinc-400">CTO, TechCorp</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Testimonial 2 */}
-              <div className="group relative aspect-square rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 transition-all hover:border-zinc-700 hover:bg-zinc-900/70 hover:shadow-lg flex flex-col justify-between">
-                <div>
-                  <blockquote className="text-zinc-300 leading-relaxed mb-4 text-base">
-                    "Our team integrated AI features in weeks, not months."
-                  </blockquote>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-green-500 mr-3 flex items-center justify-center shadow-xl border-4 border-white">
-                    <span className="text-white font-black text-lg">MR</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">
-                      Marcus Rodriguez
-                    </div>
-                    <div className="text-xs text-zinc-400">
-                      Lead Developer, InnovateLab
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Testimonial 3 */}
-              <div className="group relative aspect-square rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 transition-all hover:border-zinc-700 hover:bg-zinc-900/70 hover:shadow-lg flex flex-col justify-between">
-                <div>
-                  <blockquote className="text-zinc-300 leading-relaxed mb-4 text-base">
-                    "Synvey gave us enterprise security without the complexity."
-                  </blockquote>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-purple-500 mr-3 flex items-center justify-center shadow-xl border-4 border-white">
-                    <span className="text-white font-black text-lg">JP</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">
-                      Jennifer Park
-                    </div>
-                    <div className="text-xs text-zinc-400">
-                      Security Director, SecureFlow
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation Controls */}
-            <div className="flex items-center justify-center gap-4 mt-8">
-              <button className="flex items-center justify-center w-10 h-10 rounded-full border border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 transition-colors">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
-                <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
-                <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
-              </div>
-              <button className="flex items-center justify-center w-10 h-10 rounded-full border border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 transition-colors">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
+          <div className="w-full flex justify-center items-center overflow-hidden">
+            <InfiniteMovingCards
+              items={testimonials}
+              pauseOnHover
+              direction="right"
+              speed="slow"
+            />
           </div>
+          <div className="w-full flex justify-center items-center overflow-hidden">
+            <InfiniteMovingCards
+              items={testimonials}
+              pauseOnHover
+              direction="left"
+              speed="slow"
+            />
+          </div>
+        </div>
+        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 animate-on-load animate-fade-in-up animate-delay-300">
+          <Button asChild size="lg">
+            <Link href="">More reviews</Link>
+          </Button>
         </div>
       </section>
 
