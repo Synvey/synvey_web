@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import { FlipWords } from "@/components/ui/flip-words";
-// import RotatingText from "../components/RotatingText";
 import VideoSlideshow from "../components/VideoSlideshow";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
@@ -35,7 +34,7 @@ export default function HomePage() {
       content: (
         <div className="h-full w-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
           <img
-            src="/gifs/ecommerce-platform.gif"
+            src="/sticky/web.svg"
             alt="E-commerce Platform Demo"
             className="h-full w-full object-cover rounded-2xl"
           />
@@ -49,7 +48,7 @@ export default function HomePage() {
       content: (
         <div className="h-full w-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
           <img
-            src="/gifs/healthcare-management.gif"
+            src="/sticky/health.svg"
             alt="Healthcare Management Demo"
             className="h-full w-full object-cover rounded-2xl"
           />
@@ -63,7 +62,7 @@ export default function HomePage() {
       content: (
         <div className="h-full w-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
           <img
-            src="/gifs/financial-services.gif"
+            src="/sticky/financial.svg"
             alt="Financial Services Demo"
             className="h-full w-full object-cover rounded-2xl"
           />
@@ -91,7 +90,7 @@ export default function HomePage() {
       content: (
         <div className="h-full w-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
           <img
-            src="/gifs/manufacturing-iot.gif"
+            src="/sticky/IOT.gif"
             alt="Manufacturing IoT Demo"
             className="h-full w-full object-cover rounded-2xl"
           />
@@ -117,14 +116,16 @@ export default function HomePage() {
     {
       slug: "ai-integration",
       title: "AI Integration",
-      description: "Harness AI to build intelligent applications",
+      description:
+        "We help businesses harness the power of Artificial Intelligence by integrating machine learning models, natural language processing, and automation into their existing systems. Our solutions optimize workflows, improve decision-making, and enhance customer experiences.",
       icon: "🤖",
       features: ["ML models", "NLP", "Predictive analytics", "Automation"],
     },
     {
       slug: "desktop-applications",
       title: "Desktop Applications",
-      description: "Create powerful native desktop apps",
+      description:
+        "Build robust desktop applications that deliver exceptional performance and user experience. Our platform supports multiple frameworks and technologies, enabling you to create applications that work seamlessly across Windows, macOS, and Linux.",
       icon: "🖥️",
       features: [
         "Cross-platform",
@@ -136,14 +137,16 @@ export default function HomePage() {
     {
       slug: "web-applications",
       title: "Web Applications",
-      description: "Build scalable responsive web apps",
+      description:
+        "We build modern, responsive, and secure web applications designed to boost business productivity and deliver smooth, intuitive user experiences. Our solutions combine performance, scalability, and user-friendly design to help your business thrive online.",
       icon: "🕸️",
       features: ["Responsive", "Performance", "SEO ready", "PWA"],
     },
     {
       slug: "mobile-applications",
       title: "Mobile Applications",
-      description: "Develop engaging mobile experiences",
+      description:
+        "Our mobile app solutions turn your ideas into engaging, high-performance apps that run seamlessly across all platforms. We focus on intuitive user journeys and optimized performance to deliver a flawless mobile experience.",
       icon: "📱",
       features: [
         "Native iOS/Android",
@@ -155,7 +158,8 @@ export default function HomePage() {
     {
       slug: "ui-ux-services",
       title: "UI/UX Services",
-      description: "Design intuitive user experiences",
+      description:
+        "We craft digital products that prioritize user experience while maintaining a modern, visually engaging design. Our process ensures usability, accessibility, and a delightful experience for every user.",
       icon: "🎨",
       features: [
         "Research",
@@ -167,18 +171,22 @@ export default function HomePage() {
     {
       slug: "cloud-devops",
       title: "Cloud & DevOps",
-      description: "Streamline deployment and operations",
+      description:
+        "SWe help businesses scale faster with cloud infrastructure and DevOps automation, ensuring reliability, security, and seamless continuous delivery.",
       icon: "☁️",
       features: ["CI/CD", "IaC", "Kubernetes", "Monitoring"],
     },
   ];
   const solutionMediaBySlug: Record<string, { src: string; alt?: string }> = {
     "ai-integration": { src: "/aiIntegration.webm", alt: "AI Integration" },
-    "desktop-applications": { src: "", alt: "Desktop Applications" },
-    "web-applications": { src: "", alt: "Web Applications" },
-    "mobile-applications": { src: "", alt: "Mobile Applications" },
-    "ui-ux-services": { src: "", alt: "UI/UX Services" },
-    "cloud-devops": { src: "", alt: "Cloud & DevOps" },
+    "desktop-applications": {
+      src: "/Desktop.webm",
+      alt: "Desktop Applications",
+    },
+    "web-applications": { src: "/videos/video4.webm", alt: "Web Applications" },
+    "mobile-applications": { src: "/Mobile.webm", alt: "Mobile Applications" },
+    "ui-ux-services": { src: "/videos/video3.webm", alt: "UI/UX Services" },
+    "cloud-devops": { src: "/Devops.webm", alt: "Cloud & DevOps" },
   };
 
   return (
@@ -197,6 +205,7 @@ export default function HomePage() {
                   duration={3000}
                 />
               </h1>
+
               <p className="mt-6 max-w-2xl mx-auto text-lg leading-7 text-zinc-400 sm:text-xl animate-on-load animate-fade-in-up animate-delay-200">
                 Synvey empowers businesses with digital solutions that scale.
                 From AI integration and custom apps to seamless mobile
@@ -213,17 +222,6 @@ export default function HomePage() {
               </div>
             </Reveal>
 
-            {/* Gif Container */}
-            <Reveal delay={120}>
-              <div className=" flex items-center justify-cente">
-                <img
-                  src="/gif.gif"
-                  alt="Animated GIF"
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-            </Reveal>
-
             {/* Middle: Video Slideshow */}
             <Reveal delay={120} className="w-full">
               <div className="relative mx-auto w-full max-w-6xl border-10 border-[#171717] rounded-3xl">
@@ -231,6 +229,17 @@ export default function HomePage() {
                 <div className="relative w-full max-w-6xl mx-auto h-[600px] flex items-center justify-center overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
                   <VideoSlideshow />
                 </div>
+              </div>
+            </Reveal>
+
+            {/* Gif Container */}
+            <Reveal delay={120}>
+              <div className=" flex items-center justify-center">
+                <img
+                  src="/gif.gif"
+                  alt="Animated GIF"
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
             </Reveal>
 

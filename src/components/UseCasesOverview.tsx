@@ -1,6 +1,7 @@
 "use client";
 
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 
 interface UseCase {
   title: string;
@@ -17,18 +18,17 @@ export default function UseCasesOverview({ useCases }: UseCasesOverviewProps) {
     <section className="py-20 sm:py-24 bg-zinc-900/30">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Industry-Specific Solutions
-          </h2>
-          <p className="mt-6 text-xl text-zinc-400 max-w-3xl mx-auto">
-            Tailored solutions for every industry and business challenge
-          </p>
+          <TextGenerateEffect
+            words="Reinventing Industries Through Solutions"
+            className="text-[48px] font-bold w-full text-left text-white  leading-tight mb-6"
+          />
+          <TextGenerateEffect
+            words="Tailored solutions for every industry and business challenge"
+            className="mt-3 text-xl text-left text-zinc-400  mx-auto"
+          />
         </div>
-        
-        <StickyScroll 
-          content={useCases}
-          contentClassName="rounded-2xl"
-        />
+
+        <StickyScroll content={useCases} contentClassName="rounded-2xl" />
       </div>
     </section>
   );
