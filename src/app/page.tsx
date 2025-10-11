@@ -336,18 +336,18 @@ export default function HomePage() {
       <section className="py-16 sm:py-20 bg-zinc-900/30">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <div className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               <TextGenerateEffect
                 words="What our customer says"
                 className="text-[48px] font-bold w-full text-left text-white  leading-tight mb-6"
               />
-            </h2>
-            <p className=" text-lg text-zinc-400  mx-auto">
+            </div>
+            <div className=" text-lg text-zinc-400  mx-auto">
               <TextGenerateEffect
                 words="Trusted by teams worldwide to build and scale faster."
                 className="text-xl text-left text-zinc-400  mx-auto"
               />
-            </p>
+            </div>
           </div>
 
           <div className="w-full flex justify-center items-center overflow-hidden">
