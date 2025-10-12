@@ -138,7 +138,7 @@ export default function Compliance() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-slate-900 dark:via-violet-900/20 dark:to-indigo-900/20">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 dark:from-slate-900 dark:via-blue-900/20 dark:to-cyan-900/20">
       {/* Geometric Background Pattern */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -169,11 +169,11 @@ export default function Compliance() {
             </div>
             
             <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight">
-              <span className="bg-gradient-to-r from-violet-600 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">
                 Global
               </span>
               <br />
-              <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-violet-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
                 Compliance
               </span>
             </h1>
@@ -343,7 +343,7 @@ export default function Compliance() {
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="relative overflow-hidden bg-gradient-to-r from-violet-600 via-purple-500 to-indigo-500 rounded-3xl p-12 text-center text-white shadow-2xl">
+            <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 rounded-3xl p-12 text-center text-white shadow-2xl">
               <div className="absolute inset-0 bg-black/10" />
               <div className="absolute inset-0">
                 <div className="absolute top-4 left-4 w-24 h-24 bg-white/10 rounded-full animate-pulse" />

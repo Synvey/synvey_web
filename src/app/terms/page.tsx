@@ -72,23 +72,23 @@ export default function TermsOfService() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 dark:from-slate-900 dark:via-orange-900/20 dark:to-red-900/20">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 dark:from-slate-900 dark:via-blue-900/20 dark:to-cyan-900/20">
       {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-400 to-red-400 rounded-full opacity-20 animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-amber-400 to-orange-400 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full opacity-20 animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-indigo-400 to-blue-400 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full border border-orange-200 dark:border-orange-700 mb-8 shadow-lg">
+              <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full border border-blue-200 dark:border-blue-700 mb-8 shadow-lg">
               <span className="text-2xl">📋</span>
               <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Legal Framework</span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-black bg-gradient-to-r from-orange-600 via-red-500 to-pink-500 bg-clip-text text-transparent mb-6 tracking-tight">
+            <h1 className="text-6xl md:text-8xl font-black bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent mb-6 tracking-tight">
               Terms of Service
             </h1>
             
@@ -119,7 +119,7 @@ export default function TermsOfService() {
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg rounded-3xl border border-orange-200 dark:border-orange-700 p-8 shadow-2xl">
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg rounded-3xl border border-blue-200 dark:border-blue-700 p-8 shadow-2xl">
               <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-8 text-center">
                 Navigate Our Terms
               </h2>
@@ -128,14 +128,14 @@ export default function TermsOfService() {
                   <Link
                     key={section.id}
                     href={`#${section.id}`}
-                    className="group relative overflow-hidden bg-gradient-to-br from-white to-orange-50 dark:from-slate-700 dark:to-slate-600 rounded-2xl p-6 border border-orange-100 dark:border-orange-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                    className="group relative overflow-hidden bg-gradient-to-br from-white to-blue-50 dark:from-slate-700 dark:to-slate-600 rounded-2xl p-6 border border-blue-100 dark:border-blue-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="relative">
                       <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
                         {section.icon}
                       </div>
-                      <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                      <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {section.title}
                       </h3>
                       <p className="text-sm text-slate-600 dark:text-slate-300">
@@ -156,13 +156,13 @@ export default function TermsOfService() {
           {sections.map((section, index) => (
             <Reveal key={section.id} delay={index * 150}>
               <div id={section.id} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
-                <div className="relative bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-3xl border border-orange-200 dark:border-orange-700 p-10 hover:shadow-2xl transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <div className="relative bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-3xl border border-blue-200 dark:border-blue-700 p-10 hover:shadow-2xl transition-all duration-500">
                   <div className="flex items-center gap-4 mb-8">
                     <div className="text-5xl group-hover:scale-110 transition-transform duration-300">
                       {section.icon}
                     </div>
-                    <h2 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-500 bg-clip-text text-transparent">
+                    <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
                       {section.title}
                     </h2>
                   </div>
@@ -170,7 +170,7 @@ export default function TermsOfService() {
                   <div className="space-y-6">
                     {section.content.map((paragraph, pIndex) => (
                       <div key={pIndex} className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mt-3 flex-shrink-0" />
+                        <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-3 flex-shrink-0" />
                         <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
                           {paragraph}
                         </p>
@@ -188,7 +188,7 @@ export default function TermsOfService() {
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="relative overflow-hidden bg-gradient-to-r from-orange-600 via-red-500 to-pink-500 rounded-3xl p-12 text-center text-white shadow-2xl">
+            <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 rounded-3xl p-12 text-center text-white shadow-2xl">
               <div className="absolute inset-0 bg-black/10" />
               <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
               
@@ -201,7 +201,7 @@ export default function TermsOfService() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <Button asChild size="lg" className="bg-white text-orange-600 hover:bg-orange-50 hover:scale-105 transition-all duration-300">
+                  <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-blue-50 hover:scale-105 transition-all duration-300">
                     <Link href="/contact">Contact Legal Team</Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">

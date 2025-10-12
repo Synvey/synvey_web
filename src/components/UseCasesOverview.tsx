@@ -20,11 +20,11 @@ export default function UseCasesOverview({ useCases }: UseCasesOverviewProps) {
         <div className="text-center mb-20">
           <TextGenerateEffect
             words="Reinventing Industries Through Solutions"
-            className="text-[48px] font-bold w-full text-left text-white  leading-tight mb-6"
+            className="text-[48px] font-bold w-full text-center text-white leading-tight mb-6"
           />
           <TextGenerateEffect
             words="Tailored solutions for every industry and business challenge"
-            className="mt-3 text-xl text-left text-zinc-400  mx-auto"
+            className="mt-3 text-xl text-center text-zinc-400 mx-auto"
           />
         </div>
 

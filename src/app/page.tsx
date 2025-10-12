@@ -319,7 +319,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+      
       {/* Solutions Showcase - tabs + scroll sync, white background */}
       <SolutionsShowcase
         solutions={solutions.map((s) => ({
@@ -343,16 +343,16 @@ export default function HomePage() {
             <div className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               <TextGenerateEffect
                 words="What our customer says"
-                className="text-[48px] font-bold w-full text-left text-white  leading-tight mb-6"
+                className="text-[48px] font-bold w-full text-center text-white leading-tight mb-6"
               />
-            </div>
+          </div>
             <div className=" text-lg text-zinc-400  mx-auto">
               <TextGenerateEffect
                 words="Trusted by teams worldwide to build and scale faster."
-                className="text-xl text-left text-zinc-400  mx-auto"
+                className="text-xl text-center text-zinc-400 mx-auto"
               />
-            </div>
-          </div>
+                </div>
+              </div>
 
           <div className="w-full flex justify-center items-center overflow-hidden">
             <InfiniteMovingCards
@@ -361,7 +361,7 @@ export default function HomePage() {
               direction="right"
               speed="slow"
             />
-          </div>
+              </div>
           <div className="w-full flex justify-center items-center overflow-hidden">
             <InfiniteMovingCards
               items={testimonials}
@@ -369,8 +369,8 @@ export default function HomePage() {
               direction="left"
               speed="slow"
             />
+            </div>
           </div>
-        </div>
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 animate-on-load animate-fade-in-up animate-delay-300">
           <Button asChild size="lg">
             <Link href="">More reviews</Link>

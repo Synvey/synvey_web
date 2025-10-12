@@ -110,7 +110,7 @@ export default function SolutionsShowcase({
       <div className="w-full mx-auto max-w-7xl xl:max-w-[1280px] 2xl:max-w-[1280px] px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
         <TextGenerateEffect
           words="Revolutionizing the World with Our Solutions."
-          className="text-[48px] font-bold w-full text-left text-white  leading-tight mb-12"
+          className="text-[48px] font-bold w-full text-center text-white leading-tight mb-12"
         />
 
         {/* Tabs */}

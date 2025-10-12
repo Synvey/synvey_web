@@ -57,7 +57,7 @@ export default function CookiePolicy() {
   const getColorClasses = (color: string) => {
     const colors = {
       emerald: {
-        bg: "from-emerald-500 to-green-500",
+        bg: "from-blue-500 to-cyan-500",
         border: "border-emerald-200 dark:border-emerald-700",
         text: "text-emerald-600 dark:text-emerald-400",
         bgLight: "bg-emerald-50 dark:bg-emerald-900/20"
@@ -85,12 +85,12 @@ export default function CookiePolicy() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-slate-900 dark:via-emerald-900/10 dark:to-teal-900/10">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 dark:from-slate-900 dark:via-blue-900/20 dark:to-cyan-900/20">
       {/* Floating Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-emerald-400/20 rounded-full blur-2xl animate-bounce" style={{ animationDuration: '3s' }} />
-        <div className="absolute top-3/4 right-1/4 w-40 h-40 bg-teal-400/20 rounded-full blur-2xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-green-400/20 rounded-full blur-xl animate-bounce" style={{ animationDuration: '2s', animationDelay: '0.5s' }} />
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-400/20 rounded-full blur-2xl animate-bounce" style={{ animationDuration: '3s' }} />
+        <div className="absolute top-3/4 right-1/4 w-40 h-40 bg-cyan-400/20 rounded-full blur-2xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-indigo-400/20 rounded-full blur-xl animate-bounce" style={{ animationDuration: '2s', animationDelay: '0.5s' }} />
       </div>
 
       {/* Hero Section */}
@@ -103,11 +103,11 @@ export default function CookiePolicy() {
             </div>
             
             <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight">
-              <span className="bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">
                 Cookie
               </span>
               <br />
-              <span className="bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
                 Policy
               </span>
             </h1>
@@ -229,7 +229,7 @@ export default function CookiePolicy() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-4">
                     🌐
                   </div>
                   <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">Browser Settings</h3>
@@ -267,7 +267,7 @@ export default function CookiePolicy() {
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="relative overflow-hidden bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 rounded-3xl p-12 text-center text-white shadow-2xl">
+            <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 rounded-3xl p-12 text-center text-white shadow-2xl">
               <div className="absolute inset-0 bg-black/10" />
               <div className="absolute inset-0">
                 <div className="absolute top-4 left-4 w-20 h-20 bg-white/10 rounded-full animate-ping" />
