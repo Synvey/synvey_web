@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { notFound } from "next/navigation";
+import React from "react";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import Reveal from "@/components/Reveal";
 
 const PRODUCTS = {
   "ai-integration": {
@@ -53,6 +56,7 @@ const PRODUCTS = {
       "Scalable AI infrastructure",
       "Enterprise-grade security",
     ],
+    video: "/videos/video1.webm",
   },
   "desktop-applications": {
     name: "Desktop Applications",
@@ -105,6 +109,7 @@ const PRODUCTS = {
       "Lower maintenance costs",
       "Future-proof architecture",
     ],
+    video: "videos/video2.webm",
   },
   "web-applications": {
     name: "Web Applications",
@@ -156,6 +161,7 @@ const PRODUCTS = {
       "Easy maintenance and updates",
       "Mobile-first approach",
     ],
+    video: "videos/video2.webm",
   },
   "mobile-applications": {
     name: "Mobile Applications",
@@ -207,6 +213,7 @@ const PRODUCTS = {
       "Lower development costs",
       "Better user retention",
     ],
+    video: "videos/video2.webm",
   },
   "ui-ux-services": {
     name: "UI/UX Services",
@@ -258,6 +265,7 @@ const PRODUCTS = {
       "Reduced development rework",
       "Competitive advantage",
     ],
+    video: "videos/video2.webm",
   },
   "cloud-devops": {
     name: "Cloud & DevOps",
@@ -309,6 +317,7 @@ const PRODUCTS = {
       "Reduced operational overhead",
       "Better scalability",
     ],
+    video: "videos/video2.webm",
   },
 };
 
@@ -350,21 +359,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <div className="flex justify-center mb-6">
-              <div
-                className={`flex h-16 w-16 items-center justify-center rounded-2xl border ${getColorClasses(
-                  product.color
-                )}`}
-              >
-                {product.icon}
-              </div>
-            </div>
             <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-              {product.name}
+              <TextGenerateEffect words={product.name} />
             </h1>
-            <p className="mt-4 text-lg text-zinc-400 max-w-3xl mx-auto">
-              {product.tagline}
-            </p>
+            <Reveal delay={240}>
+              <p className="mt-4 text-lg text-zinc-400 max-w-3xl mx-auto">
+                {product.tagline}
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -375,12 +377,33 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="mx-auto max-w-4xl">
             <div className="text-center">
               <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-6">
-                Overview
+                <TextGenerateEffect words="Overview" className="" />
               </h2>
-              <p className="text-lg text-zinc-400 leading-relaxed">
-                {product.overview}
-              </p>
+
+              <Reveal delay={240} l>
+                <p className="text-lg text-zinc-400 leading-relaxed">
+                  {product.overview}
+                </p>
+              </Reveal>
             </div>
+          </div>
+        </div>
+
+        {/* Demovideo Container */}
+        <div className="flex items-center justify-center mt-12 ">
+          <div className="relative w-full max-w-6xl mx-auto h-[650px] flex items-center justify-center overflow-hidden border-10 border-[#171717] rounded-3xl bg-zinc-900/40">
+            <Reveal delay={240}>
+              {product.video && (
+                <div className="my-8">
+                  <video
+                    src={product.video}
+                    autoPlay
+                    loop
+                    className="w-full  mx-auto rounded-2xl shadow-lg"
+                  />
+                </div>
+              )}
+            </Reveal>
           </div>
         </div>
       </section>
@@ -388,79 +411,61 @@ export default async function ProductPage({ params }: ProductPageProps) {
       {/* Key Features */}
       <section className="py-16 bg-zinc-900/30">
         <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Key Features
+              <TextGenerateEffect words="Key Features" className="" />
             </h2>
-          </div>
+          </Reveal>
+
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {product.features.map((feature, index) => (
-              <div
-                key={index}
-                className="text-center p-6 rounded-xl border border-zinc-800 bg-zinc-900/50"
-              >
-                <div className="text-3xl mb-4">{feature.icon}</div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-zinc-400">{feature.description}</p>
-              </div>
+              <Reveal key={index} delay={index * 100}>
+                <div className="text-center p-6 rounded-xl border border-zinc-800 bg-zinc-900/50">
+                  <div className="text-3xl mb-4">{feature.icon}</div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-zinc-400">{feature.description}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Benefits */}
-      <section className="py-16">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <div>
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-6">
-                Benefits
-              </h2>
-              <div className="space-y-4">
-                {product.benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/10">
-                      <svg
-                        className="h-4 w-4 text-green-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-zinc-300">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="w-full max-w-2xl">
-                <h3 className="text-lg font-semibold text-foreground mb-4 text-center">
-                  Demo Video
-                </h3>
-                <div className="relative w-full overflow-hidden rounded-xl border border-zinc-700 bg-zinc-900/60 pb-[56.25%]">
-                  <div className="absolute inset-0 flex items-center justify-center gap-2 text-sm text-zinc-300">
+      <section className="py-16 flex justify-center  bg-zinc-900/30">
+        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6 text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-6">
+            <TextGenerateEffect words="Benefits" className="" />
+          </h2>
+          <Reveal delay={360}>
+            <div className="space-y-4">
+              {product.benefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-center gap-3"
+                >
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/10">
                     <svg
-                      className="h-5 w-5"
+                      className="h-4 w-4 text-green-400"
+                      fill="none"
+                      stroke="currentColor"
                       viewBox="0 0 24 24"
-                      fill="currentColor"
                     >
-                      <path d="M8 5v14l11-7z" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
-                    <span>Demo video placeholder ({product.name})</span>
                   </div>
+                  <span className="text-zinc-300">{benefit}</span>
                 </div>
-              </div>
+              ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -469,12 +474,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
           <div className="text-center">
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-4">
-              Get Started with {product.name}
+              <TextGenerateEffect
+                words={`Get Started with ${product.name}`}
+                className=""
+              />
             </h2>
-            <p className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto">
-              Ready to transform your business with {product.name.toLowerCase()}
-              ? Contact our team to learn more.
-            </p>
+            <Reveal delay={240}>
+              <p className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto">
+                Ready to transform your business with{" "}
+                {product.name.toLowerCase()}? Contact our team to learn more.
+              </p>
+            </Reveal>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
                 <Link href="/contact">Contact Sales</Link>
