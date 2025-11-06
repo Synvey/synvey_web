@@ -51,7 +51,7 @@ export default function ContactPage() {
         topic: "",
         message: "",
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

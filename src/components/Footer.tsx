@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const solutionLinks = [
   { label: "AI Integration", href: "/products/ai-integration" },
@@ -46,7 +47,7 @@ export default function Footer() {
                 className="inline-flex items-center hover:opacity-80 transition-opacity"
                 aria-label="Home"
               >
-                <img src="/logo.png" alt="Synvey" className="h-8 w-auto" />
+                <Image src="/logo.png" alt="Synvey" width={96} height={32} />
               </Link>
               <p className="mt-4 text-sm text-zinc-400 leading-relaxed max-w-sm">
                 Building real-world solutions across industries. From e-commerce

@@ -19,7 +19,7 @@ export const TextGenerateEffect = ({
   const ref = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split(" ");
 
   // 👇 Detect when the element scrolls into view
   useEffect(() => {
@@ -52,7 +52,7 @@ export const TextGenerateEffect = ({
         }
       );
     }
-  }, [isVisible]);
+  }, [isVisible, animate, duration, filter]);
 
   const renderWords = () => {
     return (

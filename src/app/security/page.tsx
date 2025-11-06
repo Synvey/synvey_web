@@ -332,7 +332,7 @@ export default function Security() {
                   { name: "ISO 27001", icon: "🛡️", status: "Compliant" },
                   { name: "GDPR", icon: "🔒", status: "Compliant" },
                   { name: "PenTest", icon: "🔍", status: "Verified" },
-                ].map((cert, index) => (
+                ].map((cert) => (
                   <div key={cert.name} className="text-center group">
                     <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       {cert.icon}

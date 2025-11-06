@@ -2,8 +2,6 @@
 
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 import { useMemo, useRef, useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Reveal from "./Reveal";
 
 type Solution = {
   id: string;
@@ -121,7 +119,7 @@ export default function SolutionsShowcase({
           role="tablist"
           aria-label="Solution categories"
         >
-          {solutions.map((s, index) => {
+          {solutions.map((s) => {
             const isActive = s.id === activeId;
             return (
               <button
@@ -217,7 +215,7 @@ export default function SolutionsShowcase({
         {/* Progress indicator */}
         <div className="flex justify-center items-center mt-8 gap-4">
           <div className="flex gap-2">
-            {solutions.map((s, index) => (
+            {solutions.map((s) => (
               <button
                 key={`indicator-${s.id}`}
                 onClick={() => onTabClick(s.id)}

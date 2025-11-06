@@ -124,7 +124,7 @@ export default function TermsOfService() {
                 Navigate Our Terms
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {sections.map((section, index) => (
+                {sections.map((section) => (
                   <Link
                     key={section.id}
                     href={`#${section.id}`}

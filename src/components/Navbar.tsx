@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -336,7 +337,7 @@ export default function Navbar() {
                 <span className="block h-22 w-25 rounded-full bg-white/70 blur-[55px] animate-logo-flash" />
               </span>
             )}
-            <img src="/logo.png" alt="Synvey" className="h-5 w-auto" />
+            <Image src="/logo.png" alt="Synvey" width={80} height={20} />
           </Link>
         </div>
 

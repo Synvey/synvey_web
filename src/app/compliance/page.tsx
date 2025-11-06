@@ -206,7 +206,7 @@ export default function Compliance() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {complianceStats.map((stat, index) => (
+              {complianceStats.map((stat) => (
                 <div key={stat.label} className="group relative overflow-hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl border border-purple-200 dark:border-purple-700 p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     {stat.icon}
@@ -324,7 +324,7 @@ export default function Compliance() {
                   { step: "2", title: "Implementation", description: "Deploy required controls and processes", icon: "⚙️" },
                   { step: "3", title: "Monitoring", description: "Continuous compliance monitoring", icon: "📊" },
                   { step: "4", title: "Reporting", description: "Regular compliance reports and audits", icon: "📋" }
-                ].map((step, index) => (
+                ].map((step) => (
                   <div key={step.step} className="text-center group">
                     <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       {step.icon}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { FlipWords } from "@/components/ui/flip-words";
 import VideoSlideshow from "../components/VideoSlideshow";
@@ -70,11 +71,9 @@ export default function HomePage() {
         "Build scalable online stores with AI-powered features that drive sales and enhance customer experience. Our solutions include intelligent product recommendations, real-time inventory management, and seamless payment processing.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-          <img
-            src="/sticky/web.svg"
-            alt="E-commerce Platform Demo"
-            className="h-full w-full object-cover rounded-2xl"
-          />
+          <div className="relative h-full w-full">
+            <Image src="/sticky/web.svg" alt="E-commerce Platform Demo" fill className="object-cover rounded-2xl" />
+          </div>
         </div>
       ),
     },
@@ -84,11 +83,9 @@ export default function HomePage() {
         "Secure patient data and streamline medical workflows with HIPAA-compliant solutions. Our healthcare platforms provide patient portals, appointment scheduling, and comprehensive medical record management.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-          <img
-            src="/sticky/health.svg"
-            alt="Healthcare Management Demo"
-            className="h-full w-full object-cover rounded-2xl"
-          />
+          <div className="relative h-full w-full">
+            <Image src="/sticky/health.svg" alt="Healthcare Management Demo" fill className="object-cover rounded-2xl" />
+          </div>
         </div>
       ),
     },
@@ -98,11 +95,9 @@ export default function HomePage() {
         "Compliant fintech solutions with real-time analytics and fraud detection. Our financial platforms ensure PCI compliance while providing seamless transaction processing and advanced risk management.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
-          <img
-            src="/sticky/financial.svg"
-            alt="Financial Services Demo"
-            className="h-full w-full object-cover rounded-2xl"
-          />
+          <div className="relative h-full w-full">
+            <Image src="/sticky/financial.svg" alt="Financial Services Demo" fill className="object-cover rounded-2xl" />
+          </div>
         </div>
       ),
     },
@@ -112,11 +107,9 @@ export default function HomePage() {
         "Interactive learning platforms and comprehensive student management systems. Our EdTech solutions include learning management systems, virtual classrooms, and advanced assessment tools.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
-          <img
-            src="/gifs/education-technology.gif"
-            alt="Education Technology Demo"
-            className="h-full w-full object-cover rounded-2xl"
-          />
+          <div className="relative h-full w-full">
+            <Image src="/gifs/education-technology.gif" alt="Education Technology Demo" fill className="object-cover rounded-2xl" />
+          </div>
         </div>
       ),
     },
@@ -126,11 +119,9 @@ export default function HomePage() {
         "Smart factory solutions with predictive maintenance and quality control. Our IoT platforms integrate sensors, analytics, and supply chain management for optimized manufacturing operations.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
-          <img
-            src="/sticky/IOT.gif"
-            alt="Manufacturing IoT Demo"
-            className="h-full w-full object-cover rounded-2xl"
-          />
+          <div className="relative h-full w-full">
+            <Image src="/sticky/IOT.gif" alt="Manufacturing IoT Demo" fill className="object-cover rounded-2xl" />
+          </div>
         </div>
       ),
     },
@@ -140,11 +131,9 @@ export default function HomePage() {
         "Property listings with virtual tours and comprehensive market analytics. Our real estate platforms provide immersive property experiences, advanced search capabilities, and lead management systems.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center">
-          <img
-            src="/gifs/real-estate-portal.gif"
-            alt="Real Estate Portal Demo"
-            className="h-full w-full object-cover rounded-2xl"
-          />
+          <div className="relative h-full w-full">
+            <Image src="/gifs/real-estate-portal.gif" alt="Real Estate Portal Demo" fill className="object-cover rounded-2xl" />
+          </div>
         </div>
       ),
     },
@@ -271,12 +260,8 @@ export default function HomePage() {
 
             {/* Gif Container */}
             <Reveal delay={120}>
-              <div className=" flex items-center justify-center">
-                <img
-                  src="/gif.gif"
-                  alt="Animated GIF"
-                  className="max-w-full max-h-full object-contain"
-                />
+              <div className="flex items-center justify-center">
+                <Image src="/gif.gif" alt="Animated GIF" width={800} height={450} className="object-contain" />
               </div>
             </Reveal>
             <Reveal delay={240}>
@@ -295,9 +280,11 @@ export default function HomePage() {
                     {brandTicker.map((brand, index) => (
                       <div key={index} className="shrink-0 flex items-center">
                         {brand.src ? (
-                          <img
+                          <Image
                             src={brand.src}
                             alt={brand.name}
+                            width={28}
+                            height={28}
                             className="h-6 sm:h-7 w-auto opacity-80 saturate-0 contrast-125 hover:opacity-100 transition-opacity mx-6"
                           />
                         ) : (

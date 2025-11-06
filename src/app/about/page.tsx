@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -31,7 +32,9 @@ export default function AboutPage() {
               <div className="relative mx-auto w-full max-w-xl">
                 <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
                 <div className="flex items-center justify-center">
-                  <img src="/logo.jpg" alt="Synvey team" className="h-auto w-4/5 rounded-full shadow-2xl ring-1 ring-zinc-800/30" />
+                  <div className="relative h-auto w-4/5 aspect-square">
+                    <Image src="/logo.jpg" alt="Synvey team" fill className="object-cover rounded-full shadow-2xl ring-1 ring-zinc-800/30" sizes="(max-width: 768px) 80vw, 40vw" />
+                  </div>
                 </div>
               </div>
             </div>

@@ -321,17 +321,7 @@ const PRODUCTS = {
   },
 };
 
-const getColorClasses = (color: string) => {
-  const colors = {
-    purple: "bg-purple-500/10 text-purple-400 border-purple-500/20",
-    blue: "bg-blue-500/10 text-blue-400 border-blue-500/20",
-    emerald: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-    orange: "bg-orange-500/10 text-orange-400 border-orange-500/20",
-    pink: "bg-pink-500/10 text-pink-400 border-pink-500/20",
-    indigo: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
-  };
-  return colors[color as keyof typeof colors] || colors.indigo;
-};
+// getColorClasses removed as it was unused
 
 interface ProductPageProps {
   params: Promise<{
@@ -380,7 +370,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <TextGenerateEffect words="Overview" className="" />
               </h2>
 
-              <Reveal delay={240} l>
+              <Reveal delay={240}>
                 <p className="text-lg text-zinc-400 leading-relaxed">
                   {product.overview}
                 </p>
