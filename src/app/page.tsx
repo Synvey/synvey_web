@@ -1,129 +1,255 @@
 import Link from "next/link";
+import React from "react";
+import { FlipWords } from "@/components/ui/flip-words";
+import VideoSlideshow from "../components/VideoSlideshow";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { Button } from "@/components/ui/button";
-import ThreeDashedLines from "@/components/ThreeDashedLines";
 import Reveal from "@/components/Reveal";
+import SolutionsShowcase from "@/components/SolutionsShowcase";
+import UseCasesOverview from "@/components/UseCasesOverview";
+import { TextGenerateEffect } from "../components/ui/text-generate-effect";
+import StatsSection from "@/components/StatsSection";
 
 export default function HomePage() {
-  const tickerItems = [
-    "Faster releases",
-    "Clear analytics",
-    "Robust quality",
-    "Easy integrations",
-    "Enterprise-grade security",
-    "Real-time monitoring",
-    "Developer-first UX",
-    "Scales with your traffic",
-    "Zero-downtime deploys",
-    "Smart automation",
-    "API-ready by default",
-    "SOC2-friendly practices",
-    "Role-based access",
-    "Powerful insights",
-    "Global performance",
+  // Brand-style logos; use placeholders available in /public and fallbacks with initials
+  const brandTicker = [
+    { src: "/Openai.svg", name: "Open AI" },
+    { src: "/figma.svg", name: "Figma" },
+    { src: "/js.svg", name: "Js" },
+    { src: "/react.svg", name: "React" },
+    { src: "/python.svg", name: "Python" },
+    { src: "/docker.svg", name: "Docker" },
+    { src: "/flutter.svg", name: "Flutter" },
+    { src: "/github.svg", name: "github" },
+    { src: "/php.svg", name: "PHP" },
+    { src: "/google.svg", name: "Google" },
+    { src: "/laravel.svg", name: "Laravel" },
+    { src: "/go.svg", name: "GO" },
+    { src: "/node.svg", name: "Node" },
   ];
-  const useCases = [
+
+  // User reviews
+  const testimonials = [
     {
-      slug: "ecommerce-platform",
+      quote:
+        "Synvey completely transformed the way we approach digital solutions. From understanding our unique business challenges to delivering a fully customized platform, their team demonstrated unmatched expertise and creativity. Their proactive approach and attention to detail ensured that every milestone was met with precision, making the entire experience smooth and rewarding.",
+      name: "Alex Turner",
+      title: "QuantumEdge Solutions",
+    },
+    {
+      quote:
+        "Working with Synvey has been a revelation for our organization. They not only delivered a high-quality product but also guided us through complex technical decisions with clarity and professionalism. The team’s innovative thinking and dedication to achieving excellence have truly set them apart in the IT industry",
+      name: "Maya Li",
+      title: "Nexora Systems",
+    },
+    {
+      quote:
+        "Synvey’s solutions exceeded our expectations in every way. Their deep understanding of modern technology, combined with a strategic approach to our business objectives, resulted in a scalable and efficient platform. The collaboration was seamless, and their responsiveness to feedback made the project incredibly smooth.",
+      name: "Raj Patel",
+      title: "VertexWave Corp.",
+    },
+    {
+      quote:
+        "From the first consultation to the final delivery, Synvey proved to be a trusted partner. They took the time to understand our business, proposed innovative solutions, and executed them flawlessly. The team’s professionalism, technical expertise, and commitment to quality ensured a final product that has positively impacted our operations and growth.",
+      name: "Sofia Kim",
+      title: "LuminaCore Solutions",
+    },
+    {
+      quote:
+        "Synvey has redefined what we thought was possible with IT solutions. Their ability to combine creativity with technical precision allowed us to implement systems that are not only functional but also future-proof. Every step of the project demonstrated their dedication, knowledge, and a genuine interest in helping our company succeed.",
+      name: "Ethan Cole",
+      title: "Solaris Innovations",
+    },
+  ];
+
+  // Enhanced use cases data for sticky scroll reveal
+  const stickyUseCases = [
+    {
       title: "E-commerce Platform",
-      description: "Build scalable online stores with AI-powered features",
-      icon: "🛒",
-      features: ["AI-powered recommendations", "Real-time inventory", "Secure payments", "Mobile optimization"],
+      description:
+        "Build scalable online stores with AI-powered features that drive sales and enhance customer experience. Our solutions include intelligent product recommendations, real-time inventory management, and seamless payment processing.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+          <img
+            src="/sticky/web.svg"
+            alt="E-commerce Platform Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
     {
-      slug: "healthcare-management",
       title: "Healthcare Management",
-      description: "Secure patient data and streamline medical workflows",
-      icon: "🏥",
-      features: ["HIPAA compliance", "Patient portals", "Appointment scheduling", "Medical records"],
+      description:
+        "Secure patient data and streamline medical workflows with HIPAA-compliant solutions. Our healthcare platforms provide patient portals, appointment scheduling, and comprehensive medical record management.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+          <img
+            src="/sticky/health.svg"
+            alt="Healthcare Management Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
     {
-      slug: "financial-services",
       title: "Financial Services",
-      description: "Compliant fintech solutions with real-time analytics",
-      icon: "💳",
-      features: ["PCI compliance", "Real-time transactions", "Fraud detection", "Risk management"],
+      description:
+        "Compliant fintech solutions with real-time analytics and fraud detection. Our financial platforms ensure PCI compliance while providing seamless transaction processing and advanced risk management.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+          <img
+            src="/sticky/financial.svg"
+            alt="Financial Services Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
     {
-      slug: "education-technology",
       title: "Education Technology",
-      description: "Interactive learning platforms and student management",
-      icon: "🎓",
-      features: ["Learning management", "Student tracking", "Virtual classrooms", "Assessment tools"],
+      description:
+        "Interactive learning platforms and comprehensive student management systems. Our EdTech solutions include learning management systems, virtual classrooms, and advanced assessment tools.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+          <img
+            src="/gifs/education-technology.gif"
+            alt="Education Technology Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
     {
-      slug: "manufacturing-iot",
       title: "Manufacturing IoT",
-      description: "Smart factory solutions and predictive maintenance",
-      icon: "🏭",
-      features: ["IoT sensors", "Predictive analytics", "Quality control", "Supply chain"],
+      description:
+        "Smart factory solutions with predictive maintenance and quality control. Our IoT platforms integrate sensors, analytics, and supply chain management for optimized manufacturing operations.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
+          <img
+            src="/sticky/IOT.gif"
+            alt="Manufacturing IoT Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
     {
-      slug: "real-estate-portal",
       title: "Real Estate Portal",
-      description: "Property listings with virtual tours and analytics",
-      icon: "🏠",
-      features: ["Virtual tours", "Property search", "Market analytics", "Lead management"],
+      description:
+        "Property listings with virtual tours and comprehensive market analytics. Our real estate platforms provide immersive property experiences, advanced search capabilities, and lead management systems.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center">
+          <img
+            src="/gifs/real-estate-portal.gif"
+            alt="Real Estate Portal Demo"
+            className="h-full w-full object-cover rounded-2xl"
+          />
+        </div>
+      ),
     },
   ];
   const solutions = [
     {
       slug: "ai-integration",
       title: "AI Integration",
-      description: "Harness AI to build intelligent applications",
+      description:
+        "We help businesses harness the power of Artificial Intelligence by integrating machine learning models, natural language processing, and automation into their existing systems. Our solutions optimize workflows, improve decision-making, and enhance customer experiences.",
       icon: "🤖",
       features: ["ML models", "NLP", "Predictive analytics", "Automation"],
     },
     {
       slug: "desktop-applications",
       title: "Desktop Applications",
-      description: "Create powerful native desktop apps",
+      description:
+        "Build robust desktop applications that deliver exceptional performance and user experience. Our platform supports multiple frameworks and technologies, enabling you to create applications that work seamlessly across Windows, macOS, and Linux.",
       icon: "🖥️",
-      features: ["Cross-platform", "Native performance", "Modern UI", "Security"],
+      features: [
+        "Cross-platform",
+        "Native performance",
+        "Modern UI",
+        "Security",
+      ],
     },
     {
       slug: "web-applications",
       title: "Web Applications",
-      description: "Build scalable responsive web apps",
+      description:
+        "We build modern, responsive, and secure web applications designed to boost business productivity and deliver smooth, intuitive user experiences. Our solutions combine performance, scalability, and user-friendly design to help your business thrive online.",
       icon: "🕸️",
       features: ["Responsive", "Performance", "SEO ready", "PWA"],
     },
     {
       slug: "mobile-applications",
       title: "Mobile Applications",
-      description: "Develop engaging mobile experiences",
+      description:
+        "Our mobile app solutions turn your ideas into engaging, high-performance apps that run seamlessly across all platforms. We focus on intuitive user journeys and optimized performance to deliver a flawless mobile experience.",
       icon: "📱",
-      features: ["Native iOS/Android", "Cross-platform", "Offline", "Push notifications"],
+      features: [
+        "Native iOS/Android",
+        "Cross-platform",
+        "Offline",
+        "Push notifications",
+      ],
     },
     {
       slug: "ui-ux-services",
       title: "UI/UX Services",
-      description: "Design intuitive user experiences",
+      description:
+        "We craft digital products that prioritize user experience while maintaining a modern, visually engaging design. Our process ensures usability, accessibility, and a delightful experience for every user.",
       icon: "🎨",
-      features: ["Research", "Prototyping", "Visual design", "Usability testing"],
+      features: [
+        "Research",
+        "Prototyping",
+        "Visual design",
+        "Usability testing",
+      ],
     },
     {
       slug: "cloud-devops",
       title: "Cloud & DevOps",
-      description: "Streamline deployment and operations",
+      description:
+        "SWe help businesses scale faster with cloud infrastructure and DevOps automation, ensuring reliability, security, and seamless continuous delivery.",
       icon: "☁️",
       features: ["CI/CD", "IaC", "Kubernetes", "Monitoring"],
     },
   ];
-  return (
-    <main>
-      <section className="relative isolate min-h-[90vh] flex items-center">
+  const solutionMediaBySlug: Record<string, { src: string; alt?: string }> = {
+    "ai-integration": { src: "/aiIntegration.webm", alt: "AI Integration" },
+    "desktop-applications": {
+      src: "/Desktop.webm",
+      alt: "Desktop Applications",
+    },
+    "web-applications": { src: "/videos/video4.webm", alt: "Web Applications" },
+    "mobile-applications": { src: "/Mobile.webm", alt: "Mobile Applications" },
+    "ui-ux-services": { src: "/videos/video3.webm", alt: "UI/UX Services" },
+    "cloud-devops": { src: "/Devops.webm", alt: "Cloud & DevOps" },
+  };
 
-        <div className="mx-auto max-w-7xl px-4 py-0 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
-          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14 lg:gap-24 xl:gap-32">
-            {/* Left: Text */}
-            <Reveal className="lg:pr-8 xl:pr-12">
-              <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-5xl">
-                Innovate faster.<br/>Deliver with precision.
+  return (
+    <main className="bg-background">
+      <section className="relative isolate min-h-[120vh] flex items-center">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
+          <div className="flex flex-col items-center gap-16">
+            {/* Top: Text Content */}
+            <Reveal className="text-center max-w-4xl">
+              <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+                Innovate faster. <br />
+                Deliver with{" "}
+                <FlipWords
+                  words={["precision.", "accuracy.", "efficiency."]}
+                  className="inline-block text-primary px-1"
+                  duration={3000}
+                />
               </h1>
-              <p className="mt-4 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg animate-on-load animate-fade-in-up animate-delay-200">
-                Synvey empowers businesses with digital solutions that scale. From AI integration and custom apps to seamless mobile experiences and intuitive UI/UX design, we deliver technology that drives innovation and growth.
+
+              <p className="mt-6 max-w-2xl mx-auto text-lg leading-7 text-zinc-400 sm:text-xl animate-on-load animate-fade-in-up animate-delay-200">
+                Synvey empowers businesses with digital solutions that scale.
+                From AI integration and custom apps to seamless mobile
+                experiences and intuitive UI/UX design, we deliver technology
+                that drives innovation and growth.
               </p>
-              <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4 animate-on-load animate-fade-in-up animate-delay-300">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 animate-on-load animate-fade-in-up animate-delay-300">
                 <Button asChild size="lg">
                   <Link href="/technologies">Our technologies</Link>
                 </Button>
@@ -131,260 +257,160 @@ export default function HomePage() {
                   <Link href="/contact">Contact us</Link>
                 </Button>
               </div>
-
-              
-
-              {/* Trust logos removed by request */}
             </Reveal>
 
-            {/* Right: Visual (Three.js dashed lines) */}
-            <Reveal className="lg:ml-8 xl:ml-12" delay={120}>
-              <div className="relative mx-auto w-full max-w-xl">
-                <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
-                <ThreeDashedLines />
+            {/* Middle: Video Slideshow */}
+            <Reveal delay={120} className="w-full">
+              <div className="relative mx-auto w-full max-w-6xl border-10 border-[#171717] rounded-3xl">
+                {/* <div className="absolute -inset-2 -z-10 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" /> */}
+                <div className="relative w-full max-w-6xl mx-auto h-[600px] flex items-center justify-center overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                  <VideoSlideshow />
+                </div>
               </div>
             </Reveal>
-          </div>
-        </div>
 
-        {/* Ticker anchored at bottom of hero */}
-        <div className="pointer-events-auto absolute bottom-4 left-0 right-0 animate-on-load animate-fade-in-up animate-delay-500">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
-            <div className="overflow-hidden">
-              <div className="flex animate-scroll gap-6 hover:pause-animation">
-                {[0, 1].map((copy) => (
-                  <div key={copy} className="flex gap-6 whitespace-nowrap">
-                    {tickerItems.map((item, index) => (
-                      <span
-                        key={`${copy}-${index}`}
-                        className="inline-flex items-center rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-200 shadow-sm transition-colors hover:bg-zinc-900/70 hover:text-zinc-100 sm:px-5 sm:py-2.5 sm:text-base"
-                      >
-                        {item}
-                      </span>
+            {/* Gif Container */}
+            <Reveal delay={120}>
+              <div className=" flex items-center justify-center">
+                <img
+                  src="/gif.gif"
+                  alt="Animated GIF"
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            </Reveal>
+            <Reveal delay={240}>
+              <StatsSection />
+            </Reveal>
+
+            {/* Bottom: Trust logos / Brand Ticker */}
+            <Reveal delay={240} className="w-full">
+              <div className="relative w-full max-w-5xl mx-auto">
+                <p className="mb-6 text-center text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
+                  Proficient in 80+ modern tools and libraries across various
+                  technologies
+                </p>
+                <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-800/60 bg-gradient-to-b from-black/0 via-zinc-900/30 to-black/0 px-4 py-4 sm:px-6 sm:py-5 mask-fade-x">
+                  <div className="flex animate-scroll gap-4 sm:gap-6 whitespace-nowrap hover:pause-animation">
+                    {brandTicker.map((brand, index) => (
+                      <div key={index} className="shrink-0 flex items-center">
+                        {brand.src ? (
+                          <img
+                            src={brand.src}
+                            alt={brand.name}
+                            className="h-6 sm:h-7 w-auto opacity-80 saturate-0 contrast-125 hover:opacity-100 transition-opacity mx-6"
+                          />
+                        ) : (
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-zinc-800/70 ring-1 ring-inset ring-zinc-700 text-[10px] font-semibold text-zinc-200">
+                              {(brand.name || "").slice(0, 2).toUpperCase()}
+                            </div>
+                            <span className="text-zinc-300 text-sm sm:text-base font-medium opacity-90">
+                              {brand.name}
+                            </span>
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
-                ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+      
+      {/* Solutions Showcase - tabs + scroll sync, white background */}
+      <SolutionsShowcase
+        solutions={solutions.map((s) => ({
+          id: s.slug,
+          title: s.title,
+          blurb: s.description,
+          ctaHref: `/products/${s.slug}`,
+          mediaSrc: solutionMediaBySlug[s.slug]?.src,
+          mediaAlt: solutionMediaBySlug[s.slug]?.alt,
+        }))}
+      />
+
+      {/* Use Cases Overview - Sticky Scroll Reveal */}
+      <UseCasesOverview useCases={stickyUseCases} />
+
+      {/* Customer reviews */}
+
+      <section className="py-16 sm:py-20 bg-zinc-900/30">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
+          <div className="text-center mb-16">
+            <div className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              <TextGenerateEffect
+                words="What our customer says"
+                className="text-[48px] font-bold w-full text-center text-white leading-tight mb-6"
+              />
+          </div>
+            <div className=" text-lg text-zinc-400  mx-auto">
+              <TextGenerateEffect
+                words="Trusted by teams worldwide to build and scale faster."
+                className="text-xl text-center text-zinc-400 mx-auto"
+              />
+                </div>
+              </div>
+
+          <div className="w-full flex justify-center items-center overflow-hidden">
+            <InfiniteMovingCards
+              items={testimonials}
+              pauseOnHover
+              direction="right"
+              speed="slow"
+            />
+              </div>
+          <div className="w-full flex justify-center items-center overflow-hidden">
+            <InfiniteMovingCards
+              items={testimonials}
+              pauseOnHover
+              direction="left"
+              speed="slow"
+            />
+            </div>
+          </div>
+        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 animate-on-load animate-fade-in-up animate-delay-300">
+          <Button asChild size="lg">
+            <Link href="">More reviews</Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Large CTA Banner */}
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400 px-8 py-16 sm:px-12 sm:py-20">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/90 via-indigo-500/90 to-indigo-400/90" />
+            <div className="relative text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+                Ready to Transform Your Business?
+              </h2>
+              <div className="mt-8">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white text-indigo-600 hover:bg-indigo-50 font-semibold px-8 py-3 text-lg"
+                >
+                  <Link href="/contact">Contact Us</Link>
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* Solutions Overview - redesigned to match Industry-Specific Solutions */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Our Solutions
-            </h2>
-            <p className="mt-4 text-lg text-zinc-400">
-              Complete set of tools to accelerate innovation and digital transformation
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {solutions.map((solution, idx) => (
-              <Reveal key={solution.slug} delay={idx * 60}>
-                <div className="hover-card relative rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all hover:border-zinc-700 hover:bg-zinc-900/70">
-                  <div className="w-16 h-16 rounded-xl bg-indigo-500/10 mb-6 text-3xl flex items-center justify-center">
-                    {solution.icon}
-             </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    <Link href={`/products/${solution.slug}`} className="hover:underline">
-                      {solution.title}
-                    </Link>
-              </h3>
-                  <p className="text-zinc-400 leading-relaxed mb-4">
-                    {solution.description}
-                  </p>
-                  <div className="space-y-2">
-                    <div className="text-sm font-medium text-zinc-300">Key Features:</div>
-                    <ul className="text-sm text-zinc-400 space-y-1">
-                      {solution.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-center">
-                          <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-            </div>
-                  <div className="mt-4">
-                    <Link href={`/products/${solution.slug}`} className="text-sm text-indigo-400 font-medium hover:text-indigo-300 transition-colors">
-                      Learn more →
-                    </Link>
-            </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-                </div>
-      </section>
-
-      {/* Use Cases Overview - matches use-cases overview */}
-      <section className="py-16 sm:py-20 bg-zinc-900/30">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Industry-Specific Solutions
-            </h2>
-            <p className="mt-4 text-lg text-zinc-400">
-              Tailored solutions for every industry and business challenge
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {useCases.map((useCase, idx) => (
-              <Reveal key={useCase.slug} delay={idx * 60}>
-                <div className="hover-card relative rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all hover:border-zinc-700 hover:bg-zinc-900/70">
-                  <div className="w-16 h-16 rounded-xl bg-indigo-500/10 mb-6 text-3xl flex items-center justify-center">
-                    {useCase.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    <Link href={`/use-cases/${useCase.slug}`} className="hover:underline">
-                      {useCase.title}
-                    </Link>
-              </h3>
-                  <p className="text-zinc-400 leading-relaxed mb-4">
-                    {useCase.description}
-                  </p>
-                  <div className="space-y-2">
-                    <div className="text-sm font-medium text-zinc-300">Key Features:</div>
-                    <ul className="text-sm text-zinc-400 space-y-1">
-                      {useCase.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-center">
-                          <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-            </div>
-                  <div className="mt-4">
-                    <Link href={`/use-cases/${useCase.slug}`} className="text-sm text-indigo-400 font-medium hover:text-indigo-300 transition-colors">
-                      Learn more →
-                    </Link>
-          </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Customer Proof / Testimonials Section */}
-      <section className="py-16 sm:py-20 bg-zinc-900/30">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              What Our Customers Say
-            </h2>
-            <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">
-              Trusted by teams worldwide to build and scale faster.
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-              {/* Testimonial 1 */}
-              <div className="group relative aspect-square rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 transition-all hover:border-zinc-700 hover:bg-zinc-900/70 hover:shadow-lg flex flex-col justify-between">
-                <div>
-                  <blockquote className="text-zinc-300 leading-relaxed mb-4 text-base">
-                    "Reduced release time by 40% with Synvey."
-                  </blockquote>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-red-500 mr-3 flex items-center justify-center shadow-xl border-4 border-white">
-                    <span className="text-white font-black text-lg">SC</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">Sarah Chen</div>
-                    <div className="text-xs text-zinc-400">CTO, TechCorp</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Testimonial 2 */}
-              <div className="group relative aspect-square rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 transition-all hover:border-zinc-700 hover:bg-zinc-900/70 hover:shadow-lg flex flex-col justify-between">
-                <div>
-                  <blockquote className="text-zinc-300 leading-relaxed mb-4 text-base">
-                    "Our team integrated AI features in weeks, not months."
-                  </blockquote>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-green-500 mr-3 flex items-center justify-center shadow-xl border-4 border-white">
-                    <span className="text-white font-black text-lg">MR</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">Marcus Rodriguez</div>
-                    <div className="text-xs text-zinc-400">Lead Developer, InnovateLab</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Testimonial 3 */}
-              <div className="group relative aspect-square rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 transition-all hover:border-zinc-700 hover:bg-zinc-900/70 hover:shadow-lg flex flex-col justify-between">
-                <div>
-                  <blockquote className="text-zinc-300 leading-relaxed mb-4 text-base">
-                    "Synvey gave us enterprise security without the complexity."
-                  </blockquote>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-purple-500 mr-3 flex items-center justify-center shadow-xl border-4 border-white">
-                    <span className="text-white font-black text-lg">JP</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">Jennifer Park</div>
-                    <div className="text-xs text-zinc-400">Security Director, SecureFlow</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation Controls */}
-            <div className="flex items-center justify-center gap-4 mt-8">
-              <button className="flex items-center justify-center w-10 h-10 rounded-full border border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
-                <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
-                <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
-              </div>
-              <button className="flex items-center justify-center w-10 h-10 rounded-full border border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          </div>
-         </div>
-       </section>
-
-       {/* Large CTA Banner */}
-       <section className="py-20 sm:py-24">
-         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
-           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400 px-8 py-16 sm:px-12 sm:py-20">
-             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/90 via-indigo-500/90 to-indigo-400/90" />
-             <div className="relative text-center">
-               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-                 Ready to Transform Your Business?
-               </h2>
-               <div className="mt-8">
-                 <Button asChild size="lg" className="bg-white text-indigo-600 hover:bg-indigo-50 font-semibold px-8 py-3 text-lg">
-                   <Link href="/contact">Contact Us</Link>
-                 </Button>
-               </div>
-             </div>
-           </div>
-         </div>
-       </section>
 
       {/* Newsletter Signup (moved from footer) - placed directly after CTA banner */}
       <section className="border-t border-zinc-800 bg-zinc-900/30">
         <div className="mx-auto max-w-[90rem] px-3 py-12 sm:px-4 lg:px-6">
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-lg font-semibold text-foreground mb-2">Stay Updated</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">
+              Stay Updated
+            </h3>
             <p className="text-sm text-zinc-400 mb-6">
-              Get the latest updates on new use cases, success stories, and industry insights.
+              Get the latest updates on new use cases, success stories, and
+              industry insights.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
@@ -395,12 +421,10 @@ export default function HomePage() {
               <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
                 Subscribe
               </button>
-             </div>
-           </div>
-         </div>
-       </section>
-      </main>
-   );
- }
-
-
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
