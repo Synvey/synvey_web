@@ -68,12 +68,12 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative flex min-h-[200vh] justify-center space-x-60 rounded-2xl p-12 sticky-scroll-section"
+      className="relative flex min-h-[180vh] justify-center lg:space-x-60 rounded-2xl p-6 sm:p-8 lg:p-12 sticky-scroll-section"
     >
-      <div className="div relative flex items-start px-4">
+      <div className="div relative flex items-start px-0 sm:px-4 w-full max-w-full overflow-x-hidden">
         <div className="max-w-2xl">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="my-16 sm:my-20 px-4 sm:px-0">
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -84,7 +84,7 @@ export const StickyScroll = ({
                   filter: activeCard === index ? "blur(0px)" : "blur(6px)",
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="text-4xl font-bold text-slate-100"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100"
               >
                 {item.title}
               </motion.h2>
@@ -99,7 +99,7 @@ export const StickyScroll = ({
                   filter: activeCard === index ? "blur(0px)" : "blur(6px)",
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="text-xl mt-6 max-w-md text-slate-300 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl mt-4 sm:mt-6 max-w-md text-slate-300 leading-relaxed"
               >
                 {item.description}
               </motion.p>

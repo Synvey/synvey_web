@@ -14,7 +14,6 @@ import {
   NavigationMenuViewport,
   NavigationMenuLink,
 } from "./ui/navigation-menu";
-import { Sheet, SheetContent, SheetClose } from "./ui/sheet";
 
 type MenuItem = {
   label: string;
@@ -227,77 +226,110 @@ function MobileDrawer({
   open: boolean;
   onClose: () => void;
 }) {
+  if (!open) return null;
+
   return (
-    <Sheet open={open} onOpenChange={(v) => (!v ? onClose() : void 0)}>
-      <SheetContent side="right" className="p-0">
-        <div className="flex items-center justify-between border-b border-zinc-200 p-4 dark:border-zinc-800">
-          <span className="text-base font-semibold">Menu</span>
-          <SheetClose asChild>
+    <>
+      {/* Backdrop */}
+      <div
+        className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+      
+      {/* Menu Panel */}
+      <div className="fixed inset-y-0 right-0 z-50 w-[85%] max-w-sm">
+        <div className="h-full bg-slate-950 shadow-2xl rounded-l-3xl flex flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
+            <h2 className="text-lg font-semibold tracking-tight text-white">
+              Menu
+            </h2>
             <button
+              onClick={onClose}
               aria-label="Close menu"
-              className="rounded-md p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-xl text-white/60 hover:bg-white/5 hover:text-white transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                fill="currentColor"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="h-5 w-5"
               >
-                <path d="M6 18L18 6M6 6l12 12" />
+                <path d="M18 6L6 18M6 6l12 12" />
               </svg>
             </button>
-          </SheetClose>
-        </div>
-        <div className="overflow-y-auto p-4">
-          <div className="space-y-1">
-            {NAV_ITEMS.map((item) => (
-              <div key={item.label}>
-                {item.items ? (
-                  <details className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between rounded-md px-3 py-2 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800">
-                      <span>{item.label}</span>
-                      <svg
-                        className="h-4 w-4 transition-transform group-open:rotate-180"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M6 9l6 6 6-6" />
-                      </svg>
-                    </summary>
-                    <div className="mt-1 space-y-1 pl-3">
-                      {item.items.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          href={sub.href}
-                          onClick={onClose}
-                          className="block rounded-md px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </details>
-                ) : (
-                  <Link
-                    href={item.href || "#"}
-                    onClick={onClose}
-                    className="block rounded-md px-3 py-2 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </div>
-            ))}
           </div>
-          <div className="mt-4 flex items-center gap-2">
-            <Button asChild>
+
+          {/* Menu Items */}
+          <div className="flex-1 overflow-y-auto px-6 py-4">
+            <nav className="flex flex-col gap-2">
+              {NAV_ITEMS.map((item) => (
+                <div key={item.label}>
+                  {item.items ? (
+                    <details className="group">
+                      <summary className="flex cursor-pointer list-none items-center justify-between rounded-xl px-4 py-3 text-white/90 hover:bg-white/5 transition-colors">
+                        <span className="text-sm font-medium">{item.label}</span>
+                        <svg
+                          className="h-4 w-4 text-white/40 transition-transform group-open:rotate-180"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <path d="M6 9l6 6 6-6" />
+                        </svg>
+                      </summary>
+                      <div className="mt-1 space-y-1 pl-2">
+                        {item.items.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={onClose}
+                            className="flex flex-col rounded-lg px-4 py-2.5 hover:bg-white/5 transition-colors group/item"
+                          >
+                            <span className="text-sm font-medium text-white/80 group-hover/item:text-white">
+                              {sub.label}
+                            </span>
+                            {sub.description && (
+                              <span className="mt-0.5 text-xs text-white/40 line-clamp-1">
+                                {sub.description}
+                              </span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    </details>
+                  ) : (
+                    <Link
+                      href={item.href || "#"}
+                      onClick={onClose}
+                      className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-white/90 hover:bg-white/5 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </nav>
+          </div>
+
+          {/* CTA Button at Bottom */}
+          <div className="border-t border-white/5 px-6 py-5">
+            <Button
+              asChild
+              className="w-full bg-white text-slate-900 font-semibold py-3 rounded-xl shadow-lg hover:bg-slate-100 transition-colors"
+            >
               <Link href="/contact">Contact us</Link>
             </Button>
           </div>
         </div>
-      </SheetContent>
-    </Sheet>
+      </div>
+    </>
   );
 }
 
@@ -313,63 +345,77 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-gray-300/30 dark:border-gray-700/30" ${
-        isScrolled ? "shadow-md shadow-zinc-900/40" : "shadow-none"
-      }`}
-    >
-      <div className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
-        {/* Left: Desktop navigation */}
-        <div className="hidden lg:flex">
-          <DesktopNav />
-        </div>
-
-        {/* Center: Logo */}
-        <div className="flex items-center justify-center">
-          <Link
-            href="/"
-            className="inline-flex items-center relative"
-            aria-label="Home"
-          >
-            {/* Flash backdrop - hidden when scrolled */}
-            {!isScrolled && (
-              <span className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-                <span className="block h-22 w-25 rounded-full bg-white/70 blur-[55px] animate-logo-flash" />
-              </span>
-            )}
-            <Image src="/logo.png" alt="Synvey" width={80} height={20} />
-          </Link>
-        </div>
-
-        {/* Right: CTA / Mobile menu */}
-        <div className="flex items-center justify-end gap-2">
+    <>
+      <header
+        className={`sticky top-0 z-50 w-full max-w-full overflow-x-hidden bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-gray-300/30 dark:border-gray-700/30" ${
+          isScrolled ? "shadow-md shadow-zinc-900/40" : "shadow-none"
+        }`}
+      >
+        <div className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
+          {/* Left: Desktop navigation */}
           <div className="hidden lg:flex">
-            <Button
-              asChild
-              className="animate-on-load animate-slide-in-right animate-delay-200"
-            >
-              <Link href="/contact">Contact us</Link>
-            </Button>
+            <DesktopNav />
           </div>
-          <div className="flex lg:hidden">
-            <button
-              aria-label="Open menu"
-              onClick={() => setOpen(true)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
+
+          {/* Left (mobile): empty to keep grid balance */}
+          <div className="flex lg:hidden" />
+
+          {/* Center: Logo */}
+          <div className="flex items-center justify-center">
+            <Link
+              href="/"
+              className="inline-flex items-center relative mx-auto"
+              aria-label="Home"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="h-5 w-5"
+              {/* Flash backdrop - hidden when scrolled */}
+              {!isScrolled && (
+                <span className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+                  <span className="block h-22 w-25 rounded-full bg-white/70 blur-[55px] animate-logo-flash" />
+                </span>
+              )}
+              <Image src="/logo.png" alt="Synvey" width={80} height={20} />
+            </Link>
+          </div>
+
+          {/* Right: CTA / Mobile menu */}
+          <div className="flex items-center justify-end gap-2">
+            <div className="hidden lg:flex">
+              <Button
+                asChild
+                className="animate-on-load animate-slide-in-right animate-delay-200"
               >
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
+                <Link href="/contact">Contact us</Link>
+              </Button>
+            </div>
+            <div className="flex lg:hidden">
+              <button
+                aria-label="Open menu"
+                onClick={() => setOpen(true)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-white ring-1 ring-white/15 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40 shadow-sm transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-6 w-6"
+                  aria-hidden="true"
+                >
+                  <path d="M4 7h16" />
+                  <path d="M4 12h16" />
+                  <path d="M4 17h16" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
+      
+      {/* Mobile Drawer - rendered outside header to avoid overflow constraints */}
       <MobileDrawer open={open} onClose={() => setOpen(false)} />
-    </header>
+    </>
   );
 }

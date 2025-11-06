@@ -32,12 +32,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head></head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-dvh bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-dvh bg-background text-foreground w-full max-w-full overflow-x-hidden`}
       >
         <ThemeProvider>
-          <div className="flex min-h-dvh flex-col">
+          <div className="flex min-h-dvh flex-col w-full max-w-full overflow-x-hidden">
             <Navbar />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 w-full max-w-full overflow-x-hidden">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

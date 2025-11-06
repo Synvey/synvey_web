@@ -35,21 +35,21 @@ const legalLinks = [
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-zinc-800 bg-zinc-900/50 text-foreground">
+    <footer className="border-t border-zinc-800 bg-zinc-900/50 text-foreground w-full max-w-full overflow-x-hidden">
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
           {/* Company Info & Social */}
-          <div className="lg:col-span-2 space-y-6">
-            <div>
+          <div className="lg:col-span-2 space-y-6 flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="flex flex-col items-center lg:items-start w-full">
               <Link
                 href="/"
-                className="inline-flex items-center hover:opacity-80 transition-opacity"
+                className="inline-flex items-center hover:opacity-80 transition-opacity mx-auto lg:mx-0"
                 aria-label="Home"
               >
                 <Image src="/logo.png" alt="Synvey" width={96} height={32} />
               </Link>
-              <p className="mt-4 text-sm text-zinc-400 leading-relaxed max-w-sm">
+              <p className="mt-4 text-sm text-zinc-400 leading-relaxed max-w-sm text-center lg:text-left mx-auto lg:mx-0">
                 Building real-world solutions across industries. From e-commerce
                 to healthcare, we help businesses transform their digital
                 presence with proven technology.
@@ -57,11 +57,11 @@ export default function Footer() {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-3">
-              <h4 className="text-sm font-semibold text-foreground">
+            <div className="space-y-3 flex flex-col items-center lg:items-start w-full">
+              <h4 className="text-sm font-semibold text-foreground text-center lg:text-left">
                 Get in Touch
               </h4>
-              <div className="space-y-2 text-sm text-zinc-400">
+              <div className="space-y-2 text-sm text-zinc-400 text-center lg:text-left">
                 <p>
                   📧{" "}
                   <a
@@ -95,11 +95,11 @@ export default function Footer() {
             </div>
 
             {/* Social Links */}
-            <div>
-              <h4 className="text-sm font-semibold text-foreground mb-3">
+            <div className="flex flex-col items-center lg:items-start w-full">
+              <h4 className="text-sm font-semibold text-foreground mb-3 text-center lg:text-left">
                 Follow Us
               </h4>
-              <div className="flex gap-3">
+              <div className="flex gap-3 justify-center lg:justify-start">
                 <a
                   aria-label="LinkedIn"
                   href="https://linkedin.com/company/synvey"
@@ -165,11 +165,11 @@ export default function Footer() {
           </div>
 
           {/* Solutions */}
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">
+          <div className="flex flex-col items-center lg:items-start">
+            <h4 className="text-sm font-semibold text-foreground mb-4 text-center lg:text-left">
               Solutions
             </h4>
-            <ul className="space-y-3 text-sm text-zinc-400">
+            <ul className="space-y-3 text-sm text-zinc-400 text-center lg:text-left">
               {solutionLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -184,11 +184,11 @@ export default function Footer() {
           </div>
 
           {/* Use Cases */}
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">
+          <div className="flex flex-col items-center lg:items-start">
+            <h4 className="text-sm font-semibold text-foreground mb-4 text-center lg:text-left">
               Use Cases
             </h4>
-            <ul className="space-y-3 text-sm text-zinc-400">
+            <ul className="space-y-3 text-sm text-zinc-400 text-center lg:text-left">
               {useCaseLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -203,24 +203,22 @@ export default function Footer() {
           </div>
 
           {/* Resources & Company */}
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-1">
-            <div>
-              <h4 className="text-sm font-semibold text-foreground mb-4">
-                Company
-              </h4>
-              <ul className="space-y-3 text-sm text-zinc-400">
-                {companyLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="hover:text-white transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="flex flex-col items-center lg:items-start">
+            <h4 className="text-sm font-semibold text-foreground mb-4 text-center lg:text-left">
+              Company
+            </h4>
+            <ul className="space-y-3 text-sm text-zinc-400 text-center lg:text-left">
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -228,10 +226,10 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-zinc-800 bg-zinc-900/50">
         <div className="mx-auto max-w-[90rem] px-3 py-6 sm:px-4 lg:px-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex flex-col sm:flex-row items-center gap-4 text-xs text-zinc-400">
-              <p>© {year} Synvey. All rights reserved.</p>
-              <div className="flex gap-6">
+          <div className="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex flex-col items-center gap-4 text-xs text-zinc-400 sm:flex-row sm:items-center">
+              <p className="text-center sm:text-left">© {year} Synvey. All rights reserved.</p>
+              <div className="flex flex-wrap gap-4 justify-center sm:gap-6 sm:justify-start">
                 {legalLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -243,13 +241,13 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-            <div className="flex items-center gap-4 text-xs text-zinc-400">
-              <span>Made with ❤️ in San Francisco</span>
-              <div className="flex items-center gap-2">
+            <div className="flex flex-col items-center gap-4 text-xs text-zinc-400 sm:flex-row sm:items-center">
+              <span className="text-center">Made with ❤️ in San Francisco</span>
+              <div className="flex items-center gap-2 justify-center">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <span>All systems operational</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 justify-center">
                 <span>🏆 Trusted by 500+ companies</span>
               </div>
             </div>

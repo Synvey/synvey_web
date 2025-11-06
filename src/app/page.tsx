@@ -217,8 +217,8 @@ export default function HomePage() {
 
   return (
     <main className="bg-background">
-      <section className="relative isolate min-h-[120vh] flex items-center">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
+      <section className="relative isolate min-h-[120vh] flex items-center w-full max-w-full overflow-x-hidden">
+        <div className="mx-auto max-w-7xl px-0 sm:px-6 lg:px-8 py-16 xl:max-w-[1400px] 2xl:max-w-[1600px] w-full">
           <div className="flex flex-col items-center gap-16">
             {/* Top: Text Content */}
             <Reveal className="text-center max-w-4xl">
@@ -252,7 +252,7 @@ export default function HomePage() {
             <Reveal delay={120} className="w-full">
               <div className="relative mx-auto w-full max-w-6xl border-10 border-[#171717] rounded-3xl">
                 {/* <div className="absolute -inset-2 -z-10 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" /> */}
-                <div className="relative w-full max-w-6xl mx-auto h-[600px] flex items-center justify-center overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <div className="relative w-full max-w-6xl mx-auto aspect-video sm:h-auto flex items-center justify-center overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
                   <VideoSlideshow />
                 </div>
               </div>
@@ -260,8 +260,8 @@ export default function HomePage() {
 
             {/* Gif Container */}
             <Reveal delay={120}>
-              <div className="flex items-center justify-center">
-                <Image src="/gif.gif" alt="Animated GIF" width={800} height={450} className="object-contain" />
+              <div className="flex items-center justify-center px-4">
+                <Image src="/gif.gif" alt="Animated GIF" width={800} height={450} className="w-full max-w-[800px] h-auto object-contain" />
               </div>
             </Reveal>
             <Reveal delay={240}>
@@ -326,17 +326,17 @@ export default function HomePage() {
 
       <section className="py-16 sm:py-20 bg-zinc-900/30">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
-          <div className="text-center mb-16">
-            <div className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <div className="text-center mb-16">
+            <div className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               <TextGenerateEffect
                 words="What our customer says"
-                className="text-[48px] font-bold w-full text-center text-white leading-tight mb-6"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold w-full text-center text-white leading-tight mb-4 sm:mb-6"
               />
           </div>
-            <div className=" text-lg text-zinc-400  mx-auto">
+            <div className=" text-base sm:text-lg text-zinc-400  mx-auto">
               <TextGenerateEffect
                 words="Trusted by teams worldwide to build and scale faster."
-                className="text-xl text-center text-zinc-400 mx-auto"
+                className="text-base sm:text-lg md:text-xl text-center text-zinc-400 mx-auto"
               />
                 </div>
               </div>

@@ -108,7 +108,7 @@ export default function SolutionsShowcase({
       <div className="w-full mx-auto max-w-7xl xl:max-w-[1280px] 2xl:max-w-[1280px] px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
         <TextGenerateEffect
           words="Revolutionizing the World with Our Solutions."
-          className="text-[48px] font-bold w-full text-center text-white leading-tight mb-12"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold w-full text-center text-white leading-tight mb-8 md:mb-12"
         />
 
         {/* Tabs */}
@@ -158,15 +158,15 @@ export default function SolutionsShowcase({
                     : "opacity-0 pointer-events-none absolute inset-0"
                 } ${prefersReducedMotion ? "transition-none" : ""}`}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 min-h-[560px]">
-                  <div className="p-14 sm:p-16 lg:p-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 min-h-[520px]">
+                  <div className="p-6 sm:p-10 lg:p-20">
                     {/* <div className="text-xs font-semibold text-slate-400 mb-3">
                       {s.title.toUpperCase()}
                     </div> */}
-                    <h3 className="text-4xl font-semibold mb-6 text-white">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-white">
                       {s.title}
                     </h3>
-                    <p className="text-slate-300 leading-relaxed mb-10 text-lg">
+                    <p className="text-slate-300 leading-relaxed mb-8 md:mb-10 text-base md:text-lg">
                       {s.blurb}
                     </p>
                     <a
@@ -181,7 +181,7 @@ export default function SolutionsShowcase({
                       </span>
                     </a>
                   </div>
-                  <div className="relative bg-black">
+                  <div className="relative bg-black w-full mx-auto aspect-video lg:aspect-auto lg:h-full">
                     {s.mediaSrc ? (
                       <video
                         key={s.id} // forces reload when activeId changes
@@ -198,7 +198,7 @@ export default function SolutionsShowcase({
                         }}
                         muted
                         playsInline
-                        className="absolute inset-0 w-full h-full"
+                        className="absolute inset-0 w-full h-full object-cover"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center text-slate-400">
