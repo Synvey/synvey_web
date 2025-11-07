@@ -347,7 +347,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full max-w-full overflow-x-hidden bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-gray-300/30 dark:border-gray-700/30" ${
+        className={`sticky top-0 z-50 w-full max-w-full bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-gray-300/30 dark:border-gray-700/30" ${
           isScrolled ? "shadow-md shadow-zinc-900/40" : "shadow-none"
         }`}
       >

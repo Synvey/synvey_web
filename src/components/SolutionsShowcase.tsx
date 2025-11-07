@@ -114,7 +114,7 @@ export default function SolutionsShowcase({
         {/* Tabs */}
         <div
           ref={tabsRef}
-          className="rounded-2xl bg-{slate-800/40} ring-1 ring-slate-600/40 p-4 flex gap-4 whitespace-nowrap justify-center mb-12 overflow-x-auto sm:overflow-x-visible scrollbar-hide backdrop-blur-sm"
+          className="rounded-2xl bg-{slate-800/40} ring-1 ring-slate-600/40 p-4 flex gap-4 whitespace-nowrap justify-center items-center mb-12 overflow-x-auto sm:overflow-x-visible scrollbar-hide backdrop-blur-sm"
           onKeyDown={handleKeyDown}
           role="tablist"
           aria-label="Solution categories"
@@ -128,7 +128,7 @@ export default function SolutionsShowcase({
                 className={`shrink-0 rounded-xl px-6 py-4 text-base font-medium transition-all duration-300 ${
                   isActive
                     ? "bg-white text-black transform scale-105 shadow-lg shadow-blue-500/25"
-                    : "bg-{slate-800/40} text-white hover:bg-slate-600/80 hover:text-white hover:scale-102"
+                    : "bg-{slate-800/40} text-white hover:bg-slate-600/80 hover:text-white hover:scale-102 hidden md:flex"
                 } ${prefersReducedMotion ? "transform-none" : ""}`}
                 aria-selected={isActive}
                 aria-controls={`panel-${s.id}`}
@@ -159,7 +159,7 @@ export default function SolutionsShowcase({
                 } ${prefersReducedMotion ? "transition-none" : ""}`}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 min-h-[520px]">
-                  <div className="p-6 sm:p-10 lg:p-20">
+                  <div className="p-6 sm:p-10 lg:p-20 flex flex-col items-center md:items-start text-center md:text-left">
                     {/* <div className="text-xs font-semibold text-slate-400 mb-3">
                       {s.title.toUpperCase()}
                     </div> */}
