@@ -4,6 +4,18 @@ import { useMotionValueEvent, useScroll } from "motion/react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
+const BACKGROUND_COLORS = [
+  "#090c15", // slate-900
+  "#090c15", // black
+  "#090c15", // neutral-900
+];
+
+const LINEAR_GRADIENTS = [
+  "#000000", // cyan-500 to emerald-500
+  "#000000", // pink-500 to indigo-500
+  "#000000", // orange-500 to yellow-500
+];
+
 export const StickyScroll = ({
   content,
   contentClassName,
@@ -40,30 +52,22 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = [
-    "#090c15", // slate-900
-    "#090c15", // black
-    "#090c15", // neutral-900
-  ];
-  const linearGradients = [
-    "#000000", // cyan-500 to emerald-500
-    "#000000", // pink-500 to indigo-500
-    "#000000", // orange-500 to yellow-500
-  ];
-
   const [backgroundGradient, setBackgroundGradient] = useState(
-    linearGradients[0]
+    LINEAR_GRADIENTS[0]
   );
 
   useEffect(() => {
-    setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
+    setBackgroundGradient(
+      LINEAR_GRADIENTS[activeCard % LINEAR_GRADIENTS.length]
+    );
   }, [activeCard]);
 
   return (
     <motion.div
       ref={ref}
       animate={{
-        backgroundColor: backgroundColors[activeCard % backgroundColors.length],
+        backgroundColor:
+          BACKGROUND_COLORS[activeCard % BACKGROUND_COLORS.length],
       }}
       className="relative flex min-h-[200vh] justify-center space-x-60 rounded-2xl p-12 sticky-scroll-section"
     >
