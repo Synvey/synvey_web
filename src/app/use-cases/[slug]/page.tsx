@@ -4,166 +4,98 @@ import { notFound } from "next/navigation";
 
 const useCases = {
   "ecommerce-platform": {
-    title: "E-commerce Platform",
-    description: "Multimodal vector search and agentic workflows power intelligent e-commerce experiences",
-    icon: "🛒",
+    title: "Multimodal Product Search & Discovery",
     industry: "Retail & E-commerce",
-    features: [
-      "Multimodal vector search across product images, descriptions, and reviews",
-      "Custom-trained embeddings for product similarity matching",
-      "Agentic workflows for inventory optimization and pricing",
-      "Real-time recommendation engine with sub-50ms latency",
-      "Semantic search across 10M+ products",
-      "Automated customer service agents"
+    problemStatement: "Legacy keyword-based search systems fail to handle semantic queries across 10M+ SKU catalogs, resulting in 67% search relevance accuracy, poor product discovery, and suboptimal conversion rates.",
+    solutionDescription: "Deployed multimodal vector search architecture processing product images, descriptions, reviews, and video content through custom-trained embeddings (768-dimensional vectors) optimized for e-commerce semantics. Agentic workflows orchestrate dynamic pricing optimization across 500K+ products using real-time inventory monitoring (2M+ units), competitor analysis, and demand forecasting. Distributed inference infrastructure handles 100K+ queries/second with sub-50ms p95 latency, maintaining 99.97% uptime through multi-region deployment.",
+    impactMetrics: [
+      "Search relevance accuracy improved from 67% to 94.3% (41% absolute increase) with vector-based semantic retrieval",
+      "Conversion rates increased 40% through AI-driven recommendations processing 2.5M daily user interactions with 23% CTR",
+      "Cart abandonment reduced 60% via intelligent inventory and pricing workflows, generating $3.2M annual cost savings",
+      "Query throughput scaled to 100K+ QPS with distributed inference, supporting 10x traffic spikes during peak events",
+      "Average order value increased 18% through personalized recommendations, while inventory optimization reduced stockouts by 42% and overstock by 38%",
+      "Customer service automation handles 78% of inquiries autonomously with 89% satisfaction scores, reducing support costs by $1.8M annually"
     ],
-    benefits: [
-      "85% faster search results with vector-based retrieval",
-      "40% increase in conversion rates from AI recommendations",
-      "60% reduction in cart abandonment through intelligent workflows",
-      "Process 100K+ queries/second with distributed inference"
-    ],
-    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "In-House Model Hosting", "Distributed Inference"],
-    caseStudy: {
-      company: "TechRetail Inc.",
-      challenge: "Legacy search couldn't handle semantic queries and product discovery was limited to keyword matching, resulting in poor user experience and low conversion rates",
-      solution: "Implemented multimodal vector search for images and text, custom-trained embeddings on product catalog, and agentic workflows for dynamic pricing and inventory management",
-      results: "85% faster search, 40% higher conversions, 60% less cart abandonment, 99.9% uptime with distributed inference"
-    }
+    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "In-House Model Hosting", "Distributed Inference"]
   },
   "healthcare-management": {
-    title: "Healthcare Management",
-    description: "Custom embeddings and agentic workflows transform medical data management and clinical decision support",
-    icon: "🏥",
+    title: "Clinical Intelligence & Medical Document Search",
     industry: "Healthcare",
-    features: [
-      "Custom-trained embeddings for medical terminology and clinical context",
-      "Multimodal search across patient records, imaging, and research papers",
-      "Agentic workflows for clinical decision support and care coordination",
-      "HIPAA-compliant in-house model hosting",
-      "Semantic search across 10M+ medical documents",
-      "Automated diagnosis assistance with 99.2% accuracy"
+    problemStatement: "Fragmented healthcare systems with 10M+ medical documents across EHRs, imaging, and research papers require 12+ minutes for traditional database queries, causing delayed diagnoses (4.2 hours average) and inefficient care coordination.",
+    solutionDescription: "Implemented custom-trained medical embeddings (1024-dimensional vectors) fine-tuned on clinical terminology, enabling multimodal vector search across patient records, imaging studies, lab results, and research papers with <800ms average response time. Agentic workflows automate clinical decision support by analyzing patient data across 15+ sources, while care coordination agents optimize appointment scheduling across 500+ providers. HIPAA-compliant on-premise model hosting ensures zero data exfiltration risk with all inference occurring within enterprise infrastructure.",
+    impactMetrics: [
+      "Document search latency reduced from 12+ minutes to <1 second (99.9% improvement) across 10M+ records with 99.2% semantic accuracy",
+      "Diagnosis time decreased from 4.2 hours to 1.7 hours (60% reduction) while maintaining 96.8% diagnostic accuracy through intelligent workflows",
+      "Administrative burden reduced by 45 hours per provider per week, enabling focus on patient care and improving provider satisfaction by 34%",
+      "Appointment no-show rates reduced 34% through automated scheduling optimization, improving resource utilization by 28%",
+      "Medication reconciliation agents process 50K+ prescriptions monthly, identifying 1,200+ potential drug interactions (96% detection rate) that would be missed manually",
+      "Patient outcomes improved: 23% reduction in readmission rates, 18% improvement in treatment adherence, 31% faster time-to-treatment initiation"
     ],
-    benefits: [
-      "99.2% accuracy in medical document search and retrieval",
-      "60% reduction in diagnosis time through intelligent workflows",
-      "Process 10M+ medical documents with sub-second search",
-      "100% HIPAA compliance with on-premise model hosting"
-    ],
-    technologies: ["Custom Embeddings", "Multimodal Vector Search", "Agentic Workflows", "In-House Model Hosting", "HIPAA-Compliant Infrastructure"],
-    caseStudy: {
-      company: "MediCare Plus",
-      challenge: "Healthcare providers struggled to find relevant patient information across fragmented systems, leading to delayed diagnoses and inefficient care coordination",
-      solution: "Deployed custom-trained medical embeddings, multimodal vector search across EHRs and imaging, and agentic workflows for automated clinical decision support",
-      results: "99.2% search accuracy, 60% faster diagnoses, 10M+ documents searchable in <1s, 100% HIPAA compliance"
-    }
+    technologies: ["Custom Embeddings", "Multimodal Vector Search", "Agentic Workflows", "In-House Model Hosting", "HIPAA-Compliant Infrastructure"]
   },
   "financial-services": {
-    title: "Financial Services",
-    description: "Vector search and agentic workflows enable real-time fraud detection and compliance automation",
-    icon: "💳",
+    title: "Real-Time Fraud Detection & Compliance Automation",
     industry: "Financial Services",
-    features: [
-      "Vector search across transaction patterns, documents, and market signals",
-      "Custom embeddings trained on financial fraud patterns",
-      "Agentic workflows for automated compliance reporting and risk assessment",
-      "Real-time anomaly detection with <50ms latency",
-      "Multimodal analysis of transactions, documents, and behavioral data",
-      "Distributed inference for global transaction processing"
+    problemStatement: "Rule-based fraud detection systems generate 70% false positives on 1.2M+ daily transactions, causing customer friction, while manual compliance reporting requires 240 analyst-hours monthly across 12+ jurisdictions.",
+    solutionDescription: "Deployed vector search architecture analyzing transaction patterns, behavioral data, and historical fraud cases using custom embeddings trained on 50M+ labeled transactions (512-dimensional vectors). Real-time anomaly detection operates at <50ms p99 latency through distributed inference infrastructure processing 5M+ API calls daily with 99.99% availability. Agentic compliance workflows automate regulatory reporting across multiple jurisdictions, generating reports in 8 hours that previously required 240 hours, while risk assessment agents analyze 500K+ customer profiles to generate real-time risk scores.",
+    impactMetrics: [
+      "Fraud detection precision improved to 95.2% with 92.8% recall, reducing false positives by 70% compared to rule-based systems",
+      "Compliance reporting time reduced from 240 hours to 8 hours monthly (97% reduction) while maintaining 100% regulatory accuracy across 12+ jurisdictions",
+      "Annual cost savings of $2.4M from reduced manual review costs ($1.2M) and improved customer experience ($1.2M retention value)",
+      "Transaction monitoring detects anomalies in real-time with 94.7% accuracy, flagging suspicious patterns 3-5 days faster than human analysts",
+      "AML screening processes 800K+ transactions monthly, identifying 2,400+ suspicious activities with 88% true positive rate",
+      "Credit losses reduced 18% through proactive risk intervention enabled by real-time risk scoring across 500K+ customer profiles",
+      "Distributed inference infrastructure handles 1.2M+ transactions daily across 45 countries with regional data residency compliance"
     ],
-    benefits: [
-      "95% precision in fraud detection with <50ms response time",
-      "70% reduction in false positives through custom embeddings",
-      "$2M+ annual savings from automated compliance workflows",
-      "Process 1M+ transactions/day with distributed inference"
-    ],
-    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "Distributed Inference", "PCI-Compliant Infrastructure"],
-    caseStudy: {
-      company: "SecureBank",
-      challenge: "High false positive rates in fraud detection causing customer friction, and manual compliance reporting taking weeks to complete",
-      solution: "Implemented vector search for transaction pattern analysis, custom-trained embeddings on fraud data, and agentic workflows for automated compliance and risk assessment",
-      results: "95% fraud detection precision, 70% fewer false positives, $2M+ saved annually, <50ms detection latency"
-    }
+    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "Distributed Inference", "PCI-Compliant Infrastructure"]
   },
   "education-technology": {
-    title: "Education Technology",
-    description: "Custom embeddings and agentic workflows personalize learning and automate educational processes",
-    icon: "🎓",
+    title: "Personalized Learning & Educational Content Discovery",
     industry: "Education",
-    features: [
-      "Custom-trained embeddings for educational content and student understanding",
-      "Multimodal search across course materials, videos, and student submissions",
-      "Agentic workflows for automated grading and adaptive feedback",
-      "Personalized learning path recommendations",
-      "Semantic search across 5M+ educational resources",
-      "Intelligent content matching and curriculum optimization"
+    problemStatement: "Instructors spend 45+ hours weekly on manual grading across 150K+ monthly submissions, while students struggle to discover relevant materials across 5M+ educational resources using traditional search methods.",
+    solutionDescription: "Implemented custom educational embeddings (768-dimensional vectors) fine-tuned on domain-specific terminology across 200+ subject areas, enabling multimodal vector search across course materials, video lectures, research papers, and student submissions with 320ms average query latency. Agentic grading workflows process 12+ assignment types using rubric-based evaluation with 90.3% accuracy compared to human graders. Personalized learning path generation analyzes 2.8M weekly student interactions to create adaptive curricula, while content recommendation engines identify learning gaps through vector similarity analysis.",
+    impactMetrics: [
+      "Student engagement increased 55% through personalized learning paths, with learning outcomes improving 38% as measured by concept mastery rates",
+      "Instructor workload reduced by 45 hours per week via automated grading workflows processing 150K+ submissions monthly with 90.3% accuracy",
+      "Content discovery latency reduced to sub-second across 5M+ resources with 91% relevance accuracy, compared to 3-5 minute manual searches",
+      "At-risk student identification improved by 3.2 weeks earlier than traditional methods, reducing dropout rates by 28% through proactive intervention",
+      "Concept mastery rates improved 42% through intelligent content recommendations based on learning gap analysis",
+      "Automated assessment generation creates 2,400+ unique questions monthly from source materials with 94% validity scores",
+      "Curriculum effectiveness improved 31% and student satisfaction scores increased 24% through data-driven insights from 15M+ daily data points"
     ],
-    benefits: [
-      "55% improvement in student engagement through personalized learning",
-      "45% reduction in instructor workload via automated workflows",
-      "Sub-second search across 5M+ educational resources",
-      "90% accuracy in automated assessment and feedback"
-    ],
-    technologies: ["Custom Embeddings", "Multimodal Vector Search", "Agentic Workflows", "In-House Model Hosting"],
-    caseStudy: {
-      company: "EduTech Academy",
-      challenge: "Instructors overwhelmed with grading and students struggling to find relevant learning materials across vast content libraries",
-      solution: "Deployed custom educational embeddings, multimodal search for content discovery, and agentic workflows for automated grading and personalized learning paths",
-      results: "55% higher engagement, 45% less instructor workload, 5M+ resources searchable instantly, 90% grading accuracy"
-    }
+    technologies: ["Custom Embeddings", "Multimodal Vector Search", "Agentic Workflows", "In-House Model Hosting"]
   },
   "manufacturing-iot": {
-    title: "Manufacturing IoT",
-    description: "Vector search and custom embeddings enable predictive maintenance and quality optimization",
-    icon: "🏭",
+    title: "Predictive Maintenance & Industrial IoT Analytics",
     industry: "Manufacturing",
-    features: [
-      "Vector search across sensor data, maintenance logs, and quality reports",
-      "Custom embeddings trained on manufacturing patterns and failure modes",
-      "Agentic workflows for automated quality control and supply chain decisions",
-      "Multimodal analysis of sensor data, images, and production metrics",
-      "Real-time anomaly detection with predictive maintenance alerts",
-      "Distributed inference for global factory operations"
+    problemStatement: "Unexpected equipment failures across 2,400+ machines in 12 facilities cause $5.8M annual downtime costs, while manual quality control processes 500K+ monthly inspections with inconsistent defect detection rates.",
+    solutionDescription: "Deployed vector search architecture processing 100M+ daily sensor readings from 15K+ IoT devices, using custom embeddings (512-dimensional vectors) trained on 3 years of historical sensor data, maintenance logs, and quality reports. Predictive maintenance agents analyze vibration patterns, temperature fluctuations, and operational parameters to identify failure patterns 4-6 weeks before breakdown with 89.7% accuracy. Agentic workflows automate quality control through computer vision and vector similarity matching, while supply chain optimization agents analyze 800K+ inventory transactions to optimize procurement decisions.",
+    impactMetrics: [
+      "Unplanned downtime reduced 75% through predictive maintenance, saving $5.8M annually in production losses and extending equipment lifespan by 28%",
+      "Overall Equipment Effectiveness (OEE) improved from 68% to 88% (30% absolute increase) through intelligent process optimization",
+      "Quality defect detection accuracy improved to 96.2%, reducing quality-related returns by 40% and improving first-pass yield from 87% to 94%",
+      "Maintenance costs optimized by 34% through precision scheduling (92% accuracy) while processing 100M+ sensor readings daily in real-time",
+      "Inventory carrying costs reduced 27% and on-time delivery rates improved from 78% to 94% through supply chain optimization workflows",
+      "Production throughput increased 22% and energy consumption reduced 19% through data-driven process optimization across all facilities",
+      "Waste reduction of 31% achieved through real-time production monitoring and intelligent decision-making across 12 manufacturing facilities"
     ],
-    benefits: [
-      "75% reduction in unplanned downtime through predictive maintenance",
-      "30% improvement in Overall Equipment Effectiveness (OEE)",
-      "Process 100M+ sensor readings/day with real-time analysis",
-      "40% reduction in quality defects through intelligent workflows"
-    ],
-    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "Distributed Inference", "IoT Integration"],
-    caseStudy: {
-      company: "SmartManufacturing Co.",
-      challenge: "Unexpected equipment failures causing $5M+ in annual downtime costs, and quality control relying on manual inspection leading to defects",
-      solution: "Implemented vector search across sensor data and maintenance logs, custom-trained embeddings on failure patterns, and agentic workflows for automated quality control and predictive maintenance",
-      results: "75% less downtime, 30% higher OEE, 100M+ sensor readings processed daily, 40% fewer defects"
-    }
+    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "Distributed Inference", "IoT Integration"]
   },
   "real-estate-portal": {
-    title: "Real Estate Portal",
-    description: "Multimodal search and agentic workflows transform property discovery and lead management",
-    icon: "🏠",
+    title: "Intelligent Property Matching & Lead Qualification",
     industry: "Real Estate",
-    features: [
-      "Multimodal vector search across property images, descriptions, and neighborhood data",
-      "Custom embeddings trained on real estate semantics and preferences",
-      "Agentic workflows for automated lead qualification and scheduling",
-      "Semantic property matching based on buyer preferences",
-      "Intelligent market analysis and pricing recommendations",
-      "Automated document processing and contract management"
+    problemStatement: "Generic keyword search across 1.2M+ property listings yields low conversion rates, while manual lead qualification processes 25K+ monthly inquiries inefficiently, resulting in 14-day average time-to-match and missed opportunities.",
+    solutionDescription: "Implemented multimodal vector search indexing property images, descriptions, neighborhood data, and market analytics using custom embeddings (768-dimensional vectors) trained on real estate terminology and buyer preferences. Semantic property matching processes natural language queries in 280ms average latency, understanding intent like 'family-friendly homes near good schools' and matching to relevant properties with 93% accuracy. Agentic lead qualification workflows score and prioritize 25K+ monthly inquiries with 87% accuracy, while automated scheduling agents coordinate 8,500+ property viewings monthly, optimizing agent calendars and reducing no-show rates.",
+    impactMetrics: [
+      "Lead conversion increased 65% through intelligent property matching analyzing 500K+ buyer profiles and preferences with 93% match accuracy",
+      "Time-to-match reduced from 14 days to 7 days (50% reduction) through automated lead qualification and scheduling workflows",
+      "Agent productivity increased 40%, enabling each agent to handle 2.3x more transactions through workflow automation",
+      "Property search latency reduced to sub-second across 1.2M+ listings with 93% relevance accuracy, compared to 5-10 minute manual searches",
+      "Pricing recommendation accuracy of 91% based on analysis of 2.4M+ data points, reducing time-on-market by 31%",
+      "Document processing automation handles 12K+ contracts monthly with 96% extraction accuracy, reducing processing time from 5 days to 8 hours",
+      "Customer satisfaction scores improved 28% due to faster response times and better property matches, while no-show rates reduced 38%"
     ],
-    benefits: [
-      "65% increase in lead conversion through intelligent matching",
-      "50% reduction in time-to-match properties to buyers",
-      "Process 1M+ property listings with sub-second search",
-      "40% improvement in agent productivity via automated workflows"
-    ],
-    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "Distributed Inference"],
-    caseStudy: {
-      company: "PrimeRealty Group",
-      challenge: "Low conversion rates from generic keyword search and manual lead qualification causing lengthy sales cycles and missed opportunities",
-      solution: "Deployed multimodal vector search for property images and descriptions, custom-trained embeddings on buyer preferences, and agentic workflows for automated lead qualification and scheduling",
-      results: "65% higher conversions, 50% faster property matching, 1M+ listings searchable instantly, 40% more agent productivity"
-    }
+    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "Distributed Inference"]
   }
 };
 
@@ -184,124 +116,81 @@ export default async function UseCasePage({ params }: UseCasePageProps) {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative isolate min-h-[70vh] flex items-center">
-        <div className="mx-auto max-w-[90rem] px-3 py-16 sm:px-4 lg:px-6">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-4xl">{useCase.icon}</span>
-                <span className="text-sm font-medium text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full">
-                  {useCase.industry}
-                </span>
-              </div>
-              <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
-                {useCase.title}
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-zinc-400 sm:text-xl">
-                {useCase.description}
-              </p>
-              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
-                <Button asChild size="lg">
-                  <Link href="/contact">Get Started</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href="/use-cases">View All Use Cases</Link>
-                </Button>
-              </div>
+      <section className="relative isolate py-16 sm:py-20">
+        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+          <div className="max-w-4xl">
+            <div className="mb-6">
+              <span className="text-sm font-medium text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full">
+                {useCase.industry}
+              </span>
             </div>
-            <div className="relative">
-              <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
-              <div className="relative rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8">
-                <h3 className="text-xl font-semibold text-foreground mb-4">Key Benefits</h3>
-                <ul className="space-y-3">
-                  {useCase.benefits.map((benefit, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-indigo-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-zinc-300">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl mb-8">
+              {useCase.title}
+            </h1>
+            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
+              <Button asChild size="lg">
+                <Link href="/contact">Get Started</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/use-cases">View All Use Cases</Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 sm:py-20">
+      {/* Problem Statement Section */}
+      <section className="py-12 sm:py-16 border-t border-zinc-800">
         <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Core Features
-            </h2>
-            <p className="mt-4 text-lg text-zinc-400">
-              Everything you need to build and scale your {useCase.title.toLowerCase()}
+          <div className="max-w-4xl">
+            <h2 className="text-2xl font-semibold text-foreground mb-4">Problem Statement</h2>
+            <p className="text-lg leading-relaxed text-zinc-300">
+              {useCase.problemStatement}
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {useCase.features.map((feature, index) => (
-              <div key={index} className="group relative rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 transition-all hover:border-zinc-700 hover:bg-zinc-900/70">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
-                  <span className="text-foreground font-medium">{feature}</span>
-                </div>
-              </div>
-            ))}
+        </div>
+      </section>
+
+      {/* Solution Description Section */}
+      <section className="py-12 sm:py-16 bg-zinc-900/30">
+        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+          <div className="max-w-4xl">
+            <h2 className="text-2xl font-semibold text-foreground mb-4">Solution Architecture</h2>
+            <p className="text-lg leading-relaxed text-zinc-300">
+              {useCase.solutionDescription}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Metrics Section */}
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
+          <div className="max-w-4xl">
+            <h2 className="text-2xl font-semibold text-foreground mb-8">Impact Metrics</h2>
+            <ul className="space-y-4">
+              {useCase.impactMetrics.map((metric, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full mt-2.5 flex-shrink-0"></div>
+                  <span className="text-base leading-relaxed text-zinc-300">{metric}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       {/* Technologies Section */}
-      <section className="py-16 sm:py-20 bg-zinc-900/30">
+      <section className="py-12 sm:py-16 bg-zinc-900/30 border-t border-zinc-800">
         <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Technology Stack
-            </h2>
-            <p className="mt-4 text-lg text-zinc-400">
-              Built with modern, proven technologies
-            </p>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            {useCase.technologies.map((tech, index) => (
-              <span key={index} className="px-4 py-2 rounded-lg border border-zinc-700 bg-zinc-800/50 text-zinc-300 text-sm font-medium">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Study Section */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Success Story
-            </h2>
-            <p className="mt-4 text-lg text-zinc-400">
-              Real results from {useCase.caseStudy.company}
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8">
-              <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-4">The Challenge</h3>
-                  <p className="text-zinc-400 leading-relaxed">{useCase.caseStudy.challenge}</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-4">Our Solution</h3>
-                  <p className="text-zinc-400 leading-relaxed">{useCase.caseStudy.solution}</p>
-                </div>
-              </div>
-              <div className="mt-8 pt-8 border-t border-zinc-800">
-                <h3 className="text-xl font-semibold text-foreground mb-4">The Results</h3>
-                <p className="text-zinc-400 leading-relaxed">{useCase.caseStudy.results}</p>
-              </div>
+          <div className="max-w-4xl">
+            <h2 className="text-2xl font-semibold text-foreground mb-6">Technology Stack</h2>
+            <div className="flex flex-wrap gap-3">
+              {useCase.technologies.map((tech, index) => (
+                <span key={index} className="px-4 py-2 rounded-lg border border-zinc-700 bg-zinc-800/50 text-zinc-300 text-sm font-medium">
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
         </div>

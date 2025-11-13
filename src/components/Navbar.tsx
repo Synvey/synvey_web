@@ -56,32 +56,32 @@ const NAV_ITEMS: MenuItem[] = [
     label: "Use cases",
     items: [
       {
-        label: "E-commerce Platform",
+        label: "Multimodal Product Search & Discovery",
         href: "/use-cases/ecommerce-platform",
         description: "Multimodal vector search and agentic workflows power intelligent product discovery and automation.",
       },
       {
-        label: "Healthcare Management",
+        label: "Clinical Intelligence & Medical Document Search",
         href: "/use-cases/healthcare-management",
         description: "Custom embeddings and agentic workflows transform medical data management and clinical decision support.",
       },
       {
-        label: "Financial Services",
+        label: "Real-Time Fraud Detection & Compliance Automation",
         href: "/use-cases/financial-services",
         description: "Vector search and agentic workflows enable real-time fraud detection and compliance automation.",
       },
       {
-        label: "Education Technology",
+        label: "Personalized Learning & Educational Content Discovery",
         href: "/use-cases/education-technology",
         description: "Custom embeddings and agentic workflows personalize learning and automate educational processes.",
       },
       {
-        label: "Manufacturing IoT",
+        label: "Predictive Maintenance & Industrial IoT Analytics",
         href: "/use-cases/manufacturing-iot",
         description: "Vector search and custom embeddings enable predictive maintenance and quality optimization.",
       },
       {
-        label: "Real Estate Portal",
+        label: "Intelligent Property Matching & Lead Qualification",
         href: "/use-cases/real-estate-portal",
         description: "Multimodal search and agentic workflows transform property discovery and lead management.",
       },
