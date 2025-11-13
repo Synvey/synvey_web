@@ -6,12 +6,64 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import Reveal from "@/components/Reveal";
 
 const PRODUCTS = {
-  "ai-integration": {
-    name: "AI Integration",
+  "multimodal-vector-search": {
+    name: "Multimodal Vector Search",
     tagline:
-      "Harness the power of artificial intelligence to build intelligent applications",
+      "High-performance vector search on large-scale datasets with efficient indexing and retrieval",
     overview:
-      "We help businesses harness the power of Artificial Intelligence by integrating machine learning models, natural language processing, and automation into their existing systems. Our solutions optimize workflows, improve decision-making, and enhance customer experiences.",
+      "High-performance vector search on large-scale datasets with efficient indexing and retrieval. Our solution enables fast, accurate search across text, images, audio, video, and other data modalities, helping enterprises unlock insights from their diverse data sources.",
+    icon: (
+      <svg
+        className="h-12 w-12"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+        />
+      </svg>
+    ),
+    color: "purple",
+    features: [
+      {
+        title: "Large-Scale Datasets",
+        description: "Handle billions of vectors with efficient indexing",
+        icon: "📊",
+      },
+      {
+        title: "Efficient Indexing",
+        description: "Optimized data structures for fast retrieval",
+        icon: "⚡",
+      },
+      {
+        title: "Fast Retrieval",
+        description: "Sub-millisecond search across multiple modalities",
+        icon: "🚀",
+      },
+      {
+        title: "Multi-Format Support",
+        description: "Search across text, images, audio, video, and more",
+        icon: "🎯",
+      },
+    ],
+    benefits: [
+      "Unlock insights from diverse data sources",
+      "Sub-millisecond search performance",
+      "Scalable to billions of vectors",
+      "Enterprise-grade reliability",
+    ],
+    video: "/aiIntegration.webm",
+  },
+  "custom-agentic-workflows": {
+    name: "Custom Agentic Workflows",
+    tagline:
+      "Adaptive automation pipelines tailored to complex enterprise processes",
+    overview:
+      "Adaptive automation pipelines tailored to complex enterprise processes. Our agentic workflows automate decision-making, task orchestration, and complex business logic with intelligent AI agents that learn and adapt to your organization's unique needs.",
     icon: (
       <svg
         className="h-12 w-12"
@@ -27,96 +79,43 @@ const PRODUCTS = {
         />
       </svg>
     ),
-    color: "purple",
-    features: [
-      {
-        title: "Machine Learning Models",
-        description: "Integrate pre-trained and custom ML models seamlessly",
-        icon: "🧠",
-      },
-      {
-        title: "Natural Language Processing",
-        description: "Add intelligent text analysis and language understanding",
-        icon: "💬",
-      },
-      {
-        title: "Predictive Analytics",
-        description: "Make data-driven decisions with advanced analytics",
-        icon: "📊",
-      },
-      {
-        title: "Automated Workflows",
-        description: "Streamline processes with intelligent automation",
-        icon: "⚡",
-      },
-    ],
-    benefits: [
-      "Faster time-to-market for AI features",
-      "Reduced development complexity",
-      "Scalable AI infrastructure",
-      "Enterprise-grade security",
-    ],
-    video: "/videos/video1.webm",
-  },
-  "desktop-applications": {
-    name: "Desktop Applications",
-    tagline:
-      "Create powerful, native desktop applications with cross-platform compatibility",
-    overview:
-      "Build robust desktop applications that deliver exceptional performance and user experience. Our platform supports multiple frameworks and technologies, enabling you to create applications that work seamlessly across Windows, macOS, and Linux.",
-    icon: (
-      <svg
-        className="h-12 w-12"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-        />
-      </svg>
-    ),
     color: "blue",
     features: [
       {
-        title: "Cross-Platform Development",
-        description:
-          "Build once, deploy everywhere with universal compatibility",
-        icon: "🌐",
+        title: "Adaptive Automation",
+        description: "Workflows that learn and improve over time",
+        icon: "🧠",
       },
       {
-        title: "Native Performance",
-        description: "Optimized for speed and resource efficiency",
-        icon: "⚡",
+        title: "Task Orchestration",
+        description: "Coordinate complex multi-step processes seamlessly",
+        icon: "🔄",
       },
       {
-        title: "Modern UI Framework",
-        description: "Create beautiful, responsive user interfaces",
-        icon: "🎨",
+        title: "Decision-Making",
+        description: "Intelligent agents that make context-aware decisions",
+        icon: "🎯",
       },
       {
-        title: "Enterprise Security",
-        description: "Built-in security features and compliance support",
-        icon: "🔒",
+        title: "Enterprise-Ready",
+        description: "Built for scale, security, and compliance",
+        icon: "🏢",
       },
     ],
     benefits: [
-      "Reduced development time",
-      "Consistent user experience",
-      "Lower maintenance costs",
-      "Future-proof architecture",
+      "Automate complex business processes",
+      "Reduce manual intervention",
+      "Improve decision accuracy",
+      "Scale with your organization",
     ],
-    video: "videos/video2.webm",
+    video: "/Desktop.webm",
   },
-  "web-applications": {
-    name: "Web Applications",
+  "embedding-model-training": {
+    name: "Embedding Model Training",
     tagline:
-      "Build scalable, responsive web applications that work seamlessly across all devices",
+      "Custom-trained embeddings optimized for domain-specific data and performance needs",
     overview:
-      "We develop modern, responsive, and secure web applications that are tailored to enhance business productivity and deliver seamless user experiences.",
+      "Custom-trained embeddings optimized for domain-specific data and performance needs. We create specialized embedding models that understand your unique business context and data patterns, delivering superior performance compared to generic models.",
     icon: (
       <svg
         className="h-12 w-12"
@@ -128,47 +127,47 @@ const PRODUCTS = {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"
+          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
         />
       </svg>
     ),
     color: "emerald",
     features: [
       {
-        title: "Responsive Design",
-        description: "Perfect experience across all devices and screen sizes",
-        icon: "📱",
+        title: "Domain-Specific",
+        description: "Models trained on your industry-specific data",
+        icon: "🎯",
+      },
+      {
+        title: "Custom Training",
+        description: "Tailored training pipelines for your use case",
+        icon: "🔧",
       },
       {
         title: "Performance Optimization",
-        description: "Fast loading times and smooth user interactions",
-        icon: "🚀",
+        description: "Fine-tuned for accuracy and speed",
+        icon: "⚡",
       },
       {
-        title: "SEO Ready",
-        description: "Built-in SEO optimization for better visibility",
-        icon: "🔍",
-      },
-      {
-        title: "Progressive Web Apps",
-        description: "Modern PWA capabilities for enhanced user experience",
-        icon: "📲",
+        title: "Fine-Tuning",
+        description: "Continuous improvement based on feedback",
+        icon: "📈",
       },
     ],
     benefits: [
-      "Wider audience reach",
-      "Lower deployment costs",
-      "Easy maintenance and updates",
-      "Mobile-first approach",
+      "Superior accuracy for your domain",
+      "Reduced inference costs",
+      "Better semantic understanding",
+      "Competitive advantage",
     ],
-    video: "videos/video2.webm",
+    video: "/videos/video4.webm",
   },
-  "mobile-applications": {
-    name: "Mobile Applications",
+  "in-house-model-hosting": {
+    name: "In-House Model Hosting",
     tagline:
-      "Develop native and cross-platform mobile apps that engage users and drive growth",
+      "Secure, scalable infrastructure for managing and deploying proprietary AI models",
     overview:
-      "Our mobile app solutions bring your ideas to life with engaging, high-performing apps that work seamlessly across platforms. We ensure intuitive user journeys and optimized performance.",
+      "Secure, scalable infrastructure for managing and deploying proprietary AI models. Our hosting solutions ensure your models are accessible, reliable, and protected within your enterprise environment, giving you full control over your AI infrastructure.",
     icon: (
       <svg
         className="h-12 w-12"
@@ -180,47 +179,47 @@ const PRODUCTS = {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
         />
       </svg>
     ),
     color: "orange",
     features: [
       {
-        title: "Native Performance",
-        description: "Optimized for iOS and Android platforms",
-        icon: "📱",
+        title: "Secure Infrastructure",
+        description: "Enterprise-grade security and compliance",
+        icon: "🔒",
       },
       {
-        title: "Cross-Platform Development",
-        description: "Single codebase for multiple platforms",
-        icon: "🔄",
+        title: "Scalable Deployment",
+        description: "Auto-scaling to handle variable workloads",
+        icon: "📈",
       },
       {
-        title: "Offline Capabilities",
-        description: "Apps that work even without internet connection",
-        icon: "📡",
+        title: "Model Management",
+        description: "Version control and lifecycle management",
+        icon: "📦",
       },
       {
-        title: "Push Notifications",
-        description: "Engage users with targeted messaging",
-        icon: "🔔",
+        title: "Enterprise Security",
+        description: "Data sovereignty and access controls",
+        icon: "🛡️",
       },
     ],
     benefits: [
-      "Increased user engagement",
-      "Faster development cycles",
-      "Lower development costs",
-      "Better user retention",
+      "Full control over your AI infrastructure",
+      "Data stays within your environment",
+      "Reduced latency and costs",
+      "Compliance with regulations",
     ],
-    video: "videos/video2.webm",
+    video: "/Mobile.webm",
   },
-  "ui-ux-services": {
-    name: "UI/UX Services",
+  "offshoring-inference": {
+    name: "Offshoring Inference",
     tagline:
-      "Create intuitive, accessible user experiences that delight customers and drive engagement",
+      "Distributed inference setup optimized for performance, compliance, and cost efficiency",
     overview:
-      "We design digital products that prioritize user experience while maintaining a modern, visually appealing aesthetic. Our design process ensures usability, accessibility, and delight.",
+      "Distributed inference setup optimized for performance, compliance, and cost efficiency. We help you deploy inference workloads across global infrastructure while maintaining data sovereignty and regulatory compliance, ensuring optimal performance at the lowest cost.",
     icon: (
       <svg
         className="h-12 w-12"
@@ -232,92 +231,40 @@ const PRODUCTS = {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
-        />
-      </svg>
-    ),
-    color: "pink",
-    features: [
-      {
-        title: "User Research",
-        description: "Deep insights into user behavior and preferences",
-        icon: "🔍",
-      },
-      {
-        title: "Wireframing & Prototyping",
-        description: "Visualize concepts before development begins",
-        icon: "📐",
-      },
-      {
-        title: "Visual Design",
-        description: "Beautiful, modern interfaces that engage users",
-        icon: "🎨",
-      },
-      {
-        title: "Usability Testing",
-        description: "Validate designs with real user feedback",
-        icon: "✅",
-      },
-    ],
-    benefits: [
-      "Higher conversion rates",
-      "Improved user satisfaction",
-      "Reduced development rework",
-      "Competitive advantage",
-    ],
-    video: "videos/video2.webm",
-  },
-  "cloud-devops": {
-    name: "Cloud & DevOps",
-    tagline:
-      "Streamline deployment and operations with cloud-native solutions and DevOps best practices",
-    overview:
-      "We empower businesses to scale and deliver faster through cloud infrastructure and DevOps automation, ensuring reliability, security, and continuous delivery.",
-    icon: (
-      <svg
-        className="h-12 w-12"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
     ),
     color: "indigo",
     features: [
       {
-        title: "CI/CD Pipelines",
-        description: "Automated build, test, and deployment processes",
-        icon: "🔄",
+        title: "Distributed Setup",
+        description: "Global infrastructure for optimal performance",
+        icon: "🌐",
       },
       {
-        title: "Infrastructure as Code",
-        description: "Manage infrastructure with version control",
-        icon: "🏗️",
+        title: "Cost Optimization",
+        description: "Reduce inference costs by up to 60%",
+        icon: "💰",
       },
       {
-        title: "Container Orchestration",
-        description: "Scale applications with Kubernetes and Docker",
-        icon: "📦",
+        title: "Compliance",
+        description: "Maintain data sovereignty and regulatory compliance",
+        icon: "✅",
       },
       {
-        title: "Monitoring & Logging",
-        description: "Comprehensive observability and alerting",
-        icon: "📊",
+        title: "Global Infrastructure",
+        description: "Deploy closer to your users worldwide",
+        icon: "🚀",
       },
     ],
     benefits: [
-      "Faster deployment cycles",
-      "Improved reliability",
-      "Reduced operational overhead",
-      "Better scalability",
+      "Significant cost savings",
+      "Improved latency for global users",
+      "Regulatory compliance",
+      "Flexible deployment options",
     ],
-    video: "videos/video2.webm",
+    video: "/Devops.webm",
   },
 };
 

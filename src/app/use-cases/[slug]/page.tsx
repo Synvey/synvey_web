@@ -5,164 +5,164 @@ import { notFound } from "next/navigation";
 const useCases = {
   "ecommerce-platform": {
     title: "E-commerce Platform",
-    description: "Build scalable online stores with AI-powered features",
+    description: "Multimodal vector search and agentic workflows power intelligent e-commerce experiences",
     icon: "🛒",
     industry: "Retail & E-commerce",
     features: [
-      "AI-powered product recommendations",
-      "Real-time inventory management",
-      "Secure payment processing",
-      "Mobile-first responsive design",
-      "Advanced analytics dashboard",
-      "Multi-channel integration"
+      "Multimodal vector search across product images, descriptions, and reviews",
+      "Custom-trained embeddings for product similarity matching",
+      "Agentic workflows for inventory optimization and pricing",
+      "Real-time recommendation engine with sub-50ms latency",
+      "Semantic search across 10M+ products",
+      "Automated customer service agents"
     ],
     benefits: [
-      "Increase conversion rates by up to 40%",
-      "Reduce cart abandonment by 25%",
-      "Scale to handle 10x traffic spikes",
-      "Improve customer satisfaction scores"
+      "85% faster search results with vector-based retrieval",
+      "40% increase in conversion rates from AI recommendations",
+      "60% reduction in cart abandonment through intelligent workflows",
+      "Process 100K+ queries/second with distributed inference"
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "Redis", "AWS", "Stripe API"],
+    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "In-House Model Hosting", "Distributed Inference"],
     caseStudy: {
       company: "TechRetail Inc.",
-      challenge: "Legacy e-commerce platform couldn't handle Black Friday traffic spikes",
-      solution: "Built modern, scalable platform with AI recommendations",
-      results: "300% revenue growth, 50% faster load times, 99.9% uptime"
+      challenge: "Legacy search couldn't handle semantic queries and product discovery was limited to keyword matching, resulting in poor user experience and low conversion rates",
+      solution: "Implemented multimodal vector search for images and text, custom-trained embeddings on product catalog, and agentic workflows for dynamic pricing and inventory management",
+      results: "85% faster search, 40% higher conversions, 60% less cart abandonment, 99.9% uptime with distributed inference"
     }
   },
   "healthcare-management": {
     title: "Healthcare Management",
-    description: "Secure patient data and streamline medical workflows",
+    description: "Custom embeddings and agentic workflows transform medical data management and clinical decision support",
     icon: "🏥",
     industry: "Healthcare",
     features: [
-      "HIPAA-compliant patient portals",
-      "Appointment scheduling system",
-      "Electronic health records (EHR)",
-      "Telemedicine integration",
-      "Prescription management",
-      "Insurance verification"
+      "Custom-trained embeddings for medical terminology and clinical context",
+      "Multimodal search across patient records, imaging, and research papers",
+      "Agentic workflows for clinical decision support and care coordination",
+      "HIPAA-compliant in-house model hosting",
+      "Semantic search across 10M+ medical documents",
+      "Automated diagnosis assistance with 99.2% accuracy"
     ],
     benefits: [
-      "Reduce administrative overhead by 60%",
-      "Improve patient satisfaction by 45%",
-      "Ensure 100% HIPAA compliance",
-      "Streamline appointment scheduling"
+      "99.2% accuracy in medical document search and retrieval",
+      "60% reduction in diagnosis time through intelligent workflows",
+      "Process 10M+ medical documents with sub-second search",
+      "100% HIPAA compliance with on-premise model hosting"
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS", "HIPAA-compliant hosting", "FHIR API"],
+    technologies: ["Custom Embeddings", "Multimodal Vector Search", "Agentic Workflows", "In-House Model Hosting", "HIPAA-Compliant Infrastructure"],
     caseStudy: {
       company: "MediCare Plus",
-      challenge: "Manual patient management causing delays and errors",
-      solution: "Digital patient portal with automated workflows",
-      results: "200% efficiency gain, 99.9% uptime, 5x more appointments processed"
+      challenge: "Healthcare providers struggled to find relevant patient information across fragmented systems, leading to delayed diagnoses and inefficient care coordination",
+      solution: "Deployed custom-trained medical embeddings, multimodal vector search across EHRs and imaging, and agentic workflows for automated clinical decision support",
+      results: "99.2% search accuracy, 60% faster diagnoses, 10M+ documents searchable in <1s, 100% HIPAA compliance"
     }
   },
   "financial-services": {
     title: "Financial Services",
-    description: "Compliant fintech solutions with real-time analytics",
+    description: "Vector search and agentic workflows enable real-time fraud detection and compliance automation",
     icon: "💳",
     industry: "Financial Services",
     features: [
-      "PCI DSS compliant payment processing",
-      "Real-time fraud detection",
-      "Risk management dashboard",
-      "Regulatory compliance reporting",
-      "Multi-currency support",
-      "Advanced security protocols"
+      "Vector search across transaction patterns, documents, and market signals",
+      "Custom embeddings trained on financial fraud patterns",
+      "Agentic workflows for automated compliance reporting and risk assessment",
+      "Real-time anomaly detection with <50ms latency",
+      "Multimodal analysis of transactions, documents, and behavioral data",
+      "Distributed inference for global transaction processing"
     ],
     benefits: [
-      "Reduce fraud by up to 80%",
-      "Increase transaction processing speed by 3x",
-      "Ensure regulatory compliance",
-      "Improve customer trust and retention"
+      "95% precision in fraud detection with <50ms response time",
+      "70% reduction in false positives through custom embeddings",
+      "$2M+ annual savings from automated compliance workflows",
+      "Process 1M+ transactions/day with distributed inference"
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "Redis", "AWS", "PCI-compliant infrastructure"],
+    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "Distributed Inference", "PCI-Compliant Infrastructure"],
     caseStudy: {
       company: "SecureBank",
-      challenge: "High fraud rates and slow transaction processing",
-      solution: "AI-powered fraud detection with real-time processing",
-      results: "80% fraud reduction, 3x faster transactions, 100% compliance"
+      challenge: "High false positive rates in fraud detection causing customer friction, and manual compliance reporting taking weeks to complete",
+      solution: "Implemented vector search for transaction pattern analysis, custom-trained embeddings on fraud data, and agentic workflows for automated compliance and risk assessment",
+      results: "95% fraud detection precision, 70% fewer false positives, $2M+ saved annually, <50ms detection latency"
     }
   },
   "education-technology": {
     title: "Education Technology",
-    description: "Interactive learning platforms and student management",
+    description: "Custom embeddings and agentic workflows personalize learning and automate educational processes",
     icon: "🎓",
     industry: "Education",
     features: [
-      "Learning management system (LMS)",
-      "Student progress tracking",
-      "Virtual classroom integration",
-      "Assessment and grading tools",
-      "Parent-teacher communication",
-      "Content management system"
+      "Custom-trained embeddings for educational content and student understanding",
+      "Multimodal search across course materials, videos, and student submissions",
+      "Agentic workflows for automated grading and adaptive feedback",
+      "Personalized learning path recommendations",
+      "Semantic search across 5M+ educational resources",
+      "Intelligent content matching and curriculum optimization"
     ],
     benefits: [
-      "Improve student engagement by 50%",
-      "Reduce administrative workload by 40%",
-      "Enable remote learning capabilities",
-      "Provide real-time progress insights"
+      "55% improvement in student engagement through personalized learning",
+      "45% reduction in instructor workload via automated workflows",
+      "Sub-second search across 5M+ educational resources",
+      "90% accuracy in automated assessment and feedback"
     ],
-    technologies: ["React", "Node.js", "MongoDB", "WebRTC", "AWS", "LTI integration"],
+    technologies: ["Custom Embeddings", "Multimodal Vector Search", "Agentic Workflows", "In-House Model Hosting"],
     caseStudy: {
       company: "EduTech Academy",
-      challenge: "Traditional learning methods not engaging students",
-      solution: "Interactive digital learning platform with real-time tracking",
-      results: "50% higher engagement, 40% less admin work, 90% student satisfaction"
+      challenge: "Instructors overwhelmed with grading and students struggling to find relevant learning materials across vast content libraries",
+      solution: "Deployed custom educational embeddings, multimodal search for content discovery, and agentic workflows for automated grading and personalized learning paths",
+      results: "55% higher engagement, 45% less instructor workload, 5M+ resources searchable instantly, 90% grading accuracy"
     }
   },
   "manufacturing-iot": {
     title: "Manufacturing IoT",
-    description: "Smart factory solutions and predictive maintenance",
+    description: "Vector search and custom embeddings enable predictive maintenance and quality optimization",
     icon: "🏭",
     industry: "Manufacturing",
     features: [
-      "IoT sensor integration",
-      "Predictive maintenance algorithms",
-      "Quality control automation",
-      "Supply chain optimization",
-      "Real-time production monitoring",
-      "Energy consumption tracking"
+      "Vector search across sensor data, maintenance logs, and quality reports",
+      "Custom embeddings trained on manufacturing patterns and failure modes",
+      "Agentic workflows for automated quality control and supply chain decisions",
+      "Multimodal analysis of sensor data, images, and production metrics",
+      "Real-time anomaly detection with predictive maintenance alerts",
+      "Distributed inference for global factory operations"
     ],
     benefits: [
-      "Reduce downtime by 70%",
-      "Improve product quality by 35%",
-      "Optimize energy consumption by 25%",
-      "Increase overall equipment effectiveness"
+      "75% reduction in unplanned downtime through predictive maintenance",
+      "30% improvement in Overall Equipment Effectiveness (OEE)",
+      "Process 100M+ sensor readings/day with real-time analysis",
+      "40% reduction in quality defects through intelligent workflows"
     ],
-    technologies: ["React", "Node.js", "InfluxDB", "MQTT", "AWS IoT", "Machine Learning"],
+    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "Distributed Inference", "IoT Integration"],
     caseStudy: {
       company: "SmartManufacturing Co.",
-      challenge: "Unexpected equipment failures causing production delays",
-      solution: "IoT-based predictive maintenance system",
-      results: "70% less downtime, 35% better quality, 25% energy savings"
+      challenge: "Unexpected equipment failures causing $5M+ in annual downtime costs, and quality control relying on manual inspection leading to defects",
+      solution: "Implemented vector search across sensor data and maintenance logs, custom-trained embeddings on failure patterns, and agentic workflows for automated quality control and predictive maintenance",
+      results: "75% less downtime, 30% higher OEE, 100M+ sensor readings processed daily, 40% fewer defects"
     }
   },
   "real-estate-portal": {
     title: "Real Estate Portal",
-    description: "Property listings with virtual tours and analytics",
+    description: "Multimodal search and agentic workflows transform property discovery and lead management",
     icon: "🏠",
     industry: "Real Estate",
     features: [
-      "Virtual property tours",
-      "Advanced property search",
-      "Market analytics dashboard",
-      "Lead management system",
-      "Document management",
-      "Mobile app integration"
+      "Multimodal vector search across property images, descriptions, and neighborhood data",
+      "Custom embeddings trained on real estate semantics and preferences",
+      "Agentic workflows for automated lead qualification and scheduling",
+      "Semantic property matching based on buyer preferences",
+      "Intelligent market analysis and pricing recommendations",
+      "Automated document processing and contract management"
     ],
     benefits: [
-      "Increase lead conversion by 60%",
-      "Reduce time-to-sale by 30%",
-      "Improve customer experience",
-      "Streamline property management"
+      "65% increase in lead conversion through intelligent matching",
+      "50% reduction in time-to-match properties to buyers",
+      "Process 1M+ property listings with sub-second search",
+      "40% improvement in agent productivity via automated workflows"
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "3D rendering", "AWS", "CRM integration"],
+    technologies: ["Multimodal Vector Search", "Custom Embeddings", "Agentic Workflows", "Distributed Inference"],
     caseStudy: {
       company: "PrimeRealty Group",
-      challenge: "Low conversion rates and lengthy sales cycles",
-      solution: "Interactive portal with virtual tours and analytics",
-      results: "60% higher conversions, 30% faster sales, 95% customer satisfaction"
+      challenge: "Low conversion rates from generic keyword search and manual lead qualification causing lengthy sales cycles and missed opportunities",
+      solution: "Deployed multimodal vector search for property images and descriptions, custom-trained embeddings on buyer preferences, and agentic workflows for automated lead qualification and scheduling",
+      results: "65% higher conversions, 50% faster property matching, 1M+ listings searchable instantly, 40% more agent productivity"
     }
   }
 };

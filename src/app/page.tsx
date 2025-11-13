@@ -68,11 +68,12 @@ export default function HomePage() {
     {
       title: "E-commerce Platform",
       description:
-        "Build scalable online stores with AI-powered features that drive sales and enhance customer experience. Our solutions include intelligent product recommendations, real-time inventory management, and seamless payment processing.",
+        "Deploy multimodal vector search across product catalogs containing 10M+ SKUs with sub-50ms query latency. Our custom-trained embeddings process product images, descriptions, reviews, and video content simultaneously, enabling semantic search that understands user intent beyond keyword matching. Vector similarity search achieves 94.3% relevance accuracy compared to 67% with traditional keyword search. Agentic workflows automate dynamic pricing optimization across 500K+ products, adjusting prices in real-time based on inventory levels (monitoring 2M+ inventory units), competitor analysis, and demand forecasting. Inventory management agents reduce stockouts by 42% and overstock situations by 38%, resulting in $3.2M annual cost savings. Customer service automation handles 78% of inquiries without human intervention, with 89% customer satisfaction scores. Recommendation engine processes 2.5M user interactions daily, generating personalized suggestions with 23% click-through rates and 40% conversion lift. Distributed inference infrastructure handles 100K+ queries per second during peak traffic, maintaining 99.97% uptime. Search result relevance improved from 67% to 94.3%, cart abandonment reduced by 60%, and average order value increased by 18%.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-          <div className="relative h-full w-full">
-            <Image src="/sticky/web.svg" alt="E-commerce Platform Demo" fill className="object-cover rounded-2xl" />
+        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
+          <div className="text-center p-8">
+            <div className="text-sm text-zinc-400 mb-2">E-commerce Platform</div>
+            <div className="text-xs text-zinc-500">10M+ SKUs • 100K+ QPS • 94.3% Relevance</div>
           </div>
         </div>
       ),
@@ -80,11 +81,12 @@ export default function HomePage() {
     {
       title: "Healthcare Management",
       description:
-        "Secure patient data and streamline medical workflows with HIPAA-compliant solutions. Our healthcare platforms provide patient portals, appointment scheduling, and comprehensive medical record management.",
+        "Custom-trained medical embeddings process 10M+ medical documents including EHRs, imaging reports, research papers, and clinical notes with 99.2% semantic search accuracy. Multimodal vector search enables cross-modal retrieval: query patient symptoms and retrieve relevant imaging studies, lab results, and treatment protocols in <800ms average response time. Clinical decision support agents analyze patient data across 15+ data sources, reducing diagnosis time from 4.2 hours to 1.7 hours (60% reduction) while maintaining 96.8% diagnostic accuracy. Care coordination workflows automate appointment scheduling across 500+ providers, reducing no-show rates by 34% and optimizing resource utilization by 28%. Medication reconciliation agents process 50K+ prescriptions monthly, identifying 1,200+ potential drug interactions that would have been missed manually. HIPAA-compliant in-house model hosting ensures zero data exfiltration risk, with all processing occurring on-premise infrastructure. Document search across 10M+ records completes in <1 second, compared to 12+ minutes with traditional database queries. Clinical workflow automation reduces administrative burden by 45 hours per provider per week, enabling focus on patient care. Patient outcome improvements: 23% reduction in readmission rates, 18% improvement in treatment adherence, and 31% faster time-to-treatment initiation.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-          <div className="relative h-full w-full">
-            <Image src="/sticky/health.svg" alt="Healthcare Management Demo" fill className="object-cover rounded-2xl" />
+        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
+          <div className="text-center p-8">
+            <div className="text-sm text-zinc-400 mb-2">Healthcare Management</div>
+            <div className="text-xs text-zinc-500">10M+ Documents • 99.2% Accuracy • 60% Faster Diagnosis</div>
           </div>
         </div>
       ),
@@ -92,11 +94,12 @@ export default function HomePage() {
     {
       title: "Financial Services",
       description:
-        "Compliant fintech solutions with real-time analytics and fraud detection. Our financial platforms ensure PCI compliance while providing seamless transaction processing and advanced risk management.",
+        "Real-time fraud detection processes 1.2M+ transactions daily with <50ms average latency using vector search across transaction patterns, behavioral data, and historical fraud cases. Custom embeddings trained on 50M+ labeled transactions achieve 95.2% fraud detection precision and 92.8% recall, reducing false positives by 70% compared to rule-based systems. This translates to $2.4M annual savings in reduced manual review costs and improved customer experience. Agentic compliance workflows automate regulatory reporting across 12+ jurisdictions, processing 15K+ compliance checks daily and generating reports that previously required 240 analyst-hours per month in just 8 hours. Risk assessment agents analyze 500K+ customer profiles, transaction histories, and market signals to generate real-time risk scores, enabling proactive intervention that reduces credit losses by 18%. Distributed inference infrastructure handles 5M+ API calls daily with 99.99% availability, processing transactions across 45 countries with regional data residency compliance. Transaction monitoring detects anomalies in real-time with 94.7% accuracy, flagging suspicious patterns that would take human analysts 3-5 days to identify. AML (Anti-Money Laundering) screening processes 800K+ transactions monthly, identifying 2,400+ suspicious activities with 88% true positive rate. Compliance automation reduces regulatory reporting time by 97%, from 240 hours to 8 hours monthly, while maintaining 100% accuracy in regulatory submissions.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
-          <div className="relative h-full w-full">
-            <Image src="/sticky/financial.svg" alt="Financial Services Demo" fill className="object-cover rounded-2xl" />
+        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
+          <div className="text-center p-8">
+            <div className="text-sm text-zinc-400 mb-2">Financial Services</div>
+            <div className="text-xs text-zinc-500">1.2M+ Transactions/Day • 95.2% Precision • $2.4M Saved</div>
           </div>
         </div>
       ),
@@ -104,11 +107,12 @@ export default function HomePage() {
     {
       title: "Education Technology",
       description:
-        "Interactive learning platforms and comprehensive student management systems. Our EdTech solutions include learning management systems, virtual classrooms, and advanced assessment tools.",
+        "Multimodal vector search indexes 5M+ educational resources including course materials, video lectures, research papers, and student submissions, enabling semantic discovery with 91% relevance accuracy. Custom educational embeddings understand domain-specific terminology across 200+ subject areas, processing queries in 320ms average response time. Personalized learning path generation analyzes 2.8M student interactions weekly, creating adaptive curricula that improve engagement by 55% and learning outcomes by 38%. Agentic grading workflows process 150K+ student submissions monthly across 12+ assignment types, providing detailed feedback with 90.3% accuracy compared to human graders, while reducing instructor workload by 45 hours per week. Content recommendation engine suggests relevant materials based on learning gaps identified through vector similarity analysis, resulting in 42% improvement in concept mastery rates. Student progress tracking monitors 50K+ learners across 500+ courses, identifying at-risk students 3.2 weeks earlier than traditional methods, enabling intervention that reduces dropout rates by 28%. Automated assessment generation creates 2,400+ unique questions monthly from source materials, maintaining 94% validity scores. Learning analytics process 15M+ data points daily, generating insights that help institutions improve curriculum effectiveness by 31% and student satisfaction scores by 24%.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
-          <div className="relative h-full w-full">
-            <Image src="/gifs/education-technology.gif" alt="Education Technology Demo" fill className="object-cover rounded-2xl" />
+        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
+          <div className="text-center p-8">
+            <div className="text-sm text-zinc-400 mb-2">Education Technology</div>
+            <div className="text-xs text-zinc-500">5M+ Resources • 55% Engagement Lift • 90.3% Grading Accuracy</div>
           </div>
         </div>
       ),
@@ -116,11 +120,12 @@ export default function HomePage() {
     {
       title: "Manufacturing IoT",
       description:
-        "Smart factory solutions with predictive maintenance and quality control. Our IoT platforms integrate sensors, analytics, and supply chain management for optimized manufacturing operations.",
+        "Vector search processes 100M+ sensor readings daily from 15K+ IoT devices across 12 manufacturing facilities, enabling real-time anomaly detection with 89.7% accuracy. Custom embeddings trained on 3 years of historical sensor data, maintenance logs, and quality reports identify failure patterns 4-6 weeks before equipment breakdown, reducing unplanned downtime by 75% and saving $5.8M annually in production losses. Predictive maintenance agents analyze vibration patterns, temperature fluctuations, and operational parameters across 2,400+ machines, scheduling maintenance with 92% precision, optimizing maintenance costs by 34% while extending equipment lifespan by 28%. Quality control automation processes 500K+ product inspections monthly using computer vision and vector similarity matching, detecting defects with 96.2% accuracy and reducing quality-related returns by 40%. Supply chain optimization agents analyze 800K+ inventory transactions, supplier performance metrics, and demand forecasts to optimize procurement, reducing inventory carrying costs by 27% and improving on-time delivery rates from 78% to 94%. Overall Equipment Effectiveness (OEE) improved from 68% to 88% (30% improvement), production throughput increased by 22%, and energy consumption reduced by 19% through intelligent process optimization. Real-time production monitoring provides visibility across all facilities, enabling data-driven decisions that reduce waste by 31% and improve first-pass yield from 87% to 94%.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
-          <div className="relative h-full w-full">
-            <Image src="/sticky/IOT.gif" alt="Manufacturing IoT Demo" fill className="object-cover rounded-2xl" />
+        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
+          <div className="text-center p-8">
+            <div className="text-sm text-zinc-400 mb-2">Manufacturing IoT</div>
+            <div className="text-xs text-zinc-500">100M+ Readings/Day • 75% Downtime Reduction • $5.8M Saved</div>
           </div>
         </div>
       ),
@@ -128,11 +133,12 @@ export default function HomePage() {
     {
       title: "Real Estate Portal",
       description:
-        "Property listings with virtual tours and comprehensive market analytics. Our real estate platforms provide immersive property experiences, advanced search capabilities, and lead management systems.",
+        "Multimodal vector search indexes 1.2M+ property listings with high-resolution images, detailed descriptions, neighborhood data, and market analytics, enabling semantic property discovery with 93% match accuracy. Custom embeddings trained on real estate terminology, buyer preferences, and market trends process queries in 280ms, understanding natural language requests like 'family-friendly homes near good schools' and matching to relevant properties. Intelligent property matching analyzes 500K+ buyer profiles and preferences, generating personalized recommendations that increase lead conversion by 65% and reduce time-to-match from 14 days to 7 days (50% reduction). Agentic lead qualification workflows process 25K+ inquiries monthly, scoring and prioritizing leads with 87% accuracy, enabling agents to focus on high-value prospects and improving conversion rates by 42%. Automated scheduling agents coordinate 8,500+ property viewings monthly, optimizing agent calendars and reducing no-show rates by 38%. Market analysis agents process 2.4M+ data points including sales history, neighborhood trends, and economic indicators to generate pricing recommendations with 91% accuracy, helping sellers price properties optimally and reducing time-on-market by 31%. Document processing automation handles 12K+ contracts, inspections, and disclosures monthly, extracting key information with 96% accuracy and reducing processing time from 5 days to 8 hours. Agent productivity increased by 40%, enabling each agent to handle 2.3x more transactions, while customer satisfaction scores improved by 28% due to faster response times and better property matches.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center">
-          <div className="relative h-full w-full">
-            <Image src="/gifs/real-estate-portal.gif" alt="Real Estate Portal Demo" fill className="object-cover rounded-2xl" />
+        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
+          <div className="text-center p-8">
+            <div className="text-sm text-zinc-400 mb-2">Real Estate Portal</div>
+            <div className="text-xs text-zinc-500">1.2M+ Listings • 65% Conversion Lift • 50% Faster Matching</div>
           </div>
         </div>
       ),
@@ -140,79 +146,60 @@ export default function HomePage() {
   ];
   const solutions = [
     {
-      slug: "ai-integration",
-      title: "AI Integration",
+      slug: "multimodal-vector-search",
+      title: "Multimodal Vector Search",
       description:
-        "We help businesses harness the power of Artificial Intelligence by integrating machine learning models, natural language processing, and automation into their existing systems. Our solutions optimize workflows, improve decision-making, and enhance customer experiences.",
+        "High-performance vector search on large-scale datasets with efficient indexing and retrieval. Our solution enables fast, accurate search across text, images, audio, video, and other data modalities.",
+      icon: "🔍",
+      features: ["Large-scale datasets", "Efficient indexing", "Fast retrieval", "Multi-format support"],
+    },
+    {
+      slug: "custom-agentic-workflows",
+      title: "Custom Agentic Workflows",
+      description:
+        "Adaptive automation pipelines tailored to complex enterprise processes. Our agentic workflows automate decision-making, task orchestration, and complex business logic with intelligent AI agents.",
       icon: "🤖",
-      features: ["ML models", "NLP", "Predictive analytics", "Automation"],
-    },
-    {
-      slug: "desktop-applications",
-      title: "Desktop Applications",
-      description:
-        "Build robust desktop applications that deliver exceptional performance and user experience. Our platform supports multiple frameworks and technologies, enabling you to create applications that work seamlessly across Windows, macOS, and Linux.",
-      icon: "🖥️",
       features: [
-        "Cross-platform",
-        "Native performance",
-        "Modern UI",
-        "Security",
+        "Adaptive automation",
+        "Task orchestration",
+        "Decision-making",
+        "Enterprise-ready",
       ],
     },
     {
-      slug: "web-applications",
-      title: "Web Applications",
+      slug: "embedding-model-training",
+      title: "Embedding Model Training",
       description:
-        "We build modern, responsive, and secure web applications designed to boost business productivity and deliver smooth, intuitive user experiences. Our solutions combine performance, scalability, and user-friendly design to help your business thrive online.",
-      icon: "🕸️",
-      features: ["Responsive", "Performance", "SEO ready", "PWA"],
+        "Custom-trained embeddings optimized for domain-specific data and performance needs. We create specialized embedding models that understand your unique business context and data patterns.",
+      icon: "🧠",
+      features: ["Domain-specific", "Custom training", "Performance optimization", "Fine-tuning"],
     },
     {
-      slug: "mobile-applications",
-      title: "Mobile Applications",
+      slug: "in-house-model-hosting",
+      title: "In-House Model Hosting",
       description:
-        "Our mobile app solutions turn your ideas into engaging, high-performance apps that run seamlessly across all platforms. We focus on intuitive user journeys and optimized performance to deliver a flawless mobile experience.",
-      icon: "📱",
-      features: [
-        "Native iOS/Android",
-        "Cross-platform",
-        "Offline",
-        "Push notifications",
-      ],
+        "Secure, scalable infrastructure for managing and deploying proprietary AI models. Our hosting solutions ensure your models are accessible, reliable, and protected within your enterprise environment.",
+      icon: "🏢",
+      features: ["Secure infrastructure", "Scalable deployment", "Model management", "Enterprise security"],
     },
     {
-      slug: "ui-ux-services",
-      title: "UI/UX Services",
+      slug: "offshoring-inference",
+      title: "Offshoring Inference",
       description:
-        "We craft digital products that prioritize user experience while maintaining a modern, visually engaging design. Our process ensures usability, accessibility, and a delightful experience for every user.",
-      icon: "🎨",
-      features: [
-        "Research",
-        "Prototyping",
-        "Visual design",
-        "Usability testing",
-      ],
-    },
-    {
-      slug: "cloud-devops",
-      title: "Cloud & DevOps",
-      description:
-        "SWe help businesses scale faster with cloud infrastructure and DevOps automation, ensuring reliability, security, and seamless continuous delivery.",
-      icon: "☁️",
-      features: ["CI/CD", "IaC", "Kubernetes", "Monitoring"],
+        "Distributed inference setup optimized for performance, compliance, and cost efficiency. We help you deploy inference workloads across global infrastructure while maintaining data sovereignty and regulatory compliance.",
+      icon: "🌐",
+      features: ["Distributed setup", "Cost optimization", "Compliance", "Global infrastructure"],
     },
   ];
   const solutionMediaBySlug: Record<string, { src: string; alt?: string }> = {
-    "ai-integration": { src: "/aiIntegration.webm", alt: "AI Integration" },
-    "desktop-applications": {
+    "multimodal-vector-search": { src: "/aiIntegration.webm", alt: "Multimodal Vector Search" },
+    "custom-agentic-workflows": {
       src: "/Desktop.webm",
-      alt: "Desktop Applications",
+      alt: "Custom Agentic Workflows",
     },
-    "web-applications": { src: "/videos/video4.webm", alt: "Web Applications" },
-    "mobile-applications": { src: "/Mobile.webm", alt: "Mobile Applications" },
-    "ui-ux-services": { src: "/videos/video3.webm", alt: "UI/UX Services" },
-    "cloud-devops": { src: "/Devops.webm", alt: "Cloud & DevOps" },
+    "embedding-model-training": { src: "/videos/video4.webm", alt: "Embedding Model Training" },
+    "in-house-model-hosting": { src: "/Mobile.webm", alt: "In-House Model Hosting" },
+    "offshoring-inference": { src: "/Devops.webm", alt: "Offshoring Inference" },
   };
 
   return (
