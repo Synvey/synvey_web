@@ -1,6 +1,6 @@
 # Synvey - AI Enterprise Solutions
 
-Synvey is an AI startup building enterprise solutions that combine advanced embeddings, multimodal intelligence, and agentic automation to help organizations unlock the full potential of their data and streamline complex operations.
+Synvey is an Tiny AI startup building enterprise solutions that combine advanced embeddings, multimodal intelligence, and agentic automation to help organizations unlock the full potential of their data and streamline complex operations.
 
 ## 🎯 About Synvey
 
