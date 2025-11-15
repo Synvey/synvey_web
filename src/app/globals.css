@@ -391,3 +391,33 @@ body {
     }
   }
 }
+
+/* Mermaid Diagram Styling */
+.mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.mermaid-container .node rect,
+.mermaid-container .node circle,
+.mermaid-container .node ellipse,
+.mermaid-container .node polygon {
+  transition: all 0.3s ease;
+}
+
+.mermaid-container .node:hover rect,
+.mermaid-container .node:hover circle,
+.mermaid-container .node:hover ellipse,
+.mermaid-container .node:hover polygon {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.mermaid-container .edgePath path {
+  transition: stroke-width 0.3s ease;
+}
+
+.mermaid-container .edgePath:hover path {
+  stroke-width: 3px !important;
+}

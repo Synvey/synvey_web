@@ -26,34 +26,29 @@ const NAV_ITEMS: MenuItem[] = [
     label: "Solutions",
     items: [
       {
-        label: "AI Integration",
-        href: "/products/ai-integration",
-        description: "Harness AI to build intelligent applications.",
+        label: "Multimodal Vector Search",
+        href: "/products/multimodal-vector-search",
+        description: "High-performance vector search on large-scale datasets.",
       },
       {
-        label: "Desktop Applications",
-        href: "/products/desktop-applications",
-        description: "Create powerful native desktop apps.",
+        label: "Enterprise AI Agents",
+        href: "/products/custom-agentic-workflows",
+        description: "AI agents orchestrating workflows across 50+ enterprise systems (Office 365, Salesforce, SAP, databases).",
       },
       {
-        label: "Web Applications",
-        href: "/products/web-applications",
-        description: "Build scalable responsive web apps.",
+        label: "Embedding Model Training",
+        href: "/products/embedding-model-training",
+        description: "Custom-trained embeddings for domain-specific data.",
       },
       {
-        label: "Mobile Applications",
-        href: "/products/mobile-applications",
-        description: "Develop engaging mobile experiences.",
+        label: "In-House Model Hosting",
+        href: "/products/in-house-model-hosting",
+        description: "Secure, scalable infrastructure for AI models.",
       },
       {
-        label: "UI/UX Services",
-        href: "/products/ui-ux-services",
-        description: "Design intuitive user experiences.",
-      },
-      {
-        label: "Cloud & DevOps",
-        href: "/products/cloud-devops",
-        description: "Streamline deployment and operations.",
+        label: "Distributed Inference",
+        href: "/products/offshoring-inference",
+        description: "Global inference infrastructure optimized for performance and compliance.",
       },
     ],
   },
@@ -61,69 +56,34 @@ const NAV_ITEMS: MenuItem[] = [
     label: "Use cases",
     items: [
       {
-        label: "E-commerce Platform",
+        label: "E-commerce",
         href: "/use-cases/ecommerce-platform",
-        description: "Build scalable online stores with AI-powered features.",
+        description: "AI-powered search and automation that helps customers find products faster and increases sales.",
       },
       {
-        label: "Healthcare Management",
+        label: "Healthcare",
         href: "/use-cases/healthcare-management",
-        description: "Secure patient data and streamline medical workflows.",
+        description: "Intelligent systems that help doctors find patient information instantly and improve care quality.",
       },
       {
         label: "Financial Services",
         href: "/use-cases/financial-services",
-        description: "Compliant fintech solutions with real-time analytics.",
+        description: "Smart fraud detection and automated compliance that protects customers and reduces costs.",
       },
       {
-        label: "Education Technology",
+        label: "Education",
         href: "/use-cases/education-technology",
-        description: "Interactive learning platforms and student management.",
+        description: "Personalized learning experiences that adapt to each student and save teachers time.",
       },
       {
-        label: "Manufacturing IoT",
+        label: "Manufacturing",
         href: "/use-cases/manufacturing-iot",
-        description: "Smart factory solutions and predictive maintenance.",
+        description: "Predictive systems that prevent equipment failures and optimize production efficiency.",
       },
       {
-        label: "Real Estate Portal",
+        label: "Real Estate",
         href: "/use-cases/real-estate-portal",
-        description: "Property listings with virtual tours and analytics.",
-      },
-    ],
-  },
-  {
-    label: "Resources",
-    items: [
-      {
-        label: "Documentation",
-        href: "/docs",
-        description: "Complete API reference and guides.",
-      },
-      {
-        label: "Blog",
-        href: "/blog",
-        description: "Latest insights and industry trends.",
-      },
-      {
-        label: "Guides",
-        href: "/guides",
-        description: "Step-by-step tutorials and best practices.",
-      },
-      {
-        label: "Case Studies",
-        href: "/case-studies",
-        description: "Real-world success stories and implementations.",
-      },
-      {
-        label: "Webinars",
-        href: "/webinars",
-        description: "Live sessions and recorded presentations.",
-      },
-      {
-        label: "Community",
-        href: "/community",
-        description: "Connect with developers and get support.",
+        description: "Smart property matching that connects buyers with their ideal homes faster.",
       },
     ],
   },
@@ -347,8 +307,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full max-w-full bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-gray-300/30 dark:border-gray-700/30" ${
-          isScrolled ? "shadow-md shadow-zinc-900/40" : "shadow-none"
+        className={`fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-300/30 dark:border-gray-700/30 transition-all duration-200 ${
+          isScrolled 
+            ? "bg-background/95 backdrop-blur-md shadow-md shadow-zinc-900/40" 
+            : "bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60"
         }`}
       >
         <div className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">

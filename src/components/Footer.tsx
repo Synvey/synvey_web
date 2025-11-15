@@ -2,12 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 const solutionLinks = [
-  { label: "AI Integration", href: "/products/ai-integration" },
-  { label: "Desktop Applications", href: "/products/desktop-applications" },
-  { label: "Web Applications", href: "/products/web-applications" },
-  { label: "Mobile Applications", href: "/products/mobile-applications" },
-  { label: "UI/UX Services", href: "/products/ui-ux-services" },
-  { label: "Cloud & DevOps", href: "/products/cloud-devops" },
+  { label: "Multimodal Vector Search", href: "/products/multimodal-vector-search" },
+  { label: "Enterprise AI Agents", href: "/products/custom-agentic-workflows" },
+  { label: "Embedding Model Training", href: "/products/embedding-model-training" },
+  { label: "In-House Model Hosting", href: "/products/in-house-model-hosting" },
+  { label: "Distributed Inference", href: "/products/offshoring-inference" },
 ];
 
 const useCaseLinks = [
