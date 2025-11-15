@@ -31,9 +31,9 @@ const NAV_ITEMS: MenuItem[] = [
         description: "High-performance vector search on large-scale datasets.",
       },
       {
-        label: "Custom Agentic Workflows",
+        label: "Enterprise AI Agents",
         href: "/products/custom-agentic-workflows",
-        description: "Adaptive automation pipelines for enterprise processes.",
+        description: "AI agents orchestrating workflows across 50+ enterprise systems (Office 365, Salesforce, SAP, databases).",
       },
       {
         label: "Embedding Model Training",
@@ -46,9 +46,9 @@ const NAV_ITEMS: MenuItem[] = [
         description: "Secure, scalable infrastructure for AI models.",
       },
       {
-        label: "Offshoring Inference",
+        label: "Distributed Inference",
         href: "/products/offshoring-inference",
-        description: "Distributed inference optimized for performance and compliance.",
+        description: "Global inference infrastructure optimized for performance and compliance.",
       },
     ],
   },
@@ -56,69 +56,34 @@ const NAV_ITEMS: MenuItem[] = [
     label: "Use cases",
     items: [
       {
-        label: "Multimodal Product Search & Discovery",
+        label: "E-commerce",
         href: "/use-cases/ecommerce-platform",
-        description: "Multimodal vector search and agentic workflows power intelligent product discovery and automation.",
+        description: "AI-powered search and automation that helps customers find products faster and increases sales.",
       },
       {
-        label: "Clinical Intelligence & Medical Document Search",
+        label: "Healthcare",
         href: "/use-cases/healthcare-management",
-        description: "Custom embeddings and agentic workflows transform medical data management and clinical decision support.",
+        description: "Intelligent systems that help doctors find patient information instantly and improve care quality.",
       },
       {
-        label: "Real-Time Fraud Detection & Compliance Automation",
+        label: "Financial Services",
         href: "/use-cases/financial-services",
-        description: "Vector search and agentic workflows enable real-time fraud detection and compliance automation.",
+        description: "Smart fraud detection and automated compliance that protects customers and reduces costs.",
       },
       {
-        label: "Personalized Learning & Educational Content Discovery",
+        label: "Education",
         href: "/use-cases/education-technology",
-        description: "Custom embeddings and agentic workflows personalize learning and automate educational processes.",
+        description: "Personalized learning experiences that adapt to each student and save teachers time.",
       },
       {
-        label: "Predictive Maintenance & Industrial IoT Analytics",
+        label: "Manufacturing",
         href: "/use-cases/manufacturing-iot",
-        description: "Vector search and custom embeddings enable predictive maintenance and quality optimization.",
+        description: "Predictive systems that prevent equipment failures and optimize production efficiency.",
       },
       {
-        label: "Intelligent Property Matching & Lead Qualification",
+        label: "Real Estate",
         href: "/use-cases/real-estate-portal",
-        description: "Multimodal search and agentic workflows transform property discovery and lead management.",
-      },
-    ],
-  },
-  {
-    label: "Resources",
-    items: [
-      {
-        label: "Documentation",
-        href: "/docs",
-        description: "Complete API reference and guides.",
-      },
-      {
-        label: "Blog",
-        href: "/blog",
-        description: "Latest insights and industry trends.",
-      },
-      {
-        label: "Guides",
-        href: "/guides",
-        description: "Step-by-step tutorials and best practices.",
-      },
-      {
-        label: "Case Studies",
-        href: "/case-studies",
-        description: "Real-world success stories and implementations.",
-      },
-      {
-        label: "Webinars",
-        href: "/webinars",
-        description: "Live sessions and recorded presentations.",
-      },
-      {
-        label: "Community",
-        href: "/community",
-        description: "Connect with developers and get support.",
+        description: "Smart property matching that connects buyers with their ideal homes faster.",
       },
     ],
   },

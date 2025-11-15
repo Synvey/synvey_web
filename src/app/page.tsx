@@ -12,21 +12,26 @@ import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 import StatsSection from "@/components/StatsSection";
 
 export default function HomePage() {
-  // Brand-style logos; use placeholders available in /public and fallbacks with initials
+  // AI/ML Technology Stack - Add these SVG files to /public folder
   const brandTicker = [
-    { src: "/Openai.svg", name: "Open AI" },
-    { src: "/figma.svg", name: "Figma" },
-    { src: "/js.svg", name: "Js" },
-    { src: "/react.svg", name: "React" },
     { src: "/python.svg", name: "Python" },
+    { src: "/pytorch.svg", name: "PyTorch" },
+    { src: "/tensorflow.svg", name: "TensorFlow" },
+    { src: "/huggingface.svg", name: "Hugging Face" },
+    { src: "/openai.svg", name: "OpenAI" },
     { src: "/docker.svg", name: "Docker" },
-    { src: "/flutter.svg", name: "Flutter" },
-    { src: "/github.svg", name: "github" },
-    { src: "/php.svg", name: "PHP" },
-    { src: "/google.svg", name: "Google" },
-    { src: "/laravel.svg", name: "Laravel" },
-    { src: "/go.svg", name: "GO" },
-    { src: "/node.svg", name: "Node" },
+    { src: "/kubernetes.svg", name: "Kubernetes" },
+    { src: "/mlflow.svg", name: "MLflow" },
+    { src: "/llamaindex.svg", name: "LlamaIndex" },
+    { src: "/onnx.svg", name: "ONNX" },
+    { src: "/vertexai.svg", name: "Vertex AI" },
+    { src: "/azure.svg", name: "Azure AI" },
+    { src: "/anthropic.svg", name: "Anthropic" },
+    { src: "/ollama.png", name: "Ollama" },
+    { src: "/langchain.png", name: "LangChain" },
+    { src: "/pinecone.svg", name: "Pinecone" },
+    { src: "/weaviate.svg", name: "Weaviate" },
+    { src: "/fastapi.svg", name: "FastAPI" },
   ];
 
   // User reviews
@@ -222,13 +227,13 @@ export default function HomePage() {
     },
     {
       slug: "custom-agentic-workflows",
-      title: "Custom Agentic Workflows",
+      title: "Enterprise AI Agents",
       overview: {
-        homepageDescription: "Adaptive automation pipelines tailored to complex enterprise processes. Automates decision-making, task orchestration, and complex business logic with intelligent AI agents achieving 95%+ task completion accuracy.",
-        technicalSummary: "Production-ready agentic orchestration framework enabling autonomous decision-making across complex enterprise workflows with 95%+ task completion accuracy. Addresses enterprise automation challenges through multi-agent systems coordinating 100+ concurrent processes with state management, error recovery, and dynamic routing. LLM-powered agents execute business logic with explainable reasoning, maintaining comprehensive audit trails and compliance logging. Integrates with existing enterprise systems through REST APIs, webhooks, and database connectors, supporting conditional branching, parallel execution, and human-in-the-loop interventions.",
-        scalability: "Distributed workflow engine processes 1M+ tasks daily with horizontal scaling, supporting 100+ concurrent agent processes per workflow instance",
-        performance: "<100ms orchestration overhead per task, 95%+ task completion accuracy, sub-second agent response times for standard operations",
-        integration: "REST APIs, webhook support, database connectors (PostgreSQL, MongoDB, Redis), enterprise SSO (SAML, OAuth), message queue integration (RabbitMQ, Kafka)"
+        homepageDescription: "Universal enterprise connectivity with LLM-powered agents orchestrating workflows across 50+ data sources (Office 365, Google Workspace, Salesforce, SAP, databases). Eliminates 20+ hours weekly of manual data transfer with 99.7% cross-system synchronization accuracy.",
+        technicalSummary: "Enterprise-grade agentic workflow platform with universal connectivity to your entire tech stack. AI agents autonomously navigate complex data landscapes—querying databases (PostgreSQL, MySQL, Oracle, Snowflake, BigQuery), processing Office 365 and Google Workspace documents, orchestrating actions across CRM/ERP systems (Salesforce, SAP, NetSuite), and managing communications (Teams, Slack, Gmail). Unlike traditional iPaaS solutions, our agents use LLM reasoning to handle edge cases and ambiguity. Unlike RPA tools, we provide native API integration with intelligent data processing. Solves the core enterprise challenge: data trapped in silos across dozens of applications, eliminating 20+ hours weekly of manual data transfer work. Multi-agent systems coordinate 100+ concurrent processes with stateful orchestration, processing 10M+ records daily with 99.7% cross-system synchronization accuracy.",
+        scalability: "Distributed workflow engine processes 10M+ records daily across 15-20 enterprise systems with horizontal scaling, supporting 100+ concurrent workflows",
+        performance: "<500ms cross-system workflow latency, 95%+ task completion accuracy, <200ms event-to-action for real-time triggers",
+        integration: "50+ native connectors including Office 365 (Teams, SharePoint, Outlook, Excel), Google Workspace (Gmail, Drive, Docs), databases (PostgreSQL, MySQL, Oracle, Snowflake, BigQuery), CRM (Salesforce, HubSpot), ERP (SAP, NetSuite), communication (Slack, Teams), custom REST/GraphQL/SOAP"
       },
       features: [
         {
@@ -283,7 +288,7 @@ export default function HomePage() {
       },
       media: {
         src: "/Desktop.webm",
-        alt: "Custom Agentic Workflows Architecture",
+        alt: "Enterprise AI Agents Architecture",
         type: "video/webm"
       },
       uxInteractions: {
@@ -442,10 +447,10 @@ export default function HomePage() {
     },
     {
       slug: "offshoring-inference",
-      title: "Offshoring Inference",
+      title: "Distributed Inference",
       overview: {
         homepageDescription: "Distributed inference setup optimized for performance, compliance, and cost efficiency. Global deployment across 15+ regions reduces costs by 40-60% while maintaining <50ms latency SLAs and 99.99% availability.",
-        technicalSummary: "Global distributed inference architecture optimizing cost-performance tradeoffs across 15+ regions with intelligent request routing and load balancing. Addresses enterprise needs for cost optimization, global scale, and regulatory compliance through multi-cloud deployment (AWS, GCP, Azure) with intelligent request routing. Cost optimization strategies including spot instances, reserved capacity, and model quantization reduce inference costs by 40-60% while maintaining <50ms latency SLAs. Regional data residency compliance ensures processing occurs within required jurisdictions, with automated failover and disaster recovery enabling 99.99% global availability.",
+        technicalSummary: "Global distributed inference architecture optimizing cost-performance tradeoffs across 15+ regions with intelligent request routing and load balancing, powered by strategic partnerships with Azure AI and Google Cloud Vertex AI. Addresses enterprise needs for cost optimization, global scale, and regulatory compliance through multi-cloud deployment with intelligent request routing. Cost optimization strategies including spot instances, reserved capacity, and model quantization reduce inference costs by 40-60% while maintaining <50ms latency SLAs. Regional data residency compliance ensures processing occurs within required jurisdictions, with automated failover and disaster recovery enabling 99.99% global availability.",
         scalability: "Distributed architecture across 15+ regions scales from single region to global deployment, handling 1M+ requests daily with intelligent load distribution",
         performance: "<50ms latency SLAs maintained globally, 40-60% cost reduction, 99.99% availability with multi-region failover, <10s failover time",
         integration: "Multi-cloud APIs (AWS, GCP, Azure), CDN integration (Cloudflare, Fastly), global load balancers, regional data residency controls"
@@ -453,7 +458,7 @@ export default function HomePage() {
       features: [
         {
           title: "Distributed Global Setup",
-          description: "Multi-region deployment across 15+ geographic locations with intelligent request routing based on latency, cost, and data residency requirements. Global load balancing distributes traffic optimally, reducing latency by 40% compared to single-region deployment. Automated failover ensures 99.99% availability even during regional outages.",
+          description: "Multi-region deployment across 15+ geographic locations powered by partnerships with Azure AI and Google Cloud Vertex AI, with intelligent request routing based on latency, cost, and data residency requirements. Global load balancing distributes traffic optimally, reducing latency by 40% compared to single-region deployment. Automated failover ensures 99.99% availability even during regional outages.",
           metrics: "15+ regions deployed, 40% latency reduction, 99.99% global availability, <10s failover time, intelligent request routing"
         },
         {
@@ -502,7 +507,7 @@ export default function HomePage() {
       },
       media: {
         src: "/Devops.webm",
-        alt: "Offshoring Inference Global Architecture",
+        alt: "Distributed Inference Global Architecture",
         type: "video/webm"
       },
       uxInteractions: {
@@ -518,11 +523,11 @@ export default function HomePage() {
     "multimodal-vector-search": { src: "/aiIntegration.webm", alt: "Multimodal Vector Search" },
     "custom-agentic-workflows": {
       src: "/Desktop.webm",
-      alt: "Custom Agentic Workflows",
+      alt: "Enterprise AI Agents",
     },
     "embedding-model-training": { src: "/videos/video4.webm", alt: "Embedding Model Training" },
     "in-house-model-hosting": { src: "/Mobile.webm", alt: "In-House Model Hosting" },
-    "offshoring-inference": { src: "/Devops.webm", alt: "Offshoring Inference" },
+    "offshoring-inference": { src: "/Devops.webm", alt: "Distributed Inference" },
   };
 
   return (
@@ -533,20 +538,19 @@ export default function HomePage() {
             {/* Top: Text Content */}
             <Reveal className="text-center max-w-4xl">
               <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-                Innovate faster. <br />
-                Deliver with{" "}
+                Enterprise AI that{" "}
                 <FlipWords
-                  words={["precision.", "accuracy.", "efficiency."]}
+                  words={["understands.", "automates.", "scales."]}
                   className="inline-block text-primary px-1"
                   duration={3000}
                 />
               </h1>
 
               <p className="mt-6 max-w-2xl mx-auto text-lg leading-7 text-zinc-400 sm:text-xl animate-on-load animate-fade-in-up animate-delay-200">
-                Synvey empowers businesses with digital solutions that scale.
-                From AI integration and custom apps to seamless mobile
-                experiences and intuitive UI/UX design, we deliver technology
-                that drives innovation and growth.
+                Synvey builds production-ready AI infrastructure for enterprises. 
+                From multimodal vector search processing billions of vectors to 
+                enterprise AI agents automating complex operations, we deliver 
+                intelligent systems that transform how organizations leverage data and AI.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 animate-on-load animate-fade-in-up animate-delay-300">
                 <Button asChild size="lg">

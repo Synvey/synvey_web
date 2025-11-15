@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const solutionLinks = [
   { label: "Multimodal Vector Search", href: "/products/multimodal-vector-search" },
-  { label: "Custom Agentic Workflows", href: "/products/custom-agentic-workflows" },
+  { label: "Enterprise AI Agents", href: "/products/custom-agentic-workflows" },
   { label: "Embedding Model Training", href: "/products/embedding-model-training" },
   { label: "In-House Model Hosting", href: "/products/in-house-model-hosting" },
-  { label: "Offshoring Inference", href: "/products/offshoring-inference" },
+  { label: "Distributed Inference", href: "/products/offshoring-inference" },
 ];
 
 const useCaseLinks = [
