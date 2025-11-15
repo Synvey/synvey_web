@@ -675,7 +675,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     // Special handling for architecture diagram
                     if (key === 'architectureDiagram' && typeof value === 'string') {
                       return (
-                          <MermaidDiagram chart={value} />
+                          <MermaidDiagram key={key} chart={value} />
                       );
                     }
                     

@@ -307,8 +307,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full max-w-full bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-gray-300/30 dark:border-gray-700/30" ${
-          isScrolled ? "shadow-md shadow-zinc-900/40" : "shadow-none"
+        className={`fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-300/30 dark:border-gray-700/30 transition-all duration-200 ${
+          isScrolled 
+            ? "bg-background/95 backdrop-blur-md shadow-md shadow-zinc-900/40" 
+            : "bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60"
         }`}
       >
         <div className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">

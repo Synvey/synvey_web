@@ -37,7 +37,7 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="flex min-h-dvh flex-col w-full max-w-full overflow-x-hidden">
             <Navbar />
-            <main className="flex-1 w-full max-w-full overflow-x-hidden">{children}</main>
+            <main className="flex-1 w-full max-w-full overflow-x-hidden pt-16">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
