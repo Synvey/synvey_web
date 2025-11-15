@@ -155,7 +155,7 @@ export default function HomePage() {
       title: "Multimodal Vector Search",
       overview: {
         homepageDescription: "High-performance vector search on large-scale datasets with efficient indexing and retrieval. Enables fast, accurate search across text, images, audio, video, and other data modalities with sub-50ms latency and 94%+ relevance accuracy.",
-        technicalSummary: "Enterprise-grade vector search architecture processing billions of vectors across text, images, audio, video, and structured data with sub-50ms p95 query latency. Addresses domain-specific challenges through custom-trained embeddings (768-1024 dimensional vectors) optimized for semantic understanding, enabling 94%+ relevance accuracy at scale. Scalable distributed indexing infrastructure handles 10M+ documents with horizontal scaling, supporting real-time updates and maintaining 99.9%+ uptime. Integrates seamlessly with existing AI pipelines through RESTful APIs and SDK support for Python, JavaScript, and Go.",
+        technicalSummary: "Enterprise-grade vector search architecture processing billions of vectors across text, images, audio, video, and structured data with sub-50ms p95 query latency. Advanced document parsing engine handles complex file structures (PDFs, Office documents, HTML, Markdown) with 98%+ extraction accuracy, including OCR for scanned documents with 50+ language support. Structure-aware chunking preserves semantic boundaries optimizing embedding quality. Addresses domain-specific challenges through custom-trained embeddings (768-1024 dimensional vectors) optimized for semantic understanding, enabling 94%+ relevance accuracy at scale. Intelligent document versioning with delta indexing reduces overhead by 90% through incremental updates, tracking changes with <100ms detection latency and enabling temporal search queries. Scalable distributed indexing infrastructure handles 10M+ documents with horizontal scaling, supporting real-time updates and maintaining 99.9%+ uptime. Integrates seamlessly with existing AI pipelines through RESTful APIs and SDK support for Python, JavaScript, and Go.",
         scalability: "Horizontal scaling across distributed clusters, supporting 10M+ documents with linear performance scaling",
         performance: "Sub-50ms p95 query latency, 100K+ queries per second throughput, 60% memory optimization via advanced algorithms",
         integration: "RESTful APIs, Python/JavaScript/Go SDKs, vector database connectors (Pinecone, Weaviate, Qdrant compatible)"
@@ -180,6 +180,16 @@ export default function HomePage() {
           title: "Multi-Format Data Support",
           description: "Native support for text (plain, markdown, structured), images (JPEG, PNG, WebP), audio (MP3, WAV, FLAC), video (MP4, WebM), and structured data (JSON, CSV). Automatic format detection and preprocessing pipelines extract semantic features using domain-specific encoders. Custom embedding models fine-tuned for each modality ensure optimal representation quality.",
           metrics: "5+ data formats supported, 15+ file types processed, automatic format detection with 99% accuracy, real-time preprocessing"
+        },
+        {
+          title: "Advanced Document Parsing & Extraction",
+          description: "Intelligent document parsing engine handles complex file structures including PDFs (text, scanned, forms), Office documents (Word, Excel, PowerPoint), HTML, and markdown with 98%+ extraction accuracy. OCR capabilities process scanned documents and images with multi-language support (50+ languages). Document structure extraction identifies headers, sections, tables, lists, and metadata automatically. Smart chunking strategies preserve semantic boundaries optimizing embedding quality.",
+          metrics: "98%+ extraction accuracy, 50+ languages supported, OCR for scanned documents, structure-aware chunking, entity extraction, multi-format parsing"
+        },
+        {
+          title: "Document Versioning & Change Tracking",
+          description: "Intelligent version control system tracks document changes with delta indexing, re-indexing only modified content to reduce overhead by 90%. Change detection monitors file modifications, additions, and deletions in real-time across connected data sources. Version history enables temporal search queries ('find version from last month'), with automatic retention policies and archival. Document lineage tracking maintains relationships between versions, supporting audit requirements.",
+          metrics: "90% indexing overhead reduction via delta updates, real-time change detection across all sources, temporal search with version history, <100ms change detection latency"
         }
       ],
       benefits: [
@@ -210,6 +220,7 @@ export default function HomePage() {
         accuracy: "94%+ relevance accuracy, 89% precision at top-10 results, 96% recall for semantic queries",
         scalability: "Linear scaling from 1M to 10B+ vectors, 10M+ documents indexed, 50K+ documents/hour indexing rate",
         memoryEfficiency: "60% memory reduction vs naive implementations, 2.4GB per 1M vectors (768-dim), 4.8GB per 1M vectors (1024-dim)",
+        versionControl: "90% indexing overhead reduction via delta updates, <100ms change detection latency, temporal search with full version history",
         availability: "99.9%+ uptime with distributed deployment, <100ms failover time, zero-downtime index updates"
       },
       media: {

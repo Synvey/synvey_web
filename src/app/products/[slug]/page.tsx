@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import React from "react";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import Reveal from "@/components/Reveal";
+import MermaidDiagram from "@/components/MermaidDiagram";
 
 const PRODUCTS = {
   "multimodal-vector-search": {
@@ -11,7 +12,7 @@ const PRODUCTS = {
     tagline:
       "Enterprise-grade vector search architecture processing billions of vectors with sub-50ms p95 query latency",
     overview:
-      "Enterprise-grade vector search architecture processing billions of vectors across text, images, audio, video, and structured data with sub-50ms p95 query latency. Addresses domain-specific challenges through custom-trained embeddings (768-1024 dimensional vectors) optimized for semantic understanding, enabling 94%+ relevance accuracy at scale. Scalable distributed indexing infrastructure handles 10M+ documents with horizontal scaling, supporting real-time updates and maintaining 99.9%+ uptime. Integrates seamlessly with existing AI pipelines through RESTful APIs and SDK support for Python, JavaScript, and Go.",
+      "Enterprise-grade vector search architecture processing billions of vectors across text, images, audio, video, and structured data with sub-50ms p95 query latency. Advanced document parsing engine handles complex file structures (PDFs, Office documents, HTML, Markdown) with 98%+ extraction accuracy, including OCR for scanned documents with 50+ language support. Structure-aware chunking preserves semantic boundaries optimizing embedding quality. Addresses domain-specific challenges through custom-trained embeddings (768-1024 dimensional vectors) optimized for semantic understanding, enabling 94%+ relevance accuracy at scale. Intelligent document versioning with delta indexing reduces overhead by 90% through incremental updates, tracking changes with <100ms detection latency and enabling temporal search queries across document history. Scalable distributed indexing infrastructure handles 10M+ documents with horizontal scaling, supporting real-time updates and maintaining 99.9%+ uptime. Integrates seamlessly with existing AI pipelines through RESTful APIs and SDK support for Python, JavaScript, and Go.",
     icon: (
       <svg
         className="h-12 w-12"
@@ -49,6 +50,16 @@ const PRODUCTS = {
         description: "Native support for text (plain, markdown, structured), images (JPEG, PNG, WebP), audio (MP3, WAV, FLAC), video (MP4, WebM), and structured data (JSON, CSV). Automatic format detection and preprocessing pipelines extract semantic features using domain-specific encoders. Custom embedding models fine-tuned for each modality ensure optimal representation quality.",
         metrics: "5+ data formats supported | 15+ file types processed | 99% format detection accuracy | Real-time preprocessing"
       },
+      {
+        title: "Advanced Document Parsing & Extraction",
+        description: "Intelligent document parsing engine handles complex file structures including PDFs (text, scanned, forms), Office documents (Word, Excel, PowerPoint), HTML, and markdown with 98%+ extraction accuracy. OCR capabilities process scanned documents and images with multi-language support (50+ languages). Document structure extraction identifies headers, sections, tables, lists, and metadata automatically. Smart chunking strategies preserve semantic boundaries (sentence, paragraph, section-level) optimizing embedding quality. Entity extraction identifies key information (dates, names, locations, organizations) from unstructured text. Language detection and normalization ensure consistent processing across multilingual documents.",
+        metrics: "98%+ extraction accuracy | 50+ languages supported | OCR for scanned documents | Structure-aware chunking | Entity extraction | Multi-format parsing (PDF, Office, HTML, Markdown)"
+      },
+      {
+        title: "Document Versioning & Change Tracking",
+        description: "Intelligent version control system tracks document changes with delta indexing, re-indexing only modified content to reduce overhead by 90%. Change detection monitors file modifications, additions, and deletions in real-time across connected data sources. Version history enables temporal search queries ('find version from last month'), with automatic retention policies and archival. Document lineage tracking maintains relationships between versions, supporting audit requirements and compliance workflows. Incremental updates process only changed documents, reducing indexing costs while maintaining search accuracy.",
+        metrics: "90% indexing overhead reduction via delta updates | Real-time change detection across all sources | Temporal search with version history | <100ms change detection latency | Full document lineage tracking"
+      },
     ],
     benefits: [
       {
@@ -81,11 +92,56 @@ const PRODUCTS = {
       availability: "99.9%+ uptime with distributed deployment, <100ms failover time, zero-downtime index updates"
     },
     technicalSpecs: {
-      architecture: "Distributed vector database with HNSW and IVF-PQ indexing, horizontal sharding across compute nodes",
+      architecture: "Distributed vector database with HNSW and IVF-PQ indexing, horizontal sharding across compute nodes, delta indexing for incremental updates",
+      architectureDiagram: `graph TB
+        subgraph "Client Layer"
+          A[Query API<br/>REST/gRPC] --> B[Load Balancer]
+        end
+        
+        subgraph "Distributed Compute Nodes"
+          B --> C[Node 1<br/>Shard A]
+          B --> D[Node 2<br/>Shard B]
+          B --> E[Node 3<br/>Shard C]
+          B --> F[Node N<br/>Shard N]
+        end
+        
+        subgraph "Indexing Layer"
+          C --> G[HNSW Index<br/>Hierarchical Navigable<br/>Small World]
+          D --> H[IVF-PQ Index<br/>Inverted File Index<br/>Product Quantization]
+          E --> G
+          F --> H
+        end
+        
+        subgraph "Delta Indexing"
+          I[Change Detector<br/><100ms Latency] --> J[Delta Processor<br/>90% Overhead Reduction]
+          J --> G
+          J --> H
+        end
+        
+        subgraph "Vector Storage"
+          G --> K[(Vector Store<br/>768-1024 dim)]
+          H --> K
+          K --> L[Horizontal Sharding<br/>10M+ Documents]
+        end
+        
+        subgraph "Data Sources"
+          M[Documents<br/>Text/Image/Audio/Video] --> I
+          M --> N[Ingestion Pipeline<br/>50K+ docs/hour]
+          N --> K
+        end
+        
+        style A fill:#6366f1,stroke:#4f46e5,color:#fff
+        style G fill:#8b5cf6,stroke:#7c3aed,color:#fff
+        style H fill:#3b82f6,stroke:#2563eb,color:#fff
+        style I fill:#10b981,stroke:#059669,color:#fff
+        style J fill:#f59e0b,stroke:#d97706,color:#fff
+        style K fill:#ef4444,stroke:#dc2626,color:#fff`,
       embeddingDimensions: "768-1024 dimensional vectors with quantization support (INT8, FP16, FP32)",
       supportedModalities: "Text, images (JPEG/PNG/WebP), audio (MP3/WAV/FLAC), video (MP4/WebM), structured data (JSON/CSV)",
+      documentParsing: "PDF parsing (text, scanned, forms), Office documents (Word, Excel, PowerPoint), HTML, Markdown | OCR with 50+ language support | Structure extraction (headers, sections, tables, lists) | Smart chunking (sentence, paragraph, section-level) | Entity extraction (dates, names, locations, organizations) | 98%+ extraction accuracy",
+      versionControl: "Document versioning with temporal search, delta indexing with 90% overhead reduction, real-time change detection (<100ms), automatic retention policies, full document lineage tracking",
       apiInterfaces: "RESTful HTTP API, gRPC for high-throughput, Python/JavaScript/Go SDKs with async support",
-      integration: "Vector database connectors (Pinecone, Weaviate, Qdrant), Elasticsearch/OpenSearch compatibility layer"
+      integration: "Vector database connectors (Pinecone, Weaviate, Qdrant), Elasticsearch/OpenSearch compatibility layer, webhook support for change notifications"
     },
     video: "/aiIntegration.webm",
   },
@@ -612,17 +668,31 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </h2>
             </Reveal>
 
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <Reveal delay={240}>
                 <div className="grid grid-cols-1 gap-6">
-                  {Object.entries(product.technicalSpecs).map(([key, value], index) => (
-                    <div key={index} className="p-4 rounded-lg border border-zinc-800 bg-zinc-900/30">
-                      <h4 className="text-sm font-medium text-zinc-400 mb-2 capitalize">
-                        {key.replace(/([A-Z])/g, ' $1').trim()}
-                      </h4>
-                      <p className="text-sm text-zinc-300">{value}</p>
-                    </div>
-                  ))}
+                  {Object.entries(product.technicalSpecs).map(([key, value], index) => {
+                    // Special handling for architecture diagram
+                    if (key === 'architectureDiagram' && typeof value === 'string') {
+                      return (
+                          <MermaidDiagram chart={value} />
+                      );
+                    }
+                    
+                    // Skip architectureDiagram if we're showing the diagram separately
+                    if (key === 'architectureDiagram') {
+                      return null;
+                    }
+                    
+                    return (
+                      <div key={index} className="p-4 rounded-lg border border-zinc-800 bg-zinc-900/30">
+                        <h4 className="text-sm font-medium text-zinc-400 mb-2 capitalize">
+                          {key.replace(/([A-Z])/g, ' $1').trim()}
+                        </h4>
+                        <p className="text-sm text-zinc-300">{value}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </Reveal>
             </div>
