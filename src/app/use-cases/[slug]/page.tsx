@@ -244,9 +244,9 @@ export default async function UseCasePage({ params }: UseCasePageProps) {
         </div>
 
         <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <Reveal>
-              <div className="mb-6">
+              <div className="mb-6 flex justify-center">
                 <span className="text-sm font-medium text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full">
                   {useCase.industry}
                 </span>
@@ -256,7 +256,7 @@ export default async function UseCasePage({ params }: UseCasePageProps) {
               <TextGenerateEffect words={useCase.title} />
             </h1>
             <Reveal delay={240}>
-              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button asChild size="lg">
                   <Link href="/contact">Get Started</Link>
                 </Button>
@@ -272,7 +272,7 @@ export default async function UseCasePage({ params }: UseCasePageProps) {
       {/* Problem Statement Section */}
       <section className="py-12 sm:py-16 border-t border-zinc-800">
         <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <Reveal>
               <h2 className="text-2xl font-semibold text-foreground mb-4">
                 <TextGenerateEffect words="Problem Statement" />

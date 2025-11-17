@@ -10,17 +10,17 @@ const solutionLinks = [
 ];
 
 const useCaseLinks = [
-  { label: "E-commerce Platform", href: "/use-cases/ecommerce-platform" },
-  { label: "Healthcare Management", href: "/use-cases/healthcare-management" },
+  { label: "E-commerce", href: "/use-cases/ecommerce-platform" },
+  { label: "Healthcare", href: "/use-cases/healthcare-management" },
   { label: "Financial Services", href: "/use-cases/financial-services" },
-  { label: "Education Technology", href: "/use-cases/education-technology" },
+  { label: "Education", href: "/use-cases/education-technology" },
+  { label: "Manufacturing", href: "/use-cases/manufacturing-iot" },
+  { label: "Real Estate", href: "/use-cases/real-estate-portal" },
 ];
 
 const companyLinks = [
   { label: "About Us", href: "/about" },
   { label: "Contact Us", href: "/contact" },
-  { label: "News & Updates", href: "/news" },
-  { label: "Partnerships", href: "/partnerships" },
 ];
 
 const legalLinks = [
@@ -67,27 +67,18 @@ export default function Footer() {
                     href="mailto:hello@synvey.com"
                     className="hover:text-white transition-colors"
                   >
-                    hello@synvey.com
-                  </a>
-                </p>
-                <p>
-                  📞{" "}
-                  <a
-                    href="tel:+15551234567"
-                    className="hover:text-white transition-colors"
-                  >
-                    +1 (555) 123-4567
+                    social@synvey.com
                   </a>
                 </p>
                 <p>
                   📍{" "}
                   <a
-                    href="https://maps.google.com/?q=San%20Francisco%2C%20CA"
+                    href="https://maps.google.com/?q=Sri%20Lanka"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
                   >
-                    San Francisco, CA
+                    Sri Lanka
                   </a>
                 </p>
               </div>
@@ -142,21 +133,6 @@ export default function Footer() {
                     className="h-5 w-5"
                   >
                     <path d="M12 .5C5.7.5.9 5.3.9 11.6c0 4.9 3.2 9 7.6 10.4.6.1.9-.3.9-.6v-2.1c-3.1.7-3.8-1.3-3.8-1.3-.5-1.1-1.2-1.4-1.2-1.4-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.8 2 .8 2 1.6.9 3.1.7 3.9.5.1-.8.4-1.3.7-1.6-2.5-.3-5.1-1.2-5.1-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 .9.9-.3 1.9-.5 2.9-.5s2 .2 2.9.5c2.1-1.2 3-.9 3-.9.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3 0 4.5-2.6 5.3-5.1 5.6.4.3.7.9.7 1.9v2.8c0 .4.3.8.9.6 4.4-1.5 7.6-5.6 7.6-10.4C23.1 5.3 18.3.5 12 .5z" />
-                  </svg>
-                </a>
-                <a
-                  aria-label="YouTube"
-                  href="https://youtube.com/@synvey"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-700 text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white hover:border-zinc-600"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                   </svg>
                 </a>
               </div>
@@ -241,13 +217,10 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4 text-xs text-zinc-400 sm:flex-row sm:items-center">
-              <span className="text-center">Made with ❤️ in San Francisco</span>
+              <span className="text-center">Made with ❤️ in Sri Lanka</span>
               <div className="flex items-center gap-2 justify-center">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <span>All systems operational</span>
-              </div>
-              <div className="flex items-center gap-2 justify-center">
-                <span>🏆 Trusted by 500+ companies</span>
               </div>
             </div>
           </div>

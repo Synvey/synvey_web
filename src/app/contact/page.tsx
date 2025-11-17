@@ -96,8 +96,7 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-foreground mb-2">Sales</h3>
               <p className="text-sm text-zinc-400 mb-3">Get pricing and demos</p>
               <div className="space-y-1">
-                <p className="text-sm text-zinc-300">sales@synvey.com</p>
-                <p className="text-sm text-zinc-300">+1 (555) 123-4567</p>
+                <p className="text-sm text-zinc-300">contact@synvey.com</p>
               </div>
             </div>
 
@@ -113,8 +112,7 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-foreground mb-2">Support</h3>
               <p className="text-sm text-zinc-400 mb-3">Technical assistance</p>
               <div className="space-y-1">
-                <p className="text-sm text-zinc-300">support@synvey.com</p>
-                <Link href="/docs" className="text-sm text-indigo-400 hover:text-indigo-300">View Docs</Link>
+                <p className="text-sm text-zinc-300">operations@synvey.com</p>
               </div>
             </div>
 
@@ -130,7 +128,7 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-foreground mb-2">Partnerships</h3>
               <p className="text-sm text-zinc-400 mb-3">Business collaborations</p>
               <div className="space-y-1">
-                <p className="text-sm text-zinc-300">partners@synvey.com</p>
+                <p className="text-sm text-zinc-300">social@synvey.com</p>
               </div>
             </div>
           </div>
@@ -280,90 +278,6 @@ export default function ContactPage() {
               )}
             </div>
           </div>
-        </div>
-      </section>
-
-
-      {/* Office Location Map */}
-      <section className="py-16">
-        <div className="mx-auto max-w-[90rem] px-3 sm:px-4 lg:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Visit Our Office
-            </h2>
-            <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">
-              Come see us at our headquarters in San Francisco. We'd love to meet you in person.
-            </p>
-          </div>
-
-          {/* Map */}
-          <div className="relative mb-8">
-            <div className="aspect-[2/1] rounded-2xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d-122.396446!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c88c8e8d1%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-2xl"
-                title="Synvey Office Location - San Francisco"
-              ></iframe>
-            </div>
-          </div>
-
-          {/* Address - Horizontal Line */}
-          <div className="mb-8">
-            <div className="flex items-center justify-center">
-              <div className="rounded-xl border border-zinc-500 bg-zinc-900/50 px-8 py-6 w-full max-w-2xl">
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-3 mb-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-500/10">
-                      <svg className="h-4 w-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground">Synvey Headquarters</h3>
-                  </div>
-                  <p className="text-lg text-zinc-300">
-                    123 Tech Street, San Francisco, CA 94105, United States
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Details with Buttons */}
-          <div className="text-center">
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-foreground mb-2">Contact Information</h3>
-              <p className="text-zinc-300">
-                Phone: +1 (555) 123-4567<br />
-                Email: office@synvey.com
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild variant="outline" size="lg">
-                <Link href="https://maps.google.com/?q=123+Tech+Street+San+Francisco+CA+94105" target="_blank" rel="noopener noreferrer">
-                  <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                  Get Directions
-                </Link>
-              </Button>
-              <Button asChild size="lg">
-                <Link href="tel:+15551234567">
-                  <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  Call Office
-                </Link>
-              </Button>
-            </div>
-          </div>
-
         </div>
       </section>
     </main>

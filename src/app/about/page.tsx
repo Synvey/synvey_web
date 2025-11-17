@@ -8,34 +8,22 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative isolate min-h-[80vh] flex items-center">
         <div className="mx-auto max-w-7xl px-4 py-0 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
-          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+          <div className="grid grid-cols-1 items-center gap-8">
             {/* Left: Text */}
-            <div className="animate-on-load animate-slide-in-left">
+            <div className="animate-on-load animate-slide-in-left text-center">
               <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
                 Building the future of software development
               </h1>
-              <p className="mt-4 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg animate-on-load animate-fade-in-up animate-delay-200">
+              <p className="mt-4 max-w-xl mx-auto text-base leading-7 text-zinc-400 sm:text-lg animate-on-load animate-fade-in-up animate-delay-200">
                 We're a team of passionate developers, designers, and innovators dedicated to creating tools that accelerate innovation and empower teams to build better software.
               </p>
-              <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4 animate-on-load animate-fade-in-up animate-delay-300">
+              <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:gap-4 sm:justify-center animate-on-load animate-fade-in-up animate-delay-300">
                 <Button asChild size="lg">
                   <Link href="/contact">Join our mission</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link href="/solutions">Our solutions</Link>
                 </Button>
-              </div>
-            </div>
-
-            {/* Right: Visual */}
-            <div className="animate-on-load animate-slide-in-right animate-delay-200">
-              <div className="relative mx-auto w-full max-w-xl">
-                <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-2xl" />
-                <div className="flex items-center justify-center">
-                  <div className="relative h-auto w-4/5 aspect-square">
-                    <Image src="/logo.jpg" alt="Synvey team" fill className="object-cover rounded-full shadow-2xl ring-1 ring-zinc-800/30" sizes="(max-width: 768px) 80vw, 40vw" />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -215,91 +203,115 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Team Member 1 */}
             <div className="group text-center">
-              <div className="relative mx-auto mb-4 w-32 h-32">
+              <div className="relative mx-auto mb-4 w-48 h-48">
                 <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-indigo-500/20 to-purple-500/20 blur-xl" />
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-2xl font-bold shadow-xl">
-                  AC
-                </div>
+                <Image 
+                  src="/aboutus/ishfaque.png" 
+                  alt="Alex Chen" 
+                  width={192} 
+                  height={192} 
+                  className="w-48 h-48 rounded-full object-cover shadow-xl ring-2 ring-zinc-800"
+                />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-1">Alex Chen</h3>
+              <h3 className="text-xl font-bold text-foreground mb-1">Ishfaque Ahamed</h3>
               <p className="text-indigo-400 font-medium mb-2">CEO & Co-Founder</p>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Former senior engineer at major tech companies with 15+ years of experience in building scalable platforms.
+                Leads the company vision, strategy, partnerships, and overall business growth, with experience managing multiple tech initiatives and guiding teams through successful project launches.
               </p>
             </div>
 
             {/* Team Member 2 */}
             <div className="group text-center">
-              <div className="relative mx-auto mb-4 w-32 h-32">
+              <div className="relative mx-auto mb-4 w-48 h-48">
                 <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/20 blur-xl" />
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-2xl font-bold shadow-xl">
-                  SM
-                </div>
+                <Image 
+                  src="/aboutus/adheeb.jpg" 
+                  alt="Sarah Martinez" 
+                  width={192} 
+                  height={192} 
+                  className="w-48 h-48 rounded-full object-cover shadow-xl ring-2 ring-zinc-800"
+                />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-1">Sarah Martinez</h3>
+              <h3 className="text-xl font-bold text-foreground mb-1">Adheeb Ahamed</h3>
               <p className="text-emerald-400 font-medium mb-2">CTO & Co-Founder</p>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Expert in AI/ML integration and cloud architecture with a passion for developer experience and tooling.
+                Oversees all technical decisions, architecture, and product development, backed by hands on experience engineering high impact software systems across various projects.
               </p>
             </div>
 
             {/* Team Member 3 */}
             <div className="group text-center">
-              <div className="relative mx-auto mb-4 w-32 h-32">
+              <div className="relative mx-auto mb-4 w-48 h-48">
                 <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-pink-500/20 to-rose-500/20 blur-xl" />
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white text-2xl font-bold shadow-xl">
-                  DJ
-                </div>
+                <Image 
+                  src="/aboutus/sarose.png" 
+                  alt="David Johnson" 
+                  width={192} 
+                  height={192} 
+                  className="w-48 h-48 rounded-full object-cover shadow-xl ring-2 ring-zinc-800"
+                />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-1">David Johnson</h3>
-              <p className="text-pink-400 font-medium mb-2">Head of Design</p>
+              <h3 className="text-xl font-bold text-foreground mb-1">Rahfath Sarose</h3>
+              <p className="text-pink-400 font-medium mb-2">COO & Co Founder</p>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Award-winning designer focused on creating intuitive user experiences that make complex tools feel simple.
+                Manages daily operations, workflow, and team coordination, bringing strong experience handling cross-functional projects and ensuring smooth execution of plans.
               </p>
             </div>
 
             {/* Team Member 4 */}
             <div className="group text-center">
-              <div className="relative mx-auto mb-4 w-32 h-32">
+              <div className="relative mx-auto mb-4 w-48 h-48">
                 <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-orange-500/20 to-red-500/20 blur-xl" />
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white text-2xl font-bold shadow-xl">
-                  LW
-                </div>
+                <Image 
+                  src="/aboutus/musfir.jpg" 
+                  alt="Lisa Wang" 
+                  width={192} 
+                  height={192} 
+                  className="w-48 h-48 rounded-full object-cover shadow-xl ring-2 ring-zinc-800"
+                />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-1">Lisa Wang</h3>
-              <p className="text-orange-400 font-medium mb-2">Head of Security</p>
+              <h3 className="text-xl font-bold text-foreground mb-1">Musfir</h3>
+              <p className="text-orange-400 font-medium mb-2">Product Designer</p>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Cybersecurity expert with extensive experience in enterprise security and compliance frameworks.
+                Designs user interfaces, creates product visuals, and enhances usability, strengthened by experience designing engaging digital experiences for web and mobile projects.
               </p>
             </div>
 
             {/* Team Member 5 */}
             <div className="group text-center">
-              <div className="relative mx-auto mb-4 w-32 h-32">
+              <div className="relative mx-auto mb-4 w-48 h-48">
                 <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 blur-xl" />
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-2xl font-bold shadow-xl">
-                  MR
-                </div>
+                <Image 
+                  src="/aboutus/iflal.png" 
+                  alt="Michael Rodriguez" 
+                  width={192} 
+                  height={192} 
+                  className="w-48 h-48 rounded-full object-cover shadow-xl ring-2 ring-zinc-800"
+                />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-1">Michael Rodriguez</h3>
-              <p className="text-cyan-400 font-medium mb-2">Lead Developer</p>
+              <h3 className="text-xl font-bold text-foreground mb-1">Iflal</h3>
+              <p className="text-cyan-400 font-medium mb-2">Machine Learning Engineer</p>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Full-stack developer passionate about building robust APIs and developer tools that scale with your needs.
+                Develops and optimizes AI/ML models, data pipelines, and intelligent product features, with proven experience working on multiple data-driven machine learning projects.
               </p>
             </div>
 
             {/* Team Member 6 */}
             <div className="group text-center">
-              <div className="relative mx-auto mb-4 w-32 h-32">
+              <div className="relative mx-auto mb-4 w-48 h-48">
                 <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-purple-500/20 to-indigo-500/20 blur-xl" />
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-bold shadow-xl">
-                  ET
-                </div>
+                <Image 
+                  src="/aboutus/saiyaf.png" 
+                  alt="Emma Thompson" 
+                  width={192} 
+                  height={192} 
+                  className="w-48 h-48 rounded-full object-cover shadow-xl ring-2 ring-zinc-800"
+                />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-1">Emma Thompson</h3>
-              <p className="text-purple-400 font-medium mb-2">Head of Operations</p>
+              <h3 className="text-xl font-bold text-foreground mb-1">Saiyaf</h3>
+              <p className="text-purple-400 font-medium mb-2">Software Engineer</p>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Operations specialist focused on scaling our platform and ensuring exceptional customer support experiences.
+                Builds and maintains both frontend and backend applications, supported by experience developing full web solutions across different technologies and project environments.
               </p>
             </div>
           </div>
@@ -320,7 +332,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             <div className="text-center">
-              <div className="text-4xl font-bold text-indigo-400 mb-2">50K+</div>
+              <div className="text-4xl font-bold text-indigo-400 mb-2">10+</div>
               <div className="text-sm text-zinc-400">Active Developers</div>
             </div>
             <div className="text-center">
@@ -328,7 +340,7 @@ export default function AboutPage() {
               <div className="text-sm text-zinc-400">Uptime</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-purple-400 mb-2">150+</div>
+              <div className="text-4xl font-bold text-purple-400 mb-2">10+</div>
               <div className="text-sm text-zinc-400">Enterprise Clients</div>
             </div>
             <div className="text-center">

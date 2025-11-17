@@ -551,17 +551,14 @@ export default function HomePage() {
               <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
                 Enterprise AI that{" "}
                 <FlipWords
-                  words={["understands.", "automates.", "scales."]}
+                  words={["Understands.", "Automates.", "Scales."]}
                   className="inline-block text-primary px-1"
                   duration={3000}
                 />
               </h1>
 
               <p className="mt-6 max-w-2xl mx-auto text-lg leading-7 text-zinc-400 sm:text-xl animate-on-load animate-fade-in-up animate-delay-200">
-                Synvey builds production-ready AI infrastructure for enterprises. 
-                From multimodal vector search processing billions of vectors to 
-                enterprise AI agents automating complex operations, we deliver 
-                intelligent systems that transform how organizations leverage data and AI.
+                Synvey builds production-ready AI infrastructure for enterprises from multimodal vector search to AI agents that automate complex operations.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 animate-on-load animate-fade-in-up animate-delay-300">
                 <Button asChild size="lg">
