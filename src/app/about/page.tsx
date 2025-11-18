@@ -220,25 +220,6 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Team Member 2 */}
-            <div className="group text-center">
-              <div className="relative mx-auto mb-4 w-48 h-48">
-                <div className="absolute -inset-2 -z-10 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/20 blur-xl" />
-                <Image 
-                  src="/aboutus/adheeb.jpg" 
-                  alt="Sarah Martinez" 
-                  width={192} 
-                  height={192} 
-                  className="w-48 h-48 rounded-full object-cover shadow-xl ring-2 ring-zinc-800"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-1">Adheeb Ahamed</h3>
-              <p className="text-emerald-400 font-medium mb-2">CTO & Co-Founder</p>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                Oversees all technical decisions, architecture, and product development, backed by hands on experience engineering high impact software systems across various projects.
-              </p>
-            </div>
-
             {/* Team Member 3 */}
             <div className="group text-center">
               <div className="relative mx-auto mb-4 w-48 h-48">
