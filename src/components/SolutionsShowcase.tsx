@@ -106,10 +106,17 @@ export default function SolutionsShowcase({
       className="bg-background text-foreground min-h-[100vh] flex items-start sm:items-center relative"
     >
       <div className="w-full mx-auto max-w-7xl xl:max-w-[1280px] 2xl:max-w-[1280px] px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
-        <TextGenerateEffect
-          words="Revolutionizing the World with Our Solutions."
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold w-full text-center text-white leading-tight mb-8 md:mb-12"
-        />
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-sm font-bold tracking-[0.2em] uppercase text-blue-500 mb-4 flex items-center justify-center gap-2">
+            <span className="w-8 h-[1px] bg-blue-500"></span>
+            Our Core Solutions
+            <span className="w-8 h-[1px] bg-blue-500"></span>
+          </h2>
+          <TextGenerateEffect
+            words="Revolutionizing the World with Our Solutions."
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold w-full text-center text-white leading-tight"
+          />
+        </div>
 
         {/* Tabs */}
         <div

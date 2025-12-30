@@ -3,12 +3,11 @@ import Image from "next/image";
 import React from "react";
 import { FlipWords } from "@/components/ui/flip-words";
 import VideoSlideshow from "../components/VideoSlideshow";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import UseCasesOverview from "@/components/UseCasesOverview";
-import { TextGenerateEffect } from "../components/ui/text-generate-effect";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import StatsSection from "@/components/StatsSection";
 
 export default function HomePage() {
@@ -74,79 +73,31 @@ export default function HomePage() {
       title: "Multimodal Product Search & Discovery",
       description:
         "Multimodal vector search across 10M+ SKU catalogs with sub-50ms latency achieves 94.3% relevance accuracy (vs 67% with keyword search). Agentic workflows automate dynamic pricing, inventory management, and customer service, reducing stockouts by 42% and generating $3.2M annual savings. Recommendation engine processes 2.5M daily interactions with 40% conversion lift. Distributed infrastructure handles 100K+ QPS with 99.97% uptime.",
-      content: (
-        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
-          <div className="text-center p-8">
-            <div className="text-sm text-zinc-400 mb-2">Multimodal Product Search</div>
-            <div className="text-xs text-zinc-500">10M+ SKUs • 100K+ QPS • 94.3% Relevance</div>
-          </div>
-        </div>
-      ),
     },
     {
       title: "Clinical Intelligence & Medical Document Search",
       description:
         "Custom medical embeddings process 10M+ documents (EHRs, imaging, research) with 99.2% search accuracy. Cross-modal retrieval enables querying symptoms to find relevant imaging and lab results in <800ms. Clinical decision support reduces diagnosis time by 60% (4.2h to 1.7h) with 96.8% accuracy. Medication reconciliation identifies 1,200+ drug interactions monthly. HIPAA-compliant on-premise hosting ensures zero data exfiltration. Workflow automation saves 45 hours per provider weekly, improving patient outcomes with 23% fewer readmissions.",
-      content: (
-        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
-          <div className="text-center p-8">
-            <div className="text-sm text-zinc-400 mb-2">Clinical Intelligence</div>
-            <div className="text-xs text-zinc-500">10M+ Documents • 99.2% Accuracy • 60% Faster Diagnosis</div>
-          </div>
-        </div>
-      ),
     },
     {
       title: "Real-Time Fraud Detection & Compliance Automation",
       description:
         "Real-time fraud detection processes 1.2M+ transactions daily with <50ms latency, achieving 95.2% precision and 92.8% recall. Custom embeddings reduce false positives by 70%, saving $2.4M annually. Agentic compliance workflows automate regulatory reporting across 12+ jurisdictions, reducing report generation from 240 hours to 8 hours monthly (97% reduction). Risk assessment agents analyze 500K+ profiles, reducing credit losses by 18%. AML screening identifies 2,400+ suspicious activities monthly with 88% true positive rate. Distributed infrastructure handles 5M+ API calls daily with 99.99% availability.",
-      content: (
-        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
-          <div className="text-center p-8">
-            <div className="text-sm text-zinc-400 mb-2">Fraud Detection & Compliance</div>
-            <div className="text-xs text-zinc-500">1.2M+ Transactions/Day • 95.2% Precision • $2.4M Saved</div>
-          </div>
-        </div>
-      ),
     },
     {
       title: "Personalized Learning & Educational Content Discovery",
       description:
         "Multimodal search indexes 5M+ educational resources with 91% relevance accuracy. Personalized learning paths analyze 2.8M weekly interactions, improving engagement by 55% and outcomes by 38%. Agentic grading processes 150K+ submissions monthly with 90.3% accuracy, reducing instructor workload by 45 hours weekly. Content recommendations improve concept mastery by 42%. Student tracking identifies at-risk learners 3.2 weeks earlier, reducing dropouts by 28%. Learning analytics process 15M+ daily data points, improving curriculum effectiveness by 31%.",
-      content: (
-        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
-          <div className="text-center p-8">
-            <div className="text-sm text-zinc-400 mb-2">Personalized Learning</div>
-            <div className="text-xs text-zinc-500">5M+ Resources • 55% Engagement Lift • 90.3% Grading Accuracy</div>
-          </div>
-        </div>
-      ),
     },
     {
       title: "Predictive Maintenance & Industrial IoT Analytics",
       description:
         "Vector search processes 100M+ daily sensor readings from 15K+ IoT devices with 89.7% anomaly detection accuracy. Custom embeddings identify failure patterns 4-6 weeks early, reducing unplanned downtime by 75% and saving $5.8M annually. Predictive maintenance agents schedule maintenance with 92% precision, optimizing costs by 34% and extending equipment lifespan by 28%. Quality control automation detects defects with 96.2% accuracy, reducing returns by 40%. OEE improved from 68% to 88%, throughput increased 22%, and energy consumption reduced 19%.",
-      content: (
-        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
-          <div className="text-center p-8">
-            <div className="text-sm text-zinc-400 mb-2">Predictive Maintenance</div>
-            <div className="text-xs text-zinc-500">100M+ Readings/Day • 75% Downtime Reduction • $5.8M Saved</div>
-          </div>
-        </div>
-      ),
     },
     {
       title: "Intelligent Property Matching & Lead Qualification",
       description:
         "Multimodal search indexes 1.2M+ property listings with 93% match accuracy, processing natural language queries in 280ms. Intelligent matching analyzes 500K+ buyer profiles, increasing lead conversion by 65% and reducing time-to-match by 50% (14 days to 7 days). Agentic workflows qualify 25K+ leads monthly with 87% accuracy, improving conversion rates by 42%. Automated scheduling coordinates 8,500+ viewings monthly, reducing no-shows by 38%. Market analysis generates pricing recommendations with 91% accuracy, reducing time-on-market by 31%. Agent productivity increased 40%, enabling 2.3x more transactions per agent.",
-      content: (
-        <div className="h-full w-full bg-zinc-900/50 flex items-center justify-center rounded-2xl border border-zinc-800">
-          <div className="text-center p-8">
-            <div className="text-sm text-zinc-400 mb-2">Property Matching</div>
-            <div className="text-xs text-zinc-500">1.2M+ Listings • 65% Conversion Lift • 50% Faster Matching</div>
-          </div>
-        </div>
-      ),
     },
   ];
   const solutions = [
@@ -645,47 +596,7 @@ export default function HomePage() {
       <UseCasesOverview useCases={stickyUseCases} />
 
       {/* Customer reviews */}
-
-      <section className="py-16 sm:py-20 bg-zinc-900/30">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl 2xl:max-w-[1400px]">
-            <div className="text-center mb-16">
-            <div className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              <TextGenerateEffect
-                words="What our customer says"
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold w-full text-center text-white leading-tight mb-4 sm:mb-6"
-              />
-          </div>
-            <div className=" text-base sm:text-lg text-zinc-400  mx-auto">
-              <TextGenerateEffect
-                words="Trusted by teams worldwide to build and scale faster."
-                className="text-base sm:text-lg md:text-xl text-center text-zinc-400 mx-auto"
-              />
-                </div>
-              </div>
-
-          <div className="w-full flex justify-center items-center overflow-hidden">
-            <InfiniteMovingCards
-              items={testimonials}
-              pauseOnHover
-              direction="right"
-              speed="slow"
-            />
-              </div>
-          <div className="w-full flex justify-center items-center overflow-hidden">
-            <InfiniteMovingCards
-              items={testimonials}
-              pauseOnHover
-              direction="left"
-              speed="slow"
-            />
-            </div>
-          </div>
-        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 animate-on-load animate-fade-in-up animate-delay-300">
-          <Button asChild size="lg">
-            <Link href="">More reviews</Link>
-          </Button>
-        </div>
-      </section>
+      <TestimonialsSection testimonials={testimonials} />
 
       {/* Large CTA Banner */}
       <section className="py-20 sm:py-24">
